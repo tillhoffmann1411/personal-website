@@ -19,9 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={prozaLibre.className}>{children}</body>
-      <SpeedInsights />
-      <Analytics />
+      <body className={prozaLibre.className}>{children}
+        <SpeedInsights />
+        <Analytics />
+      </body>
     </html>
   )
 }
