@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Cormorant_Garamond, Proza_Libre } from 'next/font/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './ui/globals.css'
 
 const cormorantGaramond = Cormorant_Garamond({ subsets: ['latin'], weight: '400' })
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={prozaLibre.className}>{children}</body>
+      <SpeedInsights />
     </html>
   )
 }
