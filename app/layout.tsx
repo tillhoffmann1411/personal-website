@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Cormorant_Garamond, Proza_Libre } from 'next/font/google'
+import './ui/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const cormorantGaramond = Cormorant_Garamond({ subsets: ['latin'], weight: '400' })
+const prozaLibre = Proza_Libre({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={prozaLibre.className}>{children}</body>
     </html>
   )
 }

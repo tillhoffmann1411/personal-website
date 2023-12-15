@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Proza Libre', sans-serif;
+  line-height: 150%;
+}
+
+section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+/* Global styles for heading elements */
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  line-height: 120%;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-weight: bolder;
+}
+
+/* Responsive font sizes using media queries */
+/* Adjust the breakpoint values as needed */
+
+/* For larger screens */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.2rem;
+  }
+}
+
+/* For medium screens */
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.4rem;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+}
+
+/* For small screens */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.3rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+/* Additional media queries for even smaller screens can be added if necessary */
+
+
+* {
+  box-sizing: border-box;
+}
