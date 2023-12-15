@@ -39,11 +39,9 @@ export default function Home() {
       <main className="bg-white dark:bg-black/95">
         <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64">
           <BlogFeed />
-          <About />
           <Skills />
-        </div>
-        <Portfolio />
-        <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64">
+          <About />
+          <Portfolio />
           <Contact />
           <FAQ />
         </div>
