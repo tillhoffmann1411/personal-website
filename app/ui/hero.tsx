@@ -39,14 +39,14 @@ const Hero: FC = () => {
                         >
                             Contact
                         </span>
-                        <a href="https://github.com/tillhoffmann1411" target="_blank" rel="noreferrer" className="hover:text-purple-900 dark:hover:text-purple-300 dark:text-white"><AiFillGithub /></a>
-                        <a href="https://www.linkedin.com/in/tillhoffmann/" target="_blank" rel="noreferrer" className="hover:text-purple-900 dark:hover:text-purple-300 dark:text-white"><AiFillLinkedin /></a>
+                        <a href="https://github.com/tillhoffmann1411" aria-label="Go to GitHub profile of Till Hoffmann" target="_blank" rel="noreferrer" className="hover:text-purple-900 dark:hover:text-purple-300 dark:text-white"><AiFillGithub /></a>
+                        <a href="https://www.linkedin.com/in/tillhoffmann/" aria-label="Go to LinkedIn profile of Till Hoffmann" target="_blank" rel="noreferrer" className="hover:text-purple-900 dark:hover:text-purple-300 dark:text-white"><AiFillLinkedin /></a>
                     </div>
 
                 </div>
 
                 <div className="flex m-auto w-auto max-w-full">
-                    <Image src='/images/profile.png' alt="Till Hoffmann profile picture" width={500} height={500} className="m-auto" />
+                    <Image src='/images/profile.webp' alt="Till Hoffmann profile picture" width={500} height={500} className="m-auto" />
                 </div>
             </div>
         </section>

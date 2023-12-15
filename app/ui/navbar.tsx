@@ -23,28 +23,26 @@ const Navbar: FC<Props> = ({ darkMode, setDarkMode }) => {
                 ? 'opacity-0'
                 : 'opacity-100',
             scrollPosition > innerHeight
-                ? 'bg-white dark:bg-gray-900'
+                ? 'bg-white dark:bg-gray-900 shadow-md'
                 : 'bg-transparent backdrop-blur-md',
             `active flex sticky top-0 z-20 justify-between transition-all duration-300
-        px-5 sm:px-10 md:px-32 lg:px-64
+        px-5 sm:px-10 md:px-32 xl:px-64
         dark:text-white`,
         )}>
-            <div className='py-1'>
+            <div>
                 <a
                     href="#"
-                    className="h-10 p-1"
+                    className="p-1"
                 >
-                    <div className="h-10 flex">
-                        <div className="aspect-square h-10 mr-3">
-                            <Image src="/logo.png" height={100} width={100} alt="logo" />
-                        </div>
-                        <p className="font-burtons text-2xl m-auto bg-gradient-to-b from-rose-400 via-fuchsia-400 to-sky-400 text-transparent bg-clip-text">
+                    <div className="flex">
+                        <Image src="/logo.webp" height={100} width={100} className='mr-3 h-6 w-6 sm:h-10 sm:w-10' alt="logo" />
+                        <p className="font-burtons text-xl  m-auto bg-gradient-to-b from-rose-400 via-fuchsia-400 to-sky-400 text-transparent bg-clip-text sm:text-2xl">
                             Till Hoffmann
                         </p>
                     </div>
                 </a>
             </div>
-            <ul className="flex items-center">
+            <ul className="flex items-center scale-75 sm:scale-100">
                 <li>
                     <BsFillMoonStarsFill
                         onClick={() => setDarkMode(!darkMode)}
