@@ -18,8 +18,12 @@ export default async function Image() {
     return new ImageResponse(
         (
             // ImageResponse JSX element
-            <div className="-mt-24">
-                <Hero />
+            <div className="min-h-screen flex pt-1
+            px-5 sm:px-10 md:px-32 xl:px-64
+            w-full
+            bg-gradient-to-b bg-blur-lg animate-gradient-xy
+            from-rose-300 via-fuchsia-300 to-sky-300
+            dark:from-rose-800 dark:via-fuchsia-800 dark:to-sky-800">
             </div>
         ),
         // ImageResponse options
