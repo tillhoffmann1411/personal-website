@@ -15,6 +15,14 @@ export const metadata: Metadata = {
     locale: 'en_IE',
     url: 'https://till-hoffmann.me',
     siteName: 'Till Hoffmann',
+    images: [
+      {
+        url: 'https://till-hoffmann.me/opengraph-image.png',
+        width: 3804,
+        height: 1916,
+        alt: 'Website Hero',
+      },
+    ],
   },
 }
 
