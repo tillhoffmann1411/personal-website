@@ -51,24 +51,8 @@ export type BlogPost = {
     link: string;
     guid: string;
     author: string;
-    thumbnail: string;
-    description: string;
     content: string;
-    enclosure: any;
     categories: string[];
-};
-
-export type BlogData = {
-    status: string;
-    feed: {
-        url: string;
-        title: string;
-        link: string;
-        author: string;
-        description: string;
-        image: string;
-    };
-    items: BlogPost[];
 };
 
 export type ContactForm = {

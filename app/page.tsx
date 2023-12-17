@@ -11,7 +11,6 @@ import Hero from './ui/hero';
 import Portfolio from './ui/portfolio/portfolio';
 import Skills from './ui/skills';
 
-
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
 

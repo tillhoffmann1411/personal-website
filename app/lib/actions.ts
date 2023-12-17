@@ -1,8 +1,10 @@
 'use server';
 
 import { z } from 'zod';
-import { Contact, FormState } from './definitions';
+import { BlogPost, Contact, FormState } from './definitions';
 import { sendMail } from './nodemailer';
+import Parser from 'rss-parser';
+import { cache } from 'react';
 
 const upperCaseFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
@@ -53,4 +55,19 @@ export async function createContactRequest(prevState: FormState, formData: FormD
         console.error('Error by sending mail with transporter:', err);
         return { status: 'error', message: '❌ Something went wrong, please try again later.', formData: data };
     }
+};
+
+type CustomFeed = {};
+
+export const getBlogPosts = async () => {
+    const parser = new Parser<CustomFeed, BlogPost>({
+        customFields: {
+            item: [
+                ['dc:creator', 'author'],
+                ['content:encoded', 'content']
+            ],
+        }
+    });
+    const feed = await parser.parseURL('https://medium.com/feed/@hoffmann.webdev');
+    return feed.items;
 };
