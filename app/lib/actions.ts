@@ -1,6 +1,7 @@
 'use server';
 
-import { Contact } from './definitions';
+import { z } from 'zod';
+import { Contact, FormState } from './definitions';
 import { sendMail } from './nodemailer';
 
 const upperCaseFirstLetter = (str: string) => {
@@ -21,24 +22,35 @@ const generateEmailContent = (data: Contact) => {
     };
 };
 
-export const createContactRequest = async (prevState: any, formData: FormData) => {
-    const subject = formData.get('subject')?.toString();
-    const message = formData.get('message')?.toString();
-    const email = formData.get('email')?.toString();
-    formData.forEach((value, key) => {
-        console.log('key:', key, 'value:', value);
-    });
-    console.log('subject:', subject, 'message:', message, 'email:', email);
-    if (!subject || !message || !email) {
-        return { message: '❌ Data is missing, please fill out all fields.' };
+const schema = z.object({
+    email: z.string().email(),
+    subject: z.string().min(3),
+    message: z.string().min(3),
+})
+
+export async function createContactRequest(prevState: FormState, formData: FormData): Promise<FormState> {
+    const email = formData.get('email') as string;
+    const subject = formData.get('subject') as string;
+    const message = formData.get('message') as string;
+    const data = { email, subject, message };
+
+    const validatedFields = schema.safeParse(data);
+
+    // Return early if the form data is invalid
+    if (!validatedFields.success) {
+        return {
+            status: 'error',
+            message: '❌ Given data is invalid, please check the form fields.',
+            formData: data,
+            errors: validatedFields.error.flatten().fieldErrors,
+        }
     }
     try {
         const { text, html } = generateEmailContent({ subject, message, email });
         const mailRes = await sendMail('hoffmann.webdev@gmail.com', subject, text, html);
-        return { ...mailRes, message: '🎉 Thanks for your message, I will get back to you soon!' };
+        return { status: 'success', message: '🎉 Thanks for your message, I will get back to you soon!', formData: data };
     } catch (err: any) {
         console.error('Error by sending mail with transporter:', err);
-        return { message: '❌ Something went wrong, please try again later.' };
+        return { status: 'error', message: '❌ Something went wrong, please try again later.', formData: data };
     }
-
 };

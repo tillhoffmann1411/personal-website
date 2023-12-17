@@ -70,3 +70,20 @@ export type BlogData = {
     };
     items: BlogPost[];
 };
+
+export type ContactForm = {
+    email: string;
+    subject: string;
+    message: string;
+};
+
+export type FormState = {
+    status: string;
+    message: string;
+    formData: ContactForm;
+    errors?: {
+        email?: string[];
+        subject?: string[];
+        message?: string[];
+    };
+};
