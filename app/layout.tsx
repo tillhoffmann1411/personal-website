@@ -10,6 +10,12 @@ const prozaLibre = Proza_Libre({ subsets: ['latin'], weight: '400' })
 export const metadata: Metadata = {
   title: 'Till Hoffmann - Software Engineer',
   description: 'Founder, Software Engineer, and Freelancer',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IE',
+    url: 'https://till-hoffmann.me',
+    siteName: 'Till Hoffmann',
+  },
 }
 
 export default function RootLayout({
