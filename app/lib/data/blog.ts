@@ -1,6 +1,4 @@
-import { BlogData } from '../definitions';
-
-export const blogData: BlogData = {
+export const blogData = {
     "status": "ok",
     "feed": {
         "url": "https://medium.com/feed/@hoffmann.webdev",
