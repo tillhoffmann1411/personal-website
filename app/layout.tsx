@@ -8,6 +8,7 @@ const cormorantGaramond = Cormorant_Garamond({ subsets: ['latin'], weight: '400'
 const prozaLibre = Proza_Libre({ subsets: ['latin'], weight: '400' })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://till-hoffmann.me'),
   title: 'Till Hoffmann - Software Engineer',
   description: 'Founder, Software Engineer, and Freelancer',
   openGraph: {

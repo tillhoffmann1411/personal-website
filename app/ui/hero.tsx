@@ -25,10 +25,10 @@ const Hero: FC = () => {
                         Till Hoffmann
                     </h1>
                     <h2 className="pb-8 dark:text-white">
-                        Elevating Ideas, Crafting Solutions
+                        Understanding challenges, creating Solutions
                     </h2>
                     <p className="leading-8 text-gray-800 dark:text-gray-200">
-                        Founder and Freelancer in software and product development.
+                        Passionate about process automation, knowledge graphs, and development
                     </p>
 
                     <div className="flex py-6 text-5xl self-center items-center gap-6 break-after-column lg:m-0 lg:self-start">

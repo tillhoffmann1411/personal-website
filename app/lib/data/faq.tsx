@@ -5,13 +5,7 @@ export const faqData = [
             <span>
                 You can reach out to me through the following methods:
                 <br />
-                <b>Email</b>: Feel free to send me an email at{" "}
-                <a
-                    href="mailto:hoffmann.webdev@gmail.com"
-                    className="text-purple-700 dark:text-purple-400"
-                >
-                    hoffmann.webdev@gmail.com
-                </a>
+                <b>Contact-Form</b>: Feel free to send me an email with the <a href="#contact" className="text-purple-700 dark:text-purple-400">contact form</a> on this website.
                 <br />
                 <b>Social Media</b>: You can connect with me on{" "}
                 <a
@@ -21,17 +15,7 @@ export const faqData = [
                     className="text-purple-700 dark:text-purple-400"
                 >
                     LinkedIn
-                </a>{" "}
-                and{" "}
-                <a
-                    href="https://twitter.com/tillxhoffmann"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-purple-700 dark:text-purple-400"
-                >
-                    Twitter
-                </a>
-                , where I actively engage with the tech community.
+                </a>{" "}where I actively engage with the tech community.
                 <br />
                 <br />
                 <p>
@@ -49,9 +33,10 @@ export const faqData = [
             <div>
                 <p>My freelance services include:</p>
                 <ul className="list-inside list-disc">
-                    <li>Full-Stack Development in TypeScript, React, and Node.js</li>
+                    <li>Full-Stack Development in TypeScript, React, Node.js and Python</li>
+                    <li>Knowledge graph design, planning, and implementation</li>
+                    <li>Process optimization and automation</li>
                     <li>API Integration (JavaScript and Python)</li>
-                    <li>Data Pipeline Design and Management</li>
                 </ul>
             </div>
         ),
