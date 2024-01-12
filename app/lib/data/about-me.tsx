@@ -7,8 +7,8 @@ export const aboutMeData: AboutMe[] = [
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
                 <li>Driving product and strategic orientation at Knowledge in a Box.</li>
-                <li>Consulting with a focus on knowledge graphs and process automation.</li>
-                <li>Optimizing and automating processes for growing companies.</li>
+                <li>Developing high quality applications with Next.js and React.</li>
+                <li>Designing user friendly and beautiful applications for the web.</li>
             </ul>
         ),
     },

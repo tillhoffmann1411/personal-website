@@ -22,28 +22,28 @@ import { Skill } from '../definitions';
 export const skills: Skill[] = [
   {
     title: 'Frontend Development',
-    description: 'I provide expert frontend development in React and modern frameworks for exceptional user experiences.',
+    description: 'I have 5+ years of experience in frontend development using Angular, React, Polymer, and Tailwind CSS, creating responsive and accessible web applications.',
     icon: <AiFillLayout />,
     logos: [<BiLogoAngular key="angular" />, <BiLogoReact key="react" />, <IoLogoPolymer key="polymer" />, <BiLogoTailwindCss key="tailwind" />, <SiMui key="mui" />, <BiLogoBootstrap key="boot" />],
     color: 'bg-rose-800'
   },
   {
     title: 'Backend Development',
-    description: 'I have a deep proficiency in backend development using TypeScript and Python, creating robust, efficient, and maintainable server-side solutions.',
+    description: 'I have 5+ years of experience in backend development using Next.js, Node.js, Nest.js, and Django, creating scalable and secure APIs.',
     icon: <AiOutlineCloudServer />,
     logos: [<BiLogoNodejs key="nodejs" />, <SiNestjs key="nestjs" />, <BiLogoDjango key="django" />, <BiLogoTypescript key="typescript" />],
     color: 'bg-sky-800'
   },
   {
     title: 'Architecture',
-    description: 'I specialize in cloud-based software architecture, designing scalable and resilient solutions to optimize performance and reliability.',
+    description: 'I setup and maintain cloud infrastructure using AWS, GCP, Firebase, and DigitalOcean, creating scalable and secure APIs.',
     icon: <AiFillBuild />,
     logos: [<BiLogoAws key="aws" />, <BiLogoGoogleCloud key="gcp" />, <BiLogoFirebase key="fire" />, <BiLogoDigitalocean key="digi" />],
     color: 'bg-fuchsia-800'
   },
   {
     title: 'Data Integration',
-    description: 'I offer data integration and pipeline services using Python, streamlining the flow of information and integrat it in databases.',
+    description: 'I implemented data integration pipelines using Python, Pandas, SQL, and NoSQL databases.',
     icon: <AiFillFunnelPlot />,
     logos: [<BiLogoPython key="py" />, <SiPandas key="pan" />, <AiFillApi key="api" />, <BiLogoPostgresql key="sql" />, <SiNeo4J key="neo" />, <BiLogoMongodb key="mongo" />],
     color: 'bg-violet-800'

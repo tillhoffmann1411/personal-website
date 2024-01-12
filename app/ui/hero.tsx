@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import StatusBadge from './status-badge';
 
 const Hero: FC = () => {
     return (
@@ -26,7 +27,9 @@ const Hero: FC = () => {
                         Till Hoffmann
                     </h1>
                     <h2 className="pb-2 scroll-m-20 border-b text-3xl font-semibold tracking-tight first:mt-0">
-                        Professional <code className='relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold'>Next.js</code> developer
+                        Professional{' '}
+                        <code className='relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono font-semibold'>Next.js</code>
+                        {' '}developer
                     </h2>
                     <p className="leading-7 [&:not(:first-child)]:mt-6">
                         Passionate about clean web development and automation
@@ -74,11 +77,14 @@ const Hero: FC = () => {
 
                 </div>
 
-                <div className="flex m-auto w-auto max-w-sm">
+                <div className="flex m-auto w-auto max-w-sm relative">
                     <Avatar className='w-full h-full'>
                         <AvatarImage src="/images/profile-picture-2.webp" />
                         <AvatarFallback className='h-full w-full'>TH</AvatarFallback>
                     </Avatar>
+                    <div className='absolute right-6 -top-4 md:right-8 md:-top-2'>
+                        <StatusBadge />
+                    </div>
                 </div>
             </div>
         </section>
