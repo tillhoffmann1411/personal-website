@@ -12,29 +12,17 @@ import Portfolio from './ui/portfolio/portfolio';
 import Skills from './ui/skills';
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    const mqListener = ((e: MediaQueryListEvent) => {
-      setDarkMode(e.matches);
-    });
-    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-    darkThemeMq.addEventListener('change', mqListener);
-    setDarkMode(darkThemeMq.matches);
-    return () => darkThemeMq.removeEventListener('change', mqListener);
-  }, []);
-
   return (
-    <div className={darkMode ? "dark" : ""}>
+    <div>
       <Head>
         <title>👨🏽‍💻 Till Hoffmann</title>
         <meta name="description" content="Till Hoffmann web development portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <Navbar />
       <main className='-mt-24'>
         <Hero />
-        <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64 bg-background">
+        <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64">
           <BlogFeed />
           <Skills />
           <About />

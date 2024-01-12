@@ -27,9 +27,9 @@ const ProjectCard: React.FC<Props> = ({ imageSrc, title, description, website, c
             </CardHeader>
             <CardContent>
                 {description && (
-                    <p className="mb-3 text-gray-700 dark:text-gray-300">
+                    <p className="mb-3">
                         {showMore ? description : `${description.substring(0, 75)}...`}
-                        <button className="text-gray-600 dark:text-gray-400 text-xs" onClick={() => setShowMore(!showMore)}>
+                        <button className="text-xs" onClick={() => setShowMore(!showMore)}>
                             {showMore ? 'Show less' : 'Show more'}
                         </button>
                     </p>

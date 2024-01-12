@@ -4,12 +4,7 @@ import { scrollToSection } from '../lib/utils';
 import { ModeToggle } from './mode-toggle';
 import { Button } from '@/components/ui/button';
 
-type Props = {
-    darkMode: boolean;
-    setDarkMode: (darkMode: boolean) => void;
-};
-
-const Navbar: FC<Props> = ({ darkMode, setDarkMode }) => {
+const Navbar: FC = () => {
     const scrollPosition = useScrollPosition();
     const innerHeight = useWindowHeight();
 
