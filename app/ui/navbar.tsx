@@ -39,9 +39,9 @@ const Navbar: FC = () => {
                     className="group relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold hover:bg-primary cursor-default hover:text-primary-foreground"
                     onClick={onClick}
                 >
-                    <span className='group-hover:hidden'>Till Hoffmann</span>
-                    <span className='hidden group-hover:inline group-active:hidden'>Do not press</span>
-                    <span className='hidden group-active:inline'>Whooooo 🎉</span>
+                    <span className='select-none group-hover:hidden'>Till Hoffmann</span>
+                    <span className='hidden select-none group-hover:inline group-active:hidden'>Do not press</span>
+                    <span className='hidden select-none group-active:inline'>Whooooo 🎉</span>
                 </span>
             </div>
             <ul className="flex items-center gap-3">
