@@ -21,8 +21,8 @@ const Map: FC<Props> = ({ children, className, width, height, ...rest }) => {
     useEffect(() => {
         (async function init() {
             const icon = L.icon({
-                iconRetinaUrl: 'https://till-hoffmann.me/images/profile.webp',
-                iconUrl: 'https://till-hoffmann.me/images/profile.webp',
+                iconRetinaUrl: 'https://till-hoffmann.me/images/ till-memoji.png',
+                iconUrl: 'https://till-hoffmann.me/images/ till-memoji.png',
                 iconSize: [100, 100],
                 iconAnchor: [50, 50],
                 popupAnchor: [0, -50],
