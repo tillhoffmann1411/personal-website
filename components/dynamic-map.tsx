@@ -33,7 +33,7 @@ const Map: FC<Props> = ({ children, className, width, height, ...rest }) => {
     }, []);
 
     return (
-        <MapContainer className="h-full w-full" {...rest}
+        <MapContainer className="h-full w-full z-10" {...rest}
             zoomControl={false}
             scrollWheelZoom={false}
             dragging={false}

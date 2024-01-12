@@ -1,3 +1,4 @@
+'use client'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { aboutMeData } from '../lib/data/about-me';
 
@@ -55,7 +56,7 @@ export default function About() {
                 ))}
             </div>
 
-            <p className="text-xs text-gray-400">Updated 2023-12-14 - inspired by <a href="https://nownownow.com/" className="underline">now</a></p>
+            <p className="text-xs text-gray-400">Updated 2024-01-12 - inspired by <a href="https://nownownow.com/" className="underline">now</a></p>
 
 
 

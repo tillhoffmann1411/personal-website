@@ -1,3 +1,4 @@
+'use client';
 import { FC, useEffect, useRef } from 'react';
 import { createContactRequest } from '../lib/actions';
 import { useFormState, useFormStatus } from 'react-dom';

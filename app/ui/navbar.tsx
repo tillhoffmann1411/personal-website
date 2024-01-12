@@ -1,8 +1,10 @@
+'use client';
 import { useScrollPosition, useWindowHeight } from '../lib/hooks';
 import { FC } from 'react';
 import { scrollToSection } from '../lib/utils';
 import { ModeToggle } from './mode-toggle';
 import { Button } from '@/components/ui/button';
+import confetti from 'canvas-confetti';
 
 const Navbar: FC = () => {
     const scrollPosition = useScrollPosition();
@@ -10,6 +12,14 @@ const Navbar: FC = () => {
 
     const classNames = (...classes: string[]) => {
         return classes.filter(Boolean).join(' ')
+    };
+
+    const onClick = () => {
+        confetti({
+            particleCount: 150,
+            spread: 100,
+            origin: { y: 1 },
+        });
     };
 
     return (
@@ -21,12 +31,18 @@ const Navbar: FC = () => {
                 ? 'bg-background shadow-md'
                 : 'bg-transparent backdrop-blur-md',
             `active flex sticky top-0 z-20 justify-between transition-all duration-300
-        px-5 sm:px-10 md:px-32 xl:px-64`,
+            hover:opacity-100
+            px-5 sm:px-10 md:px-32 xl:px-64`,
         )}>
             <div className="flex py-4">
-                <p className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold hover:bg-primary cursor-default hover:text-primary-foreground">
-                    Till Hoffmann
-                </p>
+                <span
+                    className="group relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold hover:bg-primary cursor-default hover:text-primary-foreground"
+                    onClick={onClick}
+                >
+                    <span className='group-hover:hidden'>Till Hoffmann</span>
+                    <span className='hidden group-hover:inline group-active:hidden'>Do not press</span>
+                    <span className='hidden group-active:inline'>Whooooo 🎉</span>
+                </span>
             </div>
             <ul className="flex items-center gap-3">
                 <li>

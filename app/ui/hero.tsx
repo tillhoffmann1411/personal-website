@@ -1,8 +1,8 @@
+'use client';
 import {
     AiFillLinkedin,
     AiFillGithub,
 } from "react-icons/ai";
-import Image from "next/image";
 import { scrollToSection } from '../lib/utils';
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
