@@ -1,7 +1,6 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { aboutMeData } from '../lib/data/about-me';
 
-
 const hoverButton = (
     <div className="inline-flex items-center justify-center
       w-8 h-8 rounded-full
@@ -15,13 +14,14 @@ const hoverButton = (
     </div>
 );
 
-export default function About() {
 
+export default function About() {
     return (
         <section id="about" className='mt-40'>
             <div className="py-6">
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">About me</h2>
             </div>
+
 
             <div className="grid auto-rows-auto grid-cols-1 gap-4 sm:grid-cols-3">
                 {aboutMeData.map((e, i) => (
