@@ -1,26 +1,38 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from '@/components/ui/card';
 import { BlogPost } from '../../lib/definitions';
+import { ArrowRight } from 'lucide-react';
 
 const BlogCard: React.FC<BlogPost> = ({ link, title, content = '' }) => {
     return (
-        <div className="flex flex-col h-full justify-between bg-gray-200 rounded-2xl dark:bg-gray-900">
-            <a href={link} target="_blank" rel="noopener noreferrer">
-                {/* <img className="rounded-t-lg" src={thumbnail} alt="" /> */}
-            </a>
-            <div className="p-5 h-full flex flex-col place-content-between">
-                <div>
-                    <a href={link} target="_blank" rel="noopener noreferrer">
-                        <h4 className="mb-4 dark:text-white">{title}</h4>
-                    </a>
-                    <p className="mb-3 text-gray-700 dark:text-gray-300">{content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 75)}...</p>
-                </div>
-                <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-full bg-black text-white px-4 py-2 border-none self-start hover:bg-purple-900 dark:bg-white dark:text-black dark:hover:bg-purple-200">
-                    Read more
-                    <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                    </svg>
-                </a>
-            </div>
-        </div>
+        <Card className='h-full flex flex-col'>
+            <CardHeader>
+                <CardTitle>{title}</CardTitle>
+                <CardDescription>published on Medium</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <p>{content.replace(/<\/?[^>]+(>|$)/g, "").substring(0, 75)}...</p>
+            </CardContent>
+            <div className='flex-grow' />
+            <CardFooter>
+                <Button
+                    asChild
+                >
+                    <Link href={link} aria-label="Go to GitHub profile of Till Hoffmann" target="_blank" rel="noreferrer">
+                        Read more
+                        <ArrowRight className='w-4 h-4 ml-2' />
+                    </Link>
+                </Button>
+            </CardFooter>
+        </Card>
     );
 };
 

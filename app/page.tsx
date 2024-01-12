@@ -32,11 +32,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="-mt-24">
+      <main className='-mt-24'>
         <Hero />
-      </div>
-      <main className="bg-white dark:bg-black/95">
-        <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64">
+        <div className="mx-auto py-10 px-5 sm:px-10 md:px-32 xl:px-64 bg-background">
           <BlogFeed />
           <Skills />
           <About />

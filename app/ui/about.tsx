@@ -1,3 +1,4 @@
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { aboutMeData } from '../lib/data/about-me';
 
 
@@ -17,34 +18,40 @@ const hoverButton = (
 export default function About() {
 
     return (
-        <section id="about">
+        <section id="about" className='mt-40'>
             <div className="py-6">
-                <h2 className="dark:text-white">Now</h2>
+                <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">About me</h2>
             </div>
 
             <div className="grid auto-rows-auto grid-cols-1 gap-4 sm:grid-cols-3">
                 {aboutMeData.map((e, i) => (
-                    <div
+                    <Card
                         onClick={e.function}
                         key={e.title}
-                        className={`group row-span-1 rounded-2xl
-                            transform transition-all duration-300
-                            bg-gray-200 p-6 dark:bg-gray-900 dark:text-white col-auto
+                        className={`group row-span-1
+                            transform transition-all duration-300 col-auto
                             ${i === 3 || i === 6 ? "sm:col-span-2" : ""}
-                            ${e.function && `cursor-pointer hover:bg-purple-200 hover:dark:bg-purple-900`}
+                            ${e.function && `cursor-pointer hover:bg-primary hover:text-primary-foreground`}
                         `}
                     >
-                        <h3 className="mb-2">{e.title}</h3>
-                        <div className="border-t-2 border-gray-400 dark:border-gray-600 mt-2"></div>
-                        <div className="mt-6">{e.description}</div>
+                        <CardHeader>
+                            <CardTitle>
+                                {e.title}
+                            </CardTitle>
+                        </CardHeader>
+
+                        <CardContent>
+                            {e.description}
+                        </CardContent>
                         {
                             e.function && (
-                                <div className="w-full flex place-content-end">
+
+                                <CardFooter className="w-full flex place-content-end">
                                     {hoverButton}
-                                </div>
+                                </CardFooter>
                             )
                         }
-                    </div>
+                    </Card>
                 ))}
             </div>
 

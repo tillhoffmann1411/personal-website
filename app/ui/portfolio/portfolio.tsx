@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import Carousel from './carousel';
+import Carousel from './portfolio-carousel';
 import Filter from './filter';
 import { projectsData } from '../../lib/data/projects';
 
@@ -23,9 +23,9 @@ const Portfolio = () => {
     };
 
     return (
-        <section className='mt-10 max-h-lg' id='portfolio'>
+        <section className='mt-40 max-h-lg' id='portfolio'>
             <div className='py-6'>
-                <h2 className='dark:text-white'>Portfolio</h2>
+                <h2 className='scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0'>Portfolio</h2>
             </div>
             <div className='py-6'>
                 <Filter options={techStack} onChange={onChange} />

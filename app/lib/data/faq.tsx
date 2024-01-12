@@ -1,24 +1,30 @@
+import Link from 'next/link';
+
 export const faqData = [
     {
         question: "How can I get in touch with you?",
         answer: (
             <span>
-                You can reach out to me through the following methods:
-                <br />
-                <b>Contact-Form</b>: Feel free to send me an email with the <a href="#contact" className="text-purple-700 dark:text-purple-400">contact form</a> on this website.
-                <br />
-                <b>Social Media</b>: You can connect with me on{" "}
-                <a
-                    href="https://www.linkedin.com/in/tillhoffmann/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-purple-700 dark:text-purple-400"
-                >
-                    LinkedIn
-                </a>{" "}where I actively engage with the tech community.
-                <br />
-                <br />
-                <p>
+                <p className='leading-7 [&:not(:first-child)]:mt-6'>
+                    You can reach out to me through the following methods:
+                </p>
+                <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
+                    <li>
+                        <span className='font-extrabold'>Contact-Form</span>: Feel free to send me an email with the <Link href="#contact" className='underline hover:text-primary'>contact form</Link> on this website.
+                    </li>
+                    <li>
+                        <span className='font-extrabold'>Social Media</span>: You can connect with me on{" "}
+                        <Link
+                            href="https://www.linkedin.com/in/tillhoffmann/"
+                            className='underline hover:text-primary'
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            LinkedIn
+                        </Link>{" "}where I actively engage with the tech community.
+                    </li>
+                </ul>
+                <p className='leading-7 [&:not(:first-child)]:mt-6'>
                     I&apos;m always open to inquiries, collaborations, and discussions related
                     to technology, startups, or any other topic you&apos;d like to explore.
                     Looking forward to connecting with you!
@@ -31,8 +37,8 @@ export const faqData = [
             "Do you offer freelance services, and what type of services do you offer?",
         answer: (
             <div>
-                <p>My freelance services include:</p>
-                <ul className="list-inside list-disc">
+                <p className='leading-7 [&:not(:first-child)]:mt-6'>My freelance services include:</p>
+                <ul className="my-6 ml-6 list-disc [&>li]:mt-">
                     <li>Full-Stack Development in TypeScript, React, Node.js and Python</li>
                     <li>Knowledge graph design, planning, and implementation</li>
                     <li>Process optimization and automation</li>
@@ -44,9 +50,9 @@ export const faqData = [
     {
         question: "Can you provide examples of your previous work or projects?",
         answer: (
-            <p>
+            <p className='leading-7 [&:not(:first-child)]:mt-6'>
                 You can explore a selection of my previous work and projects
-                in my <a href="#portfolio" className="text-purple-700 dark:text-purple-400">portfolio</a>. If you have
+                in my <Link href="#portfolio" className='underline hover:text-primary'>portfolio</Link>. If you have
                 any specific inquiries about a particular project or would like more
                 details, feel free to reach out, and I&apos;d be happy to provide additional
                 information.

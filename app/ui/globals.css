@@ -2,116 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Cormorant Garamond', serif;
-  font-family: 'Proza Libre', sans-serif;
-  line-height: 150%;
+@layer base {
+  :root {
+    --gradient: #033501;
+    --background: 125 99.8% 99.8%;
+    --foreground: 125 9.6% 0.44%;
+    --muted: 125 9.6% 91.1%;
+    --muted-foreground: 125 4.8% 41.1%;
+    --popover: 125 13.200000000000003% 91.1%;
+    --popover-foreground: 125 9.6% 0.55%;
+    --card: 125 13.200000000000003% 91.1%;
+    --card-foreground: 125 9.6% 0.55%;
+    --border: 125 14.6% 89.44%;
+    --input: 125 14.6% 89.44%;
+    --primary: 125 96% 11%;
+    --primary-foreground: 125 1.92% 91.1%;
+    --secondary: 125 29.759999999999998% 95.55%;
+    --secondary-foreground: 125 6.76% 11.1%;
+    --accent: 125 29.759999999999998% 95.55%;
+    --accent-foreground: 125 6.76% 11.1%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --ring: 125 96% 11%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 125 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    --card: 125 10% 6.5%;
+    --card-foreground: 125 0% 95%;
+    --popover: 125 0% 9%;
+    --popover-foreground: 125 0% 95%;
+    --primary: 125 70.6% 45.3%;
+    --primary-foreground: 125 80.4% 10%;
+    --secondary: 125 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 125 5% 64.9%;
+    --accent: 125 6.5% 15.1%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 125 3.7% 15.9%;
+    --input: 125 3.7% 15.9%;
+    --ring: 125 71.8% 29.2%;
+  }
+
+  .theme-custom {
+    /* Name: custom color palette
+       Author: Ilias Ism
+       URL: https://gradient.page */
+
+    /* CSS: .bg-gradient { background: var(--gradient) } */
+    --gradient: #033501;
+    --background: 125 99.8% 98.22%;
+    --foreground: 125 9.6% 0.44%;
+
+    --muted: 125 9.6% 91.1%;
+    --muted-foreground: 125 4.8% 41.1%;
+
+    --popover: 125 13.200000000000003% 91.1%;
+    --popover-foreground: 125 9.6% 0.55%;
+
+    --card: 125 13.200000000000003% 91.1%;
+    --card-foreground: 125 9.6% 0.55%;
+
+    --border: 125 14.6% 89.44%;
+    --input: 125 14.6% 89.44%;
+
+    --primary: 125 96% 11%;
+    --primary-foreground: 125 1.92% 91.1%;
+
+    --secondary: 125 29.759999999999998% 95.55%;
+    --secondary-foreground: 125 6.76% 11.1%;
+
+    --accent: 125 29.759999999999998% 95.55%;
+    --accent-foreground: 125 6.76% 11.1%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 125 96% 11%;
+
+    --radius: 0.5rem;
+}
 }
 
-section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.swiper-slide {
-  height: auto !important;
-}
-
-/* Global styles for heading elements */
-h1, h2, h3, h4, h5 {
-  font-family: 'Cormorant Garamond', serif;
-  margin: 0;
-  line-height: 120%;
-  letter-spacing: -0.01em;
-}
-
-h1 {
-  font-weight: bolder;
-}
-
-/* Responsive font sizes using media queries */
-/* Adjust the breakpoint values as needed */
-
-/* For larger screens */
-@media (min-width: 768px) {
-  h1 {
-    font-size: 3rem;
+ 
+@layer base {
+  * {
+    @apply border-border;
   }
-
-  h2 {
-    font-size: 2.5rem;
+  body {
+    @apply bg-background text-foreground;
   }
-
-  h3 {
-    font-size: 1.7rem;
-  }
-
-  h4 {
-    font-size: 1.5rem;
-  }
-
-  h5 {
-    font-size: 1.2rem;
-  }
-}
-
-/* For medium screens */
-@media (max-width: 767px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  h4 {
-    font-size: 1.4rem;
-  }
-
-  h5 {
-    font-size: 1.1rem;
-  }
-}
-
-/* For small screens */
-@media (max-width: 576px) {
-  h1 {
-    font-size: 2.3rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-  }
-
-  h4 {
-    font-size: 1.3rem;
-  }
-
-  h5 {
-    font-size: 1rem;
-  }
-}
-
-/* Additional media queries for even smaller screens can be added if necessary */
-
-
-* {
-  box-sizing: border-box;
 }

@@ -9,6 +9,7 @@ import {
     BiLogoTypescript,
     BiLogoPython,
 } from "react-icons/bi";
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
 const TECH_TO_ICON: { [name: string]: React.ReactElement } = {
     typescript: <BiLogoTypescript />,
@@ -40,32 +41,33 @@ const Filter: React.FC<Props> = ({ options = [], onChange }) => {
     }
 
     return (
-        <div className='flex justify-center items-center flex-wrap'>
-            <button
-                key={'all'}
-                onClick={() => onClick(undefined)}
-                className={classNames(
-                    "inline-flex items-center rounded-full mb-4 text-white px-4 py-4 border-none mr-2 hover:bg-purple-900 dark:text-black dark:hover:bg-purple-300",
-                    selected === undefined ? 'bg-purple-800 dark:bg-purple-200' : 'bg-black dark:bg-white'
-                )}
-            >
-                <MdFilterListOff />
-            </button>
-            {options.map(e => (
-                <button
-                    key={e}
-                    onClick={() => onClick(e)}
-                    className={classNames(
-                        "inline-flex items-center mb-4 rounded-full text-white px-4 py-2 border-none mr-2 hover:bg-purple-900 dark:text-black dark:hover:bg-purple-300",
-                        selected === e ? 'bg-purple-800 dark:bg-purple-200' : 'bg-black dark:bg-white'
-                    )}
+        <div className='flex justify-center items-center'>
+            <ToggleGroup type="single" className='flex-wrap gap-2'>
+                <ToggleGroupItem
+                    variant="outline"
+                    value="all"
+                    size="lg"
+                    aria-label={'all'}
+                    key={'all'}
+                    onClick={() => onClick(undefined)}
                 >
-                    <span className="mr-2 text-xl">
-                        {getIcon(e)}
-                    </span>
-                    {e}
-                </button>
-            ))}
+                    <MdFilterListOff />
+                </ToggleGroupItem>
+                {options.map(e => (
+                    <ToggleGroupItem
+                        variant="outline"
+                        aria-label={e}
+                        key={e}
+                        value={e}
+                        onClick={() => onClick(e)}
+                    >
+                        <span className="mr-2 text-xl">
+                            {getIcon(e)}
+                        </span>
+                        {e}
+                    </ToggleGroupItem>
+                ))}
+            </ToggleGroup>
         </div>
     )
 }
