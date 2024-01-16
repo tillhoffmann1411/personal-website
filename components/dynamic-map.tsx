@@ -23,9 +23,9 @@ const Map: FC<Props> = ({ children, className, width, height, ...rest }) => {
             const icon = L.icon({
                 iconRetinaUrl: 'https://till-hoffmann.me/images/ till-memoji.png',
                 iconUrl: 'https://till-hoffmann.me/images/ till-memoji.png',
-                iconSize: [100, 100],
-                iconAnchor: [50, 50],
-                popupAnchor: [0, -50],
+                iconSize: [80, 80],
+                iconAnchor: [40, 40],
+                popupAnchor: [0, -40],
                 className: 'transition hover:animate-pulse hover:rotate-45 hover:scale-125'
             });
             L.Marker.prototype.options.icon = icon;

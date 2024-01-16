@@ -5,12 +5,15 @@ export default function StatusBadge() {
     // at night sleeping, at day coding, at evening eating, at morning coffee
     const getStatus = () => {
         const hour = new Date().getHours();
-        if (hour >= 22 && hour < 7) {
+        console.log(hour);
+        if (hour >= 22 || hour < 7) {
             return '💤 Sleeping';
         } else if (hour >= 7 && hour < 9) {
             return '☕️ Coffee';
         } else if (hour >= 18 && hour < 20) {
             return '🍽 Eating';
+        } else if (hour >= 20 && hour < 22) {
+            return '📖 Reading';
         } else {
             return '💻 Coding';
         }

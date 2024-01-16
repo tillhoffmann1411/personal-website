@@ -136,7 +136,9 @@ const Contact: FC = () => {
                 </Card>
 
                 <div className='md:w-full'>
-                    <CologneMap />
+                    <Card className='overflow-hidden'>
+                        <CologneMap zoom={12} />
+                    </Card>
                 </div>
 
             </div>

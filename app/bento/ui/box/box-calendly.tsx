@@ -1,0 +1,16 @@
+'use client';
+import React from 'react'
+import SmallCard11 from '../small-card1-1'
+import { IoMdCalendar } from 'react-icons/io'
+
+export default function BoxCalendly() {
+    return (
+        <SmallCard11
+            linkButton="https://calendly.com/tillhoffmann"
+        >
+            <div className='flex h-full w-full bg-primary text-primary-foreground items-center justify-center'>
+                <IoMdCalendar className='h-24 w-24' />
+            </div>
+        </SmallCard11>
+    )
+}
