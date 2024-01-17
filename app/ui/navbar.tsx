@@ -10,6 +10,8 @@ import Link from 'next/link';
 const Navbar: FC = () => {
     const scrollPosition = useScrollPosition();
     const innerHeight = useWindowHeight();
+    const path = typeof window !== 'undefined' ? window.location.pathname : '';
+
 
     const classNames = (...classes: string[]) => {
         return classes.filter(Boolean).join(' ')
@@ -23,9 +25,13 @@ const Navbar: FC = () => {
         });
     };
 
+    const showNavbar = () => {
+        return (scrollPosition === 0) && (path === '/');
+    }
+
     return (
         <nav className={classNames(
-            scrollPosition === 0
+            showNavbar()
                 ? 'opacity-0'
                 : 'opacity-100',
             scrollPosition > innerHeight
@@ -33,7 +39,7 @@ const Navbar: FC = () => {
                 : 'bg-transparent backdrop-blur-md',
             `active flex sticky top-0 z-20 justify-between transition-all duration-300
             hover:opacity-100
-            px-5 sm:px-10 md:px-32 xl:px-64`,
+            px-2 sm:px-10 md:px-32 xl:px-64`,
         )}>
             <div className="flex py-4">
                 <Link

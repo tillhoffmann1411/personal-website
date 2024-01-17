@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import StatusBadge from './status-badge';
+import StatusBadge from '../../components/status-badge';
 
 const Hero: FC = () => {
     return (

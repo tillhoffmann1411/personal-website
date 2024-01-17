@@ -18,7 +18,7 @@ export default function BoxFlatrate() {
                     alt="Screenshot of flatrate application"
                     width={450}
                     height={916}
-                    className='absolute top-36 left-8'
+                    className='absolute top-44 left-8 sm:top-36'
                 />
             </div>
         </Card12>
