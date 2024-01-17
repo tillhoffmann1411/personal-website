@@ -26,7 +26,7 @@ const Map: FC<Props> = ({ children, className, width, height, ...rest }) => {
                 iconSize: [80, 80],
                 iconAnchor: [40, 40],
                 popupAnchor: [0, -40],
-                className: 'transition hover:animate-pulse hover:rotate-45 hover:scale-125'
+                className: 'hover:animate-pulse'
             });
             L.Marker.prototype.options.icon = icon;
         })();

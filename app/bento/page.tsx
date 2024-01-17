@@ -14,19 +14,20 @@ import BoxAvatar from './ui/box/box-avatar'
 
 export default function Page() {
     return (
-        <main className='min-h-screen pb-12 px-2'>
-            <div className='mx-auto gap-2 grid grid-cols-2
-                sm:grid-cols-2 sm:w-[500px] sm:gap-4
+        <main className='min-h-screen pb-12 px-4'>
+            <div className='mx-auto gap-6 grid grid-flow-row-dense
+                grid-cols-2     w-[320px]
+                sm:grid-cols-2 sm:w-[500px]
                 md:grid-cols-3 md:w-[700px]
                 lg:grid-cols-3 lg:w-[900px]
                 xl:grid-cols-4 xl:w-[1100px]
                 '>
 
                 <BoxMe />
-                <BoxMap />
                 <div className='sm:hidden'>
                     <BoxAvatar />
                 </div>
+                <BoxMap />
                 <BoxFrontend />
                 <BoxLinkedin />
                 <BoxCalendly />

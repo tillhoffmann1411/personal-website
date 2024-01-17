@@ -12,7 +12,7 @@ type Props = {
 export default function Card21({ children, linkButton, tooltip }: Props) {
     return (
         <Card className={`aspect-2/1 row-span-1 col-span-2 relative
-            w-full flex overflow-hidden
+            w-full flex overflow-hidden group
             ${linkButton && 'hover:scale-95 transition-all duration-300'}
             min-w-[300px]
             sm:w-[500px] sm:h-[242px]

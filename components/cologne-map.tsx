@@ -6,19 +6,21 @@ import { LatLngExpression } from 'leaflet';
 import { Card } from '@/components/ui/card';
 
 type Props = {
-    zoom: number
+    zoom: number,
+    width?: string,
+    height?: string,
 };
 
 const DEFAULT_CENTER: LatLngExpression = [50.928530, 6.942860];
 
-export default function CologneMap({ zoom = 12 }: Props) {
+export default function CologneMap({ zoom = 12, width = '800', height = '800' }: Props) {
     const { theme } = useTheme();
     const lightMapStyle = 'https://api.mapbox.com/styles/v1/tillhoffmann/clravm74x008501pid7o9bz4w/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidGlsbGhvZmZtYW5uIiwiYSI6ImNscmF2Z2U4MDBmdHIyaW1raWxsZXNhanMifQ.xZqeoFJvfTlETgNJOD1IoA';
     const darkMapStyle = 'https://api.mapbox.com/styles/v1/tillhoffmann/clravowy3009601p4gpk01uj9/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoidGlsbGhvZmZtYW5uIiwiYSI6ImNscmF2Z2U4MDBmdHIyaW1raWxsZXNhanMifQ.xZqeoFJvfTlETgNJOD1IoA';
     const mapStyle = theme === 'dark' ? darkMapStyle : lightMapStyle;
     return (
         <div className="overflow-hidden h-full w-full top-0 bottom-0 left-0 right-0">
-            <Map width="800" height="800" center={DEFAULT_CENTER} zoom={zoom}>
+            <Map width={width} height={height} center={DEFAULT_CENTER} zoom={zoom}>
                 <>
                     <TileLayer
                         url={mapStyle}

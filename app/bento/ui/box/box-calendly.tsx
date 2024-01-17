@@ -10,7 +10,7 @@ export default function BoxCalendly() {
             linkButton="https://calendly.com/tillhoffmann"
             tooltip='Meeting'
         >
-            <div className='flex flex-col h-full w-full bg-primary text-primary-foreground items-center justify-center'>
+            <div className='flex flex-col h-full w-full items-center justify-center'>
                 <IoMdCalendar className='h-24 w-24' />
             </div>
         </SmallCard11>
