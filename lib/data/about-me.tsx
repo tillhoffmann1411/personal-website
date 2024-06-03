@@ -1,4 +1,4 @@
-import { AboutMe } from '../definitions';
+import { AboutMe } from '../../types/definitions';
 import { scrollToSection } from '../utils';
 
 export const aboutMeData: AboutMe[] = [

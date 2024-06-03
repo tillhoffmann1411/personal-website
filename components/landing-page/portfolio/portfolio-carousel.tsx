@@ -1,11 +1,9 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 // import required modules
-import { Pagination } from 'swiper/modules';
 import ProjectCard from './project-card';
-import { Project } from '../../lib/definitions';
+import { Project } from '@/types/definitions';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 type Props = {

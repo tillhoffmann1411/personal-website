@@ -2,11 +2,11 @@
 import { Cormorant_Garamond, Proza_Libre } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
-import './ui/globals.css'
+import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider';
 import Head from 'next/head';
-import Navbar from './ui/navbar';
-import Footer from './ui/footer';
+import Navbar from '@/components/navbar';
+import Footer from '@/components/footer';
 
 const cormorantGaramond = Cormorant_Garamond({ subsets: ['latin'], weight: '400' })
 const prozaLibre = Proza_Libre({ subsets: ['latin'], weight: '400' })

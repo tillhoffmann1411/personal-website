@@ -3,13 +3,13 @@ import {
     AiFillLinkedin,
     AiFillGithub,
 } from "react-icons/ai";
-import { scrollToSection } from '../lib/utils';
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { TooltipProvider, Tooltip, TooltipTrigger, TooltipContent } from '@/components/ui/tooltip';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import StatusBadge from '../../components/status-badge';
+import StatusBadge from './status-badge';
+import { scrollToSection } from '@/lib/utils';
 
 const Hero: FC = () => {
     return (

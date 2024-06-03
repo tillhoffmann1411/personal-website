@@ -1,9 +1,9 @@
 'use client';
 import React from 'react'
-import CologneMap from '@/components/cologne-map'
+import CologneMap from '@/components/map/cologne-map'
 import SmallCard11 from '../small-card1-1'
 import Card21 from '../card2-1';
-import { useWindowWidth } from '@/app/lib/hooks';
+import { useWindowWidth } from '@/lib/hooks';
 
 export default function BoxMap() {
     const width = useWindowWidth();

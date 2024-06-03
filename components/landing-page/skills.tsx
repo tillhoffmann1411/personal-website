@@ -1,5 +1,5 @@
-import { SkillCardProps } from '@/app/lib/definitions';
-import { skills } from '@/app/lib/data/skills';
+import { SkillCardProps } from '@/types/definitions';
+import { skills } from '@/lib/data/skills';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Skills: React.FC = () => {

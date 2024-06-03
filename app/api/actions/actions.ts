@@ -1,10 +1,10 @@
 'use server';
 
 import { z } from 'zod';
-import { BlogPost, Contact, FormState } from './definitions';
-import { sendMail } from './nodemailer';
+
 import Parser from 'rss-parser';
-import { cache } from 'react';
+import { BlogPost, Contact, FormState } from '@/types/definitions';
+import { sendMail } from '@/lib/api/nodemailer';
 
 const upperCaseFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);

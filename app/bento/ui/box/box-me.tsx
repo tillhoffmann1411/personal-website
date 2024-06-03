@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 import Card21 from '../card2-1'
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import StatusBadge from '@/components/status-badge';
+import StatusBadge from '@/components/landing-page/hero/status-badge';
 
 export default function BoxMe() {
     return (

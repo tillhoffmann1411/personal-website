@@ -17,7 +17,7 @@ import {
   BiLogoPostgresql,
   BiLogoMongodb,
 } from "react-icons/bi";
-import { Skill } from '../definitions';
+import { Skill } from '../../types/definitions';
 
 export const skills: Skill[] = [
   {

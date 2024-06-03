@@ -1,8 +1,6 @@
 'use client';
 import React, { useEffect } from 'react';
 import BlogCarousel from './blog-carousel';
-import { getBlogPosts } from '../../lib/actions';
-import { BlogPost } from '../../lib/definitions';
 import {
     Card,
     CardContent,
@@ -13,6 +11,8 @@ import {
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { getBlogPosts } from '@/app/api/actions/actions';
+import { BlogPost } from '@/types/definitions';
 
 const BlogFeed = () => {
     const [blogPosts, setBlogPosts] = React.useState<BlogPost[]>([]);

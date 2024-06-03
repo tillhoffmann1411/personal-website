@@ -4,7 +4,7 @@ import Image from 'next/image';
 import flatrate from '@/public/portfolio/flatrate-iphone.webp';
 import { CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import SmallCard11 from '../small-card1-1'
-import { useWindowWidth } from '@/app/lib/hooks';
+import { useWindowWidth } from '@/lib/hooks';
 import BigCard11 from '../big-card1-1';
 
 export default function BoxFrontend() {

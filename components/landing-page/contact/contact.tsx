@@ -1,6 +1,5 @@
 'use client';
 import { FC, useEffect, useRef } from 'react';
-import { createContactRequest } from '../lib/actions';
 import { useFormState, useFormStatus } from 'react-dom';
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input";
@@ -8,7 +7,8 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { IoIosPaperPlane } from 'react-icons/io';
-import CologneMap from '../../components/cologne-map';
+import CologneMap from '../../map/cologne-map';
+import { createContactRequest } from '@/app/api/actions/actions';
 
 const initialState = {
     email: '',

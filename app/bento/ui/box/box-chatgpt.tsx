@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import SmallCard11 from '../small-card1-1'
 import { Badge } from '@/components/ui/badge'
-import { useWindowWidth } from '@/app/lib/hooks';
+import { useWindowWidth } from '@/lib/hooks';
 import BigCard11 from '../big-card1-1';
 import Typewriter from '@/components/typewriter';
 import mockup from '@/public/portfolio/wissensmanagement-presentation.webp';

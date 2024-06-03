@@ -1,6 +1,6 @@
 'use client'
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { aboutMeData } from '../lib/data/about-me';
+import { aboutMeData } from '../../lib/data/about-me';
 
 const hoverButton = (
     <div className="inline-flex items-center justify-center

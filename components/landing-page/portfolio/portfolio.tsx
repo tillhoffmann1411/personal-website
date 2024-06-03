@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Carousel from './portfolio-carousel';
 import Filter from './filter';
-import { projectsData } from '../../lib/data/projects';
+import { projectsData } from '@/lib/data/projects';
 
 const Portfolio = () => {
     const [techStack, setTechStack] = useState<string[]>([]);

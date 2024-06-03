@@ -4,7 +4,7 @@ import geneticprogramming from '@/public/portfolio/geneticprogramming-mock.webp'
 import flatrate from '@/public/portfolio/flatrate-mock.webp';
 import heizungssteuerung from '@/public/portfolio/heizungssteuerung-mock.webp';
 import kiab from '@/public/portfolio/kiab-mock.webp';
-import { Project } from '../definitions';
+import { Project } from '../../types/definitions';
 
 export const projectsData: Project[] = [
     {

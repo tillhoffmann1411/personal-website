@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import SmallCard11 from '../small-card1-1'
-import StatusBadge from '@/components/status-badge'
+import StatusBadge from '@/components/landing-page/hero/status-badge'
 
 export default function BoxAvatar() {
     return (

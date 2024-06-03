@@ -1,9 +1,8 @@
 'use client';
 import React from 'react'
-import Map, { Circle, Marker, Popup, TileLayer } from '@/components/map';
+import Map, { Circle, Marker, Popup, TileLayer } from '@/components/map/map';
 import { useTheme } from 'next-themes';
 import { LatLngExpression } from 'leaflet';
-import { Card } from '@/components/ui/card';
 
 type Props = {
     zoom: number,

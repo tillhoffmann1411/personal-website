@@ -2,7 +2,7 @@
 import React from 'react';
 import { CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import SmallCard11 from '../small-card1-1';
-import { useWindowWidth } from '@/app/lib/hooks';
+import { useWindowWidth } from '@/lib/hooks';
 import Card21 from '../card2-1';
 import Image from 'next/image';
 import kiabIcon from '@/public/portfolio/kiab-icon.png';

@@ -1,11 +1,12 @@
 'use server';
-import About from './ui/about';
-import BlogFeed from './ui/blog/blog';
-import Contact from './ui/contact';
-import FAQ from './ui/faq/faq';
-import Hero from './ui/hero';
-import Portfolio from './ui/portfolio/portfolio';
-import Skills from './ui/skills';
+
+import About from '../components/landing-page/about';
+import BlogFeed from '../components/landing-page/blog/blog';
+import Contact from '../components/landing-page/contact/contact';
+import FAQ from '../components/landing-page/faq/faq';
+import Hero from '../components/landing-page/hero/hero';
+import Portfolio from '../components/landing-page/portfolio/portfolio';
+import Skills from '../components/landing-page/skills';
 
 export default async function Home() {
   return (
