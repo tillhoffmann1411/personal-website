@@ -5,7 +5,7 @@ import { TextRevealCard } from '../ui/text-reveal-card'
 export default function Hero() {
     return (
         <section className='h-screen w-full -mt-16 bg-black flex flex-col items-center justify-center overflow-hidden rounded-md" sm:mt-0'>
-            <div className="text-4xl md:text-7xl lg:text-9xl font-bold text-center text-white relative z-20">
+            <div className="text-4xl md:text-7xl lg:text-9xl font-bold text-center text-white relative">
                 <div className='hidden md:block'>
                     <TextRevealCard text="Gute Produkte sind Magie" revealText="Ich zeige dir den Trick" />
                 </div>

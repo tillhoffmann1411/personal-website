@@ -102,11 +102,10 @@ const Navbar: FC = () => {
                     </Menu>
                 </div>
                 <div className='hidden space-x-2 sm:flex'>
-                    <ModeToggle />
-                        <Button
-                            onClick={() => scrollToSection('contact')}
-                        >
-                            Kontakt
+                    <Button
+                        onClick={() => scrollToSection('contact')}
+                    >
+                        Kontakt
                     </Button>
                 </div>
             </div>
