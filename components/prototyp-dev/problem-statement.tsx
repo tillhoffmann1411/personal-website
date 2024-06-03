@@ -33,7 +33,7 @@ export default function ProblemStatement() {
             </SectionBadge>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
               <CloudLightning className="w-12 h-12 mr-4 inline-block" />
-              Wie interne MVP entwicklung bisher läuft
+              Wie interne Prototyp Entwicklung bisher läuft
             </h2>
             <p className="max-w-[700px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                

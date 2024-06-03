@@ -60,7 +60,7 @@ const Navbar: FC = () => {
             <div className="flex items-center gap-3">
                 <div>
                     <Menu setActive={setActive}>
-                        <MenuItem setActive={setActive} active={active} item="About me">
+                        <MenuItem setActive={setActive} active={active} item="Über mich">
                             <div className="flex flex-col">
                                 <HoveredLink href="/education">Education</HoveredLink>
                                 <HoveredLink href="/experience">Experience</HoveredLink>
@@ -70,12 +70,12 @@ const Navbar: FC = () => {
                         </MenuItem>
                         <MenuItem setActive={setActive} active={active} item="Services">
                             <div className="flex flex-col">
-                                <HoveredLink href="/services/prod-dev">Product Development</HoveredLink>
-                                <HoveredLink href="/services/mvp-dev">MVP Development</HoveredLink>
-                                <HoveredLink href="/services/automation">Automation</HoveredLink>
+                                <HoveredLink href="/services/prod-dev">Produkt Entwicklung</HoveredLink>
+                                <HoveredLink href="/services/prototyp-dev">Prototyp Entwicklung</HoveredLink>
+                                <HoveredLink href="/services/automation">Automatisierung</HoveredLink>
                             </div>
                         </MenuItem>
-                        <MenuItem setActive={setActive} active={active} item="Products">
+                        <MenuItem setActive={setActive} active={active} item="Produkte">
                             <div className="text-sm grid-cols-1 grid w-full gap-2 p-2 sm:grid-cols-2 sm:w-auto">
                                 <ProductItem
                                     title="Knowledge in a Box"
@@ -106,7 +106,7 @@ const Navbar: FC = () => {
                         <Button
                             onClick={() => scrollToSection('contact')}
                         >
-                            Contact
+                            Kontakt
                     </Button>
                 </div>
             </div>

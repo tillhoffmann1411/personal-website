@@ -50,6 +50,8 @@ export const StickyScroll = ({
     "bg-gradient-to-br from-cyan-500 to-emerald-500",
     "bg-gradient-to-br from-pink-500 to-indigo-500",
     "bg-gradient-to-br from-orange-500 to-yellow-500",
+    "bg-gradient-to-br from-purple-500 to-pink-500",
+    "bg-gradient-to-br from-green-500 to-lime-500",
   ];
 
   const [backgroundGradient, setBackgroundGradient] = useState(
@@ -91,7 +93,7 @@ export const StickyScroll = ({
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="max-w-sm mt-4"
+                className="max-w-sm mt-4 text-foreground"
               >
                 {item.description}
               </motion.p>

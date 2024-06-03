@@ -1,4 +1,4 @@
-import { ConstructionIcon, TypeIcon, CodeIcon, PlayIcon, Hand } from 'lucide-react'
+import { ConstructionIcon, TypeIcon, CodeIcon, PlayIcon, Hand, PartyPopper, Car } from 'lucide-react'
 import React from 'react'
 import { StickyScroll } from '../ui/sticky-scroll-reveal'
 
@@ -35,7 +35,7 @@ export default function Offer() {
                     {
                         title: '2. Woche',
                         description: 'Es wird weitere Logik und vor allem das vorher gesammeltet Feedback in den Prototypen integriert. Damit steht am Ende der Woche ein funktionierender rappid Prototype.',
-                        content: <Hand className="h-32 w-32" />
+                        content: <Car className="h-32 w-32" />
                     },
                     {
                         title: '3. Woche',
@@ -45,7 +45,7 @@ export default function Offer() {
                     {
                         title: '4. Woche',
                         description: 'Am Ende von Woche 4 steht die MVP-Webanwendung bereit zur übergabe oder weiteren Entwicklung. Damit bist du gerüstet deine initiale Idee als schicke und moderne Anwendung zu präsentieren.',
-                        content: <TypeIcon className="h-32 w-32" />
+                        content: <PartyPopper className="h-32 w-32" />
                     },
                     { title: '', description: '' }
                 ]} />

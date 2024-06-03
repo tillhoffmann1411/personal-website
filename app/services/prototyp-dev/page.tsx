@@ -1,8 +1,8 @@
 import React from 'react'
-import Hero from '@/components/mvp-dev/hero'
-import ProblemStatement from '@/components/mvp-dev/problem-statement'
-import Solution from '@/components/mvp-dev/solution'
-import Offer from '@/components/mvp-dev/offer'
+import Hero from '@/components/prototyp-dev/hero'
+import ProblemStatement from '@/components/prototyp-dev/problem-statement'
+import Solution from '@/components/prototyp-dev/solution'
+import Offer from '@/components/prototyp-dev/offer'
 import Contact from '@/components/contact/contact'
 
 export default function Page() {
