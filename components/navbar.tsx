@@ -57,7 +57,7 @@ const Navbar: FC = () => {
                     <span className='hidden select-none group-active:inline'>Whooooo 🎉</span>
                 </Link>
             </div>
-            <ul className="flex items-center gap-3">
+            <div className="flex items-center gap-3">
                 <div>
                     <Menu setActive={setActive}>
                         <MenuItem setActive={setActive} active={active} item="About me">
@@ -101,19 +101,15 @@ const Navbar: FC = () => {
                         </MenuItem>
                     </Menu>
                 </div>
-                <div className='hidden sm:flex'>
-                    <li>
-                        <ModeToggle />
-                    </li>
-                    <li>
+                <div className='hidden space-x-2 sm:flex'>
+                    <ModeToggle />
                         <Button
                             onClick={() => scrollToSection('contact')}
                         >
                             Contact
-                        </Button>
-                    </li>
+                    </Button>
                 </div>
-            </ul>
+            </div>
         </nav>
     );
 };

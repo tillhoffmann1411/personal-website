@@ -24,7 +24,7 @@ const SubmitButton: FC = () => {
             type="submit"
             aria-disabled={pending}
         >
-            {pending ? 'Sending...' : 'Send message'}
+            {pending ? 'Senden...' : 'Abschicken'}
             <IoIosPaperPlane className="ml-2 h-5 w-5" />
         </Button>
     );
@@ -51,7 +51,7 @@ const Contact: FC = () => {
                 <div className="flex flex-col items-center justify-center space-y-4 text-center">
                     <div className="space-y-2">
                         <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                            Kotakt
+                            Kontakt
                         </div>
                         <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                             Starte jetzt dein Projekt
@@ -65,22 +65,22 @@ const Contact: FC = () => {
                     <Card className="aspect-square md:w-full">
                         <CardHeader>
                             <CardTitle>
-                                Contact me
+                                Kontakt
                             </CardTitle>
                             <CardDescription>
-                                Got a question? Want to collaborate? Need help for some project? Let me know.
+                                Wir finden gemeinsam die beste Lösung für dein Projekt.
                             </CardDescription>
                         </CardHeader>
                         <form action={formAction} ref={formRef}>
                             <CardContent className="space-y-8">
 
                                 <div className='grid w-full items-center gap-1.5'>
-                                    <Label htmlFor="email">Your email</Label>
+                                    <Label htmlFor="email">Deine email</Label>
                                     <Input
                                         type="email"
                                         id="email"
                                         name="email"
-                                        placeholder="name@email.com"
+                                        placeholder="max@email.com"
                                         aria-errormessage={formState.errors?.email?.join(' ')}
                                         required
                                     />
@@ -90,12 +90,12 @@ const Contact: FC = () => {
                                 </div>
 
                                 <div className='grid w-full items-center gap-1.5'>
-                                    <Label htmlFor="subject">Subject</Label>
+                                    <Label htmlFor="subject">Betreff</Label>
                                     <Input
                                         type="text"
                                         id="subject"
                                         name="subject"
-                                        placeholder="Let me know how I can help you"
+                                        placeholder="Idee zur Umsetzung"
                                         aria-errormessage={formState.errors?.subject?.join(' ')}
                                         required
                                     />
@@ -106,13 +106,13 @@ const Contact: FC = () => {
 
                                 <div className='grid w-full gap-1.5'>
                                     <Label htmlFor="message">
-                                        Your message
+                                        Deine Nachricht
                                     </Label>
                                     <Textarea
                                         id="message"
                                         rows={6}
                                         name="message"
-                                        placeholder="Leave a comment..."
+                                        placeholder="Ich habe folgende Idee..."
                                         aria-errormessage={formState.errors?.message?.join(' ')}
                                         required
                                     />
