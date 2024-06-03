@@ -30,7 +30,7 @@ export const MenuItem = ({
     <div onMouseEnter={() => setActive(item)} className="relative ">
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer font-bold hover:text-primary"
+        className="cursor-pointer font-bold hover:text-primary select-none"
       >
         {item}
       </motion.p>
@@ -93,7 +93,7 @@ export const ProductItem = ({
   disabled?: boolean;
 }) => {
   const link = (
-    <Link href={disabled ? '' : href} className={cn("flex space-x-2 group rounded-lg p-4", disabled ? "cursor-default" : "hover:bg-card transition-color")}>
+    <Link href={disabled ? '' : href} onClick={(e) => disabled && e.preventDefault()} className={cn("flex space-x-2 group rounded-lg p-4", disabled ? "cursor-default" : "hover:bg-card transition-color")}>
       <Image
         src={src}
         width={140}
