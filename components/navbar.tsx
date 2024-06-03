@@ -47,7 +47,7 @@ const Navbar: FC = () => {
             hover:opacity-100
             px-2 sm:px-10 md:px-32 xl:px-64`,
         )}>
-            <div className="flex py-4">
+            <div className="hidden py-4 sm:flex">
                 <Link
                     className="group relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold hover:bg-primary cursor-default hover:text-primary-foreground"
                     onClick={onClick}
@@ -60,11 +60,19 @@ const Navbar: FC = () => {
             <ul className="flex items-center gap-3">
                 <div>
                     <Menu setActive={setActive}>
+                        <MenuItem setActive={setActive} active={active} item="About me">
+                            <div className="flex flex-col">
+                                <HoveredLink href="/education">Education</HoveredLink>
+                                <HoveredLink href="/experience">Experience</HoveredLink>
+                                <HoveredLink href="/projects">Projects</HoveredLink>
+                                <HoveredLink href="/philosophy">Philosophy</HoveredLink>
+                            </div>
+                        </MenuItem>
                         <MenuItem setActive={setActive} active={active} item="Services">
                             <div className="flex flex-col">
-                                <HoveredLink href="/prod-dev">Product Development</HoveredLink>
-                                <HoveredLink href="/mvp-dev">MVP Development</HoveredLink>
-                                <HoveredLink href="/automation">Automation</HoveredLink>
+                                <HoveredLink href="/services/prod-dev">Product Development</HoveredLink>
+                                <HoveredLink href="/services/mvp-dev">MVP Development</HoveredLink>
+                                <HoveredLink href="/services/automation">Automation</HoveredLink>
                             </div>
                         </MenuItem>
                         <MenuItem setActive={setActive} active={active} item="Products">
@@ -91,26 +99,20 @@ const Navbar: FC = () => {
                                 />
                             </div>
                         </MenuItem>
-                        <MenuItem setActive={setActive} active={active} item="About me">
-                            <div className="flex flex-col">
-                                <HoveredLink href="/education">Education</HoveredLink>
-                                <HoveredLink href="/experience">Experience</HoveredLink>
-                                <HoveredLink href="/projects">Projects</HoveredLink>
-                                <HoveredLink href="/philosophy">Philosophy</HoveredLink>
-                            </div>
-                        </MenuItem>
                     </Menu>
                 </div>
-                <li>
-                    <ModeToggle />
-                </li>
-                <li>
-                    <Button
-                        onClick={() => scrollToSection('contact')}
-                    >
-                        Contact
-                    </Button>
-                </li>
+                <div className='hidden sm:flex'>
+                    <li>
+                        <ModeToggle />
+                    </li>
+                    <li>
+                        <Button
+                            onClick={() => scrollToSection('contact')}
+                        >
+                            Contact
+                        </Button>
+                    </li>
+                </div>
             </ul>
         </nav>
     );

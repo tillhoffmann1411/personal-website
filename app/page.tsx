@@ -2,7 +2,7 @@
 
 import About from '../components/landing-page/about';
 import BlogFeed from '../components/landing-page/blog/blog';
-import Contact from '../components/landing-page/contact/contact';
+import Contact from '../components/contact/contact';
 import FAQ from '../components/landing-page/faq/faq';
 import Hero from '../components/landing-page/hero/hero';
 import Portfolio from '../components/landing-page/portfolio/portfolio';

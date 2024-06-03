@@ -8,7 +8,7 @@ import {
     CardHeader,
     CardTitle,
 } from '@/components/ui/card';
-import { BlogPost } from '../../lib/definitions';
+import { BlogPost } from '@/types/definitions';
 import { ArrowRight } from 'lucide-react';
 
 const BlogCard: React.FC<BlogPost> = ({ link, title, content = '' }) => {

@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/carousel"
 // import required modules
 import BlogCard from './blog-card';
-import { BlogPost } from '../../lib/definitions';
+import { BlogPost } from '@/types/definitions';
 
 type Props = {
     articles: BlogPost[];
