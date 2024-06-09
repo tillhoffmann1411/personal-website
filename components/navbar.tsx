@@ -14,6 +14,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 import { AnimatedTooltip } from './ui/animated-tooltip';
 import React from 'react';
 import { Book, Home } from 'lucide-react';
+import { ModeToggle } from './mode-toggle';
 
 const ProductItem = ({
     title,
@@ -213,6 +214,9 @@ const Navbar: FC = () => {
                     </NavigationMenuList>
                 </NavigationMenu>
                 <div className='hidden space-x-2 sm:flex'>
+                    <div className=''>
+                        <ModeToggle />
+                    </div>
                     <Button
                         onClick={() => scrollToSection('contact')}
                     >

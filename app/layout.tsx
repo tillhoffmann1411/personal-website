@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='dark'>
       <Head>
         <title>👨🏽‍💻 Till Hoffmann</title>
         <meta name="description" content="Till Hoffmann web development portfolio" />
