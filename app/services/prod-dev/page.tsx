@@ -1,5 +1,4 @@
 import React from 'react'
-import { Component } from '@/components/component'
 import Hero from '@/components/product-dev/hero'
 import Services from '@/components/product-dev/services'
 import Offer from '@/components/product-dev/offer'
