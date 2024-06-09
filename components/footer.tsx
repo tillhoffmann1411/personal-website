@@ -3,6 +3,7 @@ import {
     AiFillLinkedin,
     AiFillGithub,
 } from "react-icons/ai";
+import { BsTwitterX } from "react-icons/bs";
 import { scrollToSection } from '@/lib/utils';
 import { FC } from 'react';
 import { Button } from '@/components/ui/button';
@@ -78,6 +79,17 @@ const Footer: FC = () => {
                                         <AiFillLinkedin />
                                     </span>
                                     <span>LinkedIn</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://x.com/tillxhoffmann"
+                                    className="flex items-center space-x-3 transition hover:text-primary"
+                                >
+                                    <span className="text-xl">
+                                        <BsTwitterX />
+                                    </span>
+                                    <span>X</span>
                                 </a>
                             </li>
                         </ul>

@@ -3,45 +3,46 @@ import { scrollToSection } from '../utils';
 
 export const aboutMeData: AboutMe[] = [
     {
-        title: '👨🏽‍💻 Professional Aim',
+        title: '💻 Produkte',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Driving product and strategic orientation at Knowledge in a Box.</li>
-                <li>Developing high quality applications with Next.js and React.</li>
-                <li>Designing user friendly and beautiful applications for the web.</li>
+                <li>Gründer und Entwicklung von Knowledge-in-a-Box.</li>
+                <li>Entwickler von grow-content</li>
+                <li>Teilen meiner eigenen Automatisierungen</li>
             </ul>
         ),
     },
     {
-        title: '🌍 Personal Exploration',
+        title: '👨🏼‍💻 Angebot',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Learning new languages and international recipes.</li>
-                <li>Exploring remote work globally.</li>
+                <li>Ich bringe deine Idee zum Leben in 4 Wochen.</li>
+                <li>Danach entwickeln wir dein neues Produkt zur Martkreife.</li>
             </ul>
         ),
     },
     {
-        title: '💡 Learning and Growth',
+        title: '💡 Mein Antrieb',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Started my own <a href="https://medium.com/@hoffmann.webdev" className="underline">blog</a> to share my knowledge and improve my writing.</li>
-                <li>Trying more ways of asynchronous communication.</li>
+                <li>Ich lerne nie aus und finde es spannend, neue Prozesse kennenzulernen.</li>
+                <li>Ich nutze modernste Technologien, um Prozesse effizient zu gestalten.</li>
             </ul>
         ),
     },
     {
-        title: '🎓 Background',
+        title: '🤝🏼',
         description: (
-            <p className="leading-7 [&:not(:first-child)]:mt-6">Tech enthusiast passionate about efficiency and solving real-world problems. Master&apos;s in Information Systems with international experience.</p>
+            <p className="leading-7 [&:not(:first-child)]:mt-6">
+                Ich bin ein fan von regelmäßiger asynchroner Kommunikation. Dabei bleibt der Fokus auf das Wesentliche und Inhalte sind auch später noch zugänglich.
+            </p>
         ),
     },
     {
         title: '📬 Reach Out',
         description: (
-            <p className="italic leading-7 [&:not(:first-child)]:mt-6">Discuss projects, collaborations, or tech. Contact me.</p>
+            <p className="italic leading-7 [&:not(:first-child)]:mt-6">Du bist interessiert mit mir zusammen zu arbeiten? Dann schreib mir.</p>
         ),
-        function: () => scrollToSection('contact'
-        ),
+        function: () => scrollToSection('contact'),
     },
 ];

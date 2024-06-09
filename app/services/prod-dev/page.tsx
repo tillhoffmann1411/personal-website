@@ -1,12 +1,22 @@
 import React from 'react'
-import { Component } from '../../../components/component'
-import Hero from '../../../components/product-dev/hero'
+import { Component } from '@/components/component'
+import Hero from '@/components/product-dev/hero'
+import Services from '@/components/product-dev/services'
+import Offer from '@/components/product-dev/offer'
+import Contact from '@/components/contact/contact'
 
 export default function Page() {
   return (
     <div>
       <Hero />
-        <Component />
+      <Services />
+      <Offer />
+      <Contact />
+      {
+        /* Portfolio */
+        /* <Testimonials /> */
+        /* <FAQ /> */
+      }
     </div>
   )
 }

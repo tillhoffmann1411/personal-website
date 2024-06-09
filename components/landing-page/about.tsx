@@ -20,7 +20,7 @@ export default function About() {
     return (
         <section id="about" className='mt-40'>
             <div className="py-6">
-                <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">About me</h2>
+                <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Über mich</h2>
             </div>
 
 
