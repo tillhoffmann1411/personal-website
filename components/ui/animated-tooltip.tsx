@@ -22,12 +22,12 @@ export const AnimatedTooltip = ({
     const x = useMotionValue(0); // going to set this value on mouse move
     // rotate the tooltip
     const rotate = useSpring(
-        useTransform(x, [-100, 100], [-45, 45]),
+        useTransform(x, [-50, 50], [-20, 20]),
         springConfig
     );
     // translate the tooltip
     const translateX = useSpring(
-        useTransform(x, [-100, 100], [-50, 50]),
+        useTransform(x, [-50, 50], [-25, 25]),
         springConfig
     );
     const handleMouseMove = (event: any) => {
@@ -61,7 +61,7 @@ export const AnimatedTooltip = ({
                             rotate: rotate,
                             whiteSpace: "nowrap",
                         }}
-                        className="absolute -top-6 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
+                        className="absolute top-8 left-12 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-50 shadow-xl px-4 py-2"
                     >
                         <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
                         <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />

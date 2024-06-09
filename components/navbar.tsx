@@ -29,7 +29,7 @@ const ProductItem = ({
     disabled?: boolean;
 }) => {
     const link = (
-        <NavigationMenuLink asChild>
+        <NavigationMenuLink asChild onClick={(e) => disabled && e.preventDefault()}>
             <Link href={disabled ? '' : href} onClick={(e) => disabled && e.preventDefault()} className={cn("flex space-x-2 group rounded-lg p-4", disabled ? "cursor-default" : "hover:bg-card transition-color")}>
                 <Image
                     src={src}
@@ -168,7 +168,7 @@ const Navbar: FC = () => {
                                     </ListItem>
                                     <ListItem
                                         title="Prototyp Entwicklung"
-                                        href="/services/prototypdev"
+                                        href="/services/prototyp-dev"
                                     >
                                         Ich erwecke deine Idee zum leben in 4 Wochen.
                                     </ListItem>
