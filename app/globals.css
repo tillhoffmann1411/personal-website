@@ -32,7 +32,7 @@
   .dark {
     --background: 125 14.3% 4.1%;
     --foreground: 0 0% 95%;
-    --card: 125 10% 6.5%;
+    --card: 125 10% 10%;
     --card-foreground: 125 0% 95%;
     --popover: 125 0% 9%;
     --popover-foreground: 125 0% 95%;
@@ -54,11 +54,6 @@
   }
 
   .theme-custom {
-    /* Name: custom color palette
-       Author: Ilias Ism
-       URL: https://gradient.page */
-
-    /* CSS: .bg-gradient { background: var(--gradient) } */
     --gradient: #033501;
     --background: 125 99.8% 98.22%;
     --foreground: 125 9.6% 0.44%;

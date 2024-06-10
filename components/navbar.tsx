@@ -30,8 +30,12 @@ const ProductItem = ({
     disabled?: boolean;
 }) => {
     const link = (
-        <NavigationMenuLink asChild onClick={(e) => disabled && e.preventDefault()}>
-            <Link href={disabled ? '' : href} onClick={(e) => disabled && e.preventDefault()} className={cn("flex space-x-2 group rounded-lg p-4", disabled ? "cursor-default" : "hover:bg-card transition-color")}>
+        <NavigationMenuLink asChild onClick={(e) => {disabled && e.preventDefault(); disabled && e.stopPropagation()}}>
+            <Link
+                href={disabled ? '' : href} 
+                onClick={(e) => {disabled && e.preventDefault(); disabled && e.stopPropagation()}}
+                className={cn("flex space-x-2 group rounded-lg p-4", disabled ? "cursor-default" : "hover:bg-card transition-color")}
+            >
                 <Image
                     src={src}
                     width={140}
@@ -83,19 +87,9 @@ const Navbar: FC = () => {
     const scrollPosition = useScrollPosition();
     const innerHeight = useWindowHeight();
     const path = typeof window !== 'undefined' ? window.location.pathname : '';
-    const [active, setActive] = useState<string | null>(null);
-
 
     const classNames = (...classes: string[]) => {
         return classes.filter(Boolean).join(' ')
-    };
-
-    const onClick = () => {
-        confetti({
-            particleCount: 150,
-            spread: 100,
-            origin: { y: 1 },
-        });
     };
 
     const showNavbar = () => {
@@ -117,7 +111,6 @@ const Navbar: FC = () => {
             <div className="hidden py-4 sm:flex">
                 <Link
                     className="group relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-lg font-semibold hover:bg-primary cursor-default hover:text-primary-foreground"
-                    onClick={onClick}
                     href="/"
                 >
                     <span className='select-none group-active:hidden' >Till Hoffmann</span>
@@ -142,16 +135,19 @@ const Navbar: FC = () => {
                                                     Home
                                                 </div>
                                                 <p className="text-sm leading-tight text-muted-foreground">
-
+                                                    Alles über mich in kürze.
                                                 </p>
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
+                                    <ListItem href="/#education" title="Auszeichnungen">
+                                        Meine Ausbildung und Auszeichnungen.
+                                    </ListItem>
+                                    <ListItem href="/#about" title="Über mich">
+                                        Einige Details über mich und meine Arbeit.
+                                    </ListItem>
                                     <ListItem href="/#blog" title="Blog">
                                         Mein Blog auf Medium, auf dem ich verschiedenste Themen behandel.
-                                    </ListItem>
-                                    <ListItem href="/#about-me" title="Über mich">
-                                        Einige Details über mich und meine Arbeit.
                                     </ListItem>
                                 </ul>
                             </NavigationMenuContent>
@@ -160,7 +156,7 @@ const Navbar: FC = () => {
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <ul className="grid w-[340px] md:w-[400px] gap-2 p-2 md:w-[500px]">
+                                <ul className="grid w-[340px] md:w-[400px] gap-2 p-2 lg:w-[500px]">
                                     <ListItem
                                         title="Produkt Entwicklung"
                                         href="/services/prod-dev"
@@ -186,7 +182,7 @@ const Navbar: FC = () => {
                         <NavigationMenuItem>
                             <NavigationMenuTrigger>Produkte</NavigationMenuTrigger>
                             <NavigationMenuContent>
-                                <div className="text-sm grid w-[340px] md:w-[400px] gap-2 p-2 md:w-[500px]">
+                                <div className="text-sm grid w-[340px] md:w-[400px] gap-2 p-2 lg:w-[500px]">
                                     <ProductItem
                                         title="Knowledge in a Box"
                                         href="https://Knowledge-in-a-box.de"

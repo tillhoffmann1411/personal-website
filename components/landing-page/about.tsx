@@ -1,6 +1,8 @@
 'use client'
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { aboutMeData } from '../../lib/data/about-me';
+import { Headline2 } from '../ui/typography';
+import { cn } from '../../lib/utils';
 
 const hoverButton = (
     <div className="inline-flex items-center justify-center
@@ -18,9 +20,9 @@ const hoverButton = (
 
 export default function About() {
     return (
-        <section id="about" className='mt-40'>
+        <section id="about">
             <div className="py-6">
-                <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">Über mich</h2>
+                <Headline2>Über mich</Headline2>
             </div>
 
 
@@ -39,11 +41,11 @@ export default function About() {
                             <CardTitle>
                                 {e.title}
                             </CardTitle>
+                            <CardDescription className={cn(e.function && 'group-hover:text-primary-foreground')}>
+                                {e.description}
+                            </CardDescription>
                         </CardHeader>
 
-                        <CardContent>
-                            {e.description}
-                        </CardContent>
                         {
                             e.function && (
 
@@ -55,11 +57,6 @@ export default function About() {
                     </Card>
                 ))}
             </div>
-
-            <p className="text-xs text-gray-400">Updated 2024-01-12 - inspired by <a href="https://nownownow.com/" className="underline">now</a></p>
-
-
-
         </section>
     );
 }

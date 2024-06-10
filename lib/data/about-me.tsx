@@ -1,40 +1,42 @@
+import { Muted } from '../../components/ui/typography';
 import { AboutMe } from '../../types/definitions';
 import { scrollToSection } from '../utils';
 
 export const aboutMeData: AboutMe[] = [
     {
-        title: '💻 Produkte',
+        title: '💻 Passion',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Gründer und Entwicklung von Knowledge-in-a-Box.</li>
-                <li>Entwickler von grow-content</li>
-                <li>Teilen meiner eigenen Automatisierungen</li>
+                <li>Ich bin begeistert von Produkten, die sich wie Magie anfühlen.</li>
+                <li>Dabei treibt mich eine ständige Neugier an mich ständig weiter zu entwickeln.</li>
             </ul>
         ),
     },
     {
-        title: '👨🏼‍💻 Angebot',
+        title: '👨🏼‍🎓 Ausbildung',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Ich bringe deine Idee zum Leben in 4 Wochen.</li>
-                <li>Danach entwickeln wir dein neues Produkt zur Martkreife.</li>
+                <li>Bachelor in Wirtschaftsinformatik an der FH Münster</li>
+                <li>Master in Wirtschaftsinformatik and der WWU Münster</li>
+                <li>Auslandssemester in Süd-Korea</li>
             </ul>
         ),
     },
     {
-        title: '💡 Mein Antrieb',
+        title: '💡 Arbeitsweise',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Ich lerne nie aus und finde es spannend, neue Prozesse kennenzulernen.</li>
-                <li>Ich nutze modernste Technologien, um Prozesse effizient zu gestalten.</li>
+                <li>Ich arbeite in kurzen und schnellen Iterationen.</li>
+                <li>Asynchrone Kommunikation hilft dabei Feedbackschleifen kurz zu halten.</li>
+                <li>Klare Ziele und Termine helfen Projekte zu beenden.</li>
             </ul>
         ),
     },
     {
-        title: '🤝🏼',
+        title: '🤝🏼 ',
         description: (
             <p className="leading-7 [&:not(:first-child)]:mt-6">
-                Ich bin ein fan von regelmäßiger asynchroner Kommunikation. Dabei bleibt der Fokus auf das Wesentliche und Inhalte sind auch später noch zugänglich.
+                Wir sollten zusammenarbeiten, wenn du eine spannende Idee hast, deine Prozesse effizienter gestalten möchtest oder du Hilfe bei deiner Produktentwicklung benötigst.
             </p>
         ),
     },

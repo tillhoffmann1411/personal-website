@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import StatusBadge from './status-badge';
 import { scrollToSection } from '@/lib/utils';
 import { HeroHighlight, Highlight } from '../../ui/hero-highlight';
+import { Headline1 } from '../../ui/typography';
 
 const Hero: FC = () => {
     return (
@@ -27,10 +28,10 @@ const Hero: FC = () => {
               2xl:max-w-[1248px]
             ">
                 <div className="flex flex-col justify-center p-6 text-center lg:text-left">
-                    <h1 className='pb-6 scroll-m-20 text-[2.5rem] font-extrabold tracking-tight md:text-[3rem] lg:text-[3rem] xl:text-[4rem]'>
+                    <Headline1>
                             <Highlight>Produkte</Highlight>
                             {' '}mit Leidenschaft
-                    </h1>
+                    </Headline1>
                     <p className="[&:not(:first-child)]:mt-6">
                             Ich schaffe magische Produkte und automatisierte Prozesse.
                     </p>

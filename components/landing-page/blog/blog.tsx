@@ -27,7 +27,7 @@ const BlogFeed = () => {
     }, []);
 
     return (
-        <section className="mt-40" id="blog">
+        <section id="blog">
             <div className="py-6">
                 <h2 className="scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0">
                     Blog
