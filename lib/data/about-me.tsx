@@ -35,15 +35,15 @@ export const aboutMeData: AboutMe[] = [
     {
         title: '🤝🏼 ',
         description: (
-            <p className="leading-7 [&:not(:first-child)]:mt-6">
+            <div className="leading-7 [&:not(:first-child)]:mt-6">
                 Wir sollten zusammenarbeiten, wenn du eine spannende Idee hast, deine Prozesse effizienter gestalten möchtest oder du Hilfe bei deiner Produktentwicklung benötigst.
-            </p>
+            </div>
         ),
     },
     {
         title: '📬 Reach Out',
         description: (
-            <p className="italic leading-7 [&:not(:first-child)]:mt-6">Du bist interessiert mit mir zusammen zu arbeiten? Dann schreib mir.</p>
+            <div className="italic leading-7 [&:not(:first-child)]:mt-6">Du bist interessiert mit mir zusammen zu arbeiten? Dann schreib mir.</div>
         ),
         function: () => scrollToSection('contact'),
     },

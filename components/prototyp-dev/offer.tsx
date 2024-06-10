@@ -1,31 +1,30 @@
-import { ConstructionIcon, TypeIcon, CodeIcon, PlayIcon, Hand, PartyPopper, Car } from 'lucide-react'
+import { ConstructionIcon, TypeIcon, CodeIcon, PlayIcon, Hand, PartyPopper, Car, Goal } from 'lucide-react'
 import React from 'react'
 import { StickyScroll } from '../ui/sticky-scroll-reveal'
+import { Body, Headline2, Muted } from '../ui/typography'
+import SectionBadge from '../ui/section-badge'
 
 export default function Offer() {
     return (
-        <section className="w-full py-36" id="offer">
-            <div className="">
-                <div className="flex flex-col items-center justify-center pb-8 px-4 md:px-6 space-y-4 text-center container">
-                    <div className="space-y-2">
-                        <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                            Angebot
-                        </div>
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                            Präsentierbar in 4 Wochen
-                        </h2>
-                        <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                            Ich entwickle deine Webanwendung in 4-12 Wochen. Von der Konzeption bis zur Bereitstellung.
-                        </p>
-                    </div>
-                </div>
+        <section id="offer">
+            <div className="space-y-2 pb-4">
+                <SectionBadge>
+                    Angebot
+                </SectionBadge>
+                <Headline2>
+                    Präsentierbar in 4 Wochen
+                </Headline2>
+                <Muted>
+                    Ich entwickle deine Webanwendung in 4-12 Wochen. Von der Konzeption bis zur Bereitstellung.
+                </Muted>
+            </div>
 
-                <StickyScroll
-                    content={[
+            <StickyScroll
+                content={[
                     {
                         title: 'Kick Off',
                         description: 'Gemeinsame Definition der Anforderungen und Ziele. Danach beginne ich direkt mit der Entwicklung des Frontends.',
-                        content: <PlayIcon className="h-32 w-32" />
+                        content: <Goal className="h-32 w-32" />
                     },
                     {
                         title: '1. Woche',
@@ -49,7 +48,6 @@ export default function Offer() {
                     },
                     { title: '', description: '' }
                 ]} />
-            </div>
         </section>
     )
 }

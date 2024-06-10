@@ -1,6 +1,7 @@
 import React from 'react'
 import { SparklesCore } from '../ui/sparkles'
 import { TextRevealCard } from '../ui/text-reveal-card'
+import { Headline1 } from '../ui/typography'
 
 export default function Hero() {
     return (
@@ -9,7 +10,11 @@ export default function Hero() {
                 <div className='hidden md:block'>
                     <TextRevealCard text="Gute Produkte sind Magie" revealText="Ich zeige dir den Trick" />
                 </div>
-                <h1 className='block md:hidden'>Gute Produkte sind Magie<br /><span className="text-muted-foreground text-3xl">Ich zeige dir den Trick</span></h1>
+                <div className='block md:hidden'>
+                    <Headline1>
+                        Gute Produkte sind Magie<br /><span className="text-muted-foreground text-3xl">Ich zeige dir den Trick</span>
+                    </Headline1>
+                </div>
             </div>
             <div className="w-[40rem] h-40 relative">
                 {/* Gradients */}

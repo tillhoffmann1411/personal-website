@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { cn } from '../../lib/utils'
 
 
 
@@ -9,9 +10,9 @@ export function Headline1({ children }: { children: React.ReactNode }) {
   )
 }
 
-export function Headline2({ children }: { children: React.ReactNode }) {
+export function Headline2({ children, props, className }: { children: React.ReactNode, props?: React.HTMLAttributes<HTMLHeadingElement>, className?: string }) {
   return (
-    <h2 className="scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight first:mt-0 lg:text-4xl">{children}</h2>
+    <h2 className={cn(className, "scroll-m-20 border-b pb-2 text-3xl font-bold tracking-tight first:mt-0 lg:text-4xl")} {...props}>{children}</h2>
   )
 }
 
@@ -29,13 +30,13 @@ export function Headline4({ children }: { children: React.ReactNode }) {
 
 export function Body({ children }: { children: React.ReactNode }) {
   return (
-    <p className="leading-7 [&:not(:first-child)]:mt-6 break-words">{children}</p>
+    <div className="leading-7 [&:not(:first-child)]:mt-6 break-words">{children}</div>
   )
 }
 
 export function Muted({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-sm text-muted-foreground">{children}</p>
+    <div className="text-sm text-muted-foreground">{children}</div>
   )
 }
 

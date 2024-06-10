@@ -8,9 +8,11 @@ export default function Page() {
   return (
     <div>
       <Hero />
-      <Services />
-      <Offer />
-      <Contact />
+      <div className="mx-auto py-10 px-5 space-y-40 md:space-y-64 sm:px-10 md:px-32 xl:px-64">
+        <Services />
+        <Offer />
+        <Contact />
+      </div>
       {
         /* Portfolio */
         /* <Testimonials /> */

@@ -9,12 +9,14 @@ export default function Page() {
   return (
     <div className='-mt-16'>
       <Hero />
-      <Services />
-      <Benefits />
-      <Target />
-      {/* <Testimonials /> */}
-      {/* <FAQ /> */}
-      <Contact />
+      <div className="mx-auto py-10 px-5 space-y-40 md:space-y-64 sm:px-10 md:px-32 xl:px-64">
+        <Services />
+        <Benefits />
+        <Target />
+        {/* <Testimonials /> */}
+        {/* <FAQ /> */}
+        <Contact />
+      </div>
 
     </div>
   )

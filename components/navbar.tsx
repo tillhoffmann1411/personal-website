@@ -88,16 +88,12 @@ const Navbar: FC = () => {
     const innerHeight = useWindowHeight();
     const path = typeof window !== 'undefined' ? window.location.pathname : '';
 
-    const classNames = (...classes: string[]) => {
-        return classes.filter(Boolean).join(' ')
-    };
-
     const showNavbar = () => {
         return (scrollPosition === 0) && (path === '/');
     }
 
     return (
-        <nav className={classNames(
+        <nav className={cn(
             showNavbar()
                 ? 'opacity-0'
                 : 'opacity-100',
@@ -134,9 +130,9 @@ const Navbar: FC = () => {
                                                 <div className="mb-2 mt-4 text-lg font-medium">
                                                     Home
                                                 </div>
-                                                <p className="text-sm leading-tight text-muted-foreground">
+                                                <div className="text-sm leading-tight text-muted-foreground">
                                                     Alles über mich in kürze.
-                                                </p>
+                                                </div>
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>

@@ -51,7 +51,6 @@ const Contact: FC = () => {
             <div className="py-6 space-y-2">
                 <Headline2>Kontakt</Headline2>
             </div>
-
                 <div className="mx-auto grid max-w-5xl items-center gap-12 py-12 grid-cols-1 md:grid-cols-2">
                     <Card className="aspect-square md:w-full">
                         <CardHeader>

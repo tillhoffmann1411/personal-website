@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { Body } from './typography';
 
 export const StickyScroll = ({
   content,
@@ -60,7 +61,7 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(tailwindGradients[activeCard % tailwindGradients.length]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeCard]);
 
   return (
@@ -86,17 +87,18 @@ export const StickyScroll = ({
               >
                 {item.title}
               </motion.h2>
-              <motion.p
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="max-w-sm mt-4 text-foreground"
               >
-                {item.description}
-              </motion.p>
+                <Body>
+                  {item.description}
+                </Body>
+              </motion.div>
             </div>
           ))}
           <div className="h-40" />

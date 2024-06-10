@@ -19,7 +19,7 @@ const logos = [
     icon: exist,
   },
   {
-    title: 'Auslandssemester in Süd-Kore mit Schwerpunkten in KI',
+    title: 'Auslandssemester in Süd-Korea mit Schwerpunkten in KI',
     icon: unist,
   },
   {
