@@ -33,7 +33,7 @@ const Hero: FC = () => {
                             {' '}mit Leidenschaft
                     </Headline1>
                     <p className="[&:not(:first-child)]:mt-6">
-                            Ich schaffe magische Produkte und automatisierte Prozesse.
+                            Ich schaffe intuitive Produkte und automatisierte Prozesse.
                     </p>
 
                     <div className="flex py-6 text-5xl self-center items-center gap-3 break-after-column lg:m-0 lg:self-start">

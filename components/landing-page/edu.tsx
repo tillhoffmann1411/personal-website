@@ -11,11 +11,11 @@ import { Body, Headline2 } from '../ui/typography';
 
 const logos = [
   {
-    title: 'Mein Produkt wurde für Digitale Innvovation ausgezeichnet.',
+    title: 'Knowledge in a Box wurde für Digitale Innvovation ausgezeichnet.',
     icon: gruenderPreis,
   },
   {
-    title: 'Mein Produkt wurde durch die EXIST Gründerförderung gefördert.',
+    title: 'Knowledge in a Box wurde durch die EXIST Gründerförderung gefördert.',
     icon: exist,
   },
   {

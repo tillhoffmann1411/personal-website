@@ -1,4 +1,3 @@
-import { Muted } from '../../components/ui/typography';
 import { AboutMe } from '../../types/definitions';
 import { scrollToSection } from '../utils';
 
@@ -7,8 +6,8 @@ export const aboutMeData: AboutMe[] = [
         title: '💻 Passion',
         description: (
             <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                <li>Ich bin begeistert von Produkten, die sich wie Magie anfühlen.</li>
-                <li>Dabei treibt mich eine ständige Neugier an mich ständig weiter zu entwickeln.</li>
+                <li>Das Entwickeln von skalierbaren und intuitiven Anwendenungen.</li>
+                <li>Dabei nutze ich modernste Technologien und Integriere schon bestehende Daten und Tools.</li>
             </ul>
         ),
     },

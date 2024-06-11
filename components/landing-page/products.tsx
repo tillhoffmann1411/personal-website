@@ -27,7 +27,10 @@ export default function Products() {
                             Knowledge in a Box
                         </Headline3>
                         <Muted>
-                            Knowledge in a Box ist ein 2022 gegründetes Startup, das ein preisgekröntes Tool für kontextbasiertes Wissensmanagement entwickelt. Unser Produkt, ausgezeichnet mit dem Deutschen Innovationspreis für Digitales, verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph. Nutzer können über eine Web-App oder Browser-Erweiterung auf die Daten zugreifen, die relevante Informationen basierend auf ihrem Kontext empfehlen.
+                            Knowledge in a Box ist ein 2022 gegründetes Startup, das ein preisgekröntes Tool für kontextbasiertes Wissensmanagement entwickelt.
+                            Unser Produkt, ausgezeichnet mit dem Deutschen Innovationspreis für Digitales, verbindet Informationen aus verschiedenen Quellen in
+                            einem Wissensgraph. Nutzer können über eine Web-App oder Browser-Erweiterung auf die Daten zugreifen, die relevante Informationen
+                            basierend auf ihrem Kontext empfehlen.
                         </Muted>
                         <div className="flex flex-col gap-2 min-[400px]:flex-row">
                             <Button variant="outline" asChild>
@@ -45,8 +48,10 @@ export default function Products() {
                             Grow Content
                         </Headline3>
                         <Muted>
-                            Grow Content ist ein ursprüngliches Hobby Projekt, welches zu einem Produkt herangewachsen ist. Es gamifiziert Content-Creation und hilft dabei, regelmäßig Inhalte auf verschiedenen Plattformen zu veröffentlichen. Dadurch sammelt man Punkte und Erfahrung und kann so Level aufsteigen und Pflanzen kaufen. Diese Pflanzen werden dann in einem eigenen Garten gesammelt. So kann man sich zusammen mit seinem Team messen.
-
+                            Grow Content ist ein ursprüngliches Hobby Projekt, welches zu einem Produkt herangewachsen ist. Es gamifiziert Content-Creation und
+                            hilft dabei, regelmäßig Inhalte auf verschiedenen Plattformen zu veröffentlichen. Dadurch sammelt man Punkte und Erfahrung und kann
+                            so Level aufsteigen und Pflanzen kaufen. Diese Pflanzen werden dann in einem eigenen Garten gesammelt. So kann man sich zusammen mit
+                            seinem Team messen.
                         </Muted>
                         <div className="flex flex-col gap-2 min-[400px]:flex-row">
                             <Button variant="outline" disabled>

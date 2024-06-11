@@ -14,7 +14,7 @@ export default function Services() {
         </Headline2>
         <Muted>
           Von der Ist-Analyse über die Potential-Bewertung bis hin zur Implementierung, Übergabe & Schulung
-          sowie Betreuung & Wartung - icht führe den gesamten Prozess.
+          sowie Betreuung & Wartung - ich führe den gesamten Prozess.
         </Muted>
       </div>
       <div className="mx-auto pt-16 grid items-start gap-8 sm:max-w-4xl sm:grid-cols-2 lg:max-w-5xl lg:grid-cols-3">
