@@ -6,8 +6,10 @@ import { Headline2 } from '../ui/typography'
 import SectionBadge from '../ui/section-badge'
 import { Button } from '../ui/button'
 import flatrateMock from '@/public/portfolio/flatrate-mock.webp';
+import { usePlausible } from 'next-plausible'
 
 export default function Offer() {
+  const plausible = usePlausible();
   return (
     <section>
       <div className="px-4 md:px-6">
@@ -32,7 +34,7 @@ export default function Offer() {
               Ich werde eng mit dir und deinem Team zusammenarbeiten, damit wir deine Vision in die Realität umsetzen.
             </p>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button asChild variant="outline">
+              <Button asChild variant="outline" onClick={() => plausible('click-contact', { props: { location: 'offer' } })}>
                 <Link href="#contact">
                   Kontakt
                 </Link>

@@ -13,8 +13,10 @@ import StatusBadge from './status-badge';
 import { scrollToSection } from '@/lib/utils';
 import { HeroHighlight, Highlight } from '../../ui/hero-highlight';
 import { Headline1 } from '../../ui/typography';
+import { usePlausible } from 'next-plausible';
 
 const Hero: FC = () => {
+    const plausible = usePlausible();
     return (
         <section id="hero" className="flex w-full h-screen">
             <HeroHighlight
@@ -40,7 +42,10 @@ const Hero: FC = () => {
                         <Button
                             size="lg"
                             className=''
-                            onClick={() => scrollToSection('contact')}
+                            onClick={() => {
+                                scrollToSection('contact')
+                                plausible('click-contact', { props: { location: 'hero', href: '#contact' } });
+                            }}
                         >
                             Kontakt
                         </Button>

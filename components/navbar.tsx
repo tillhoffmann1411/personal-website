@@ -15,6 +15,7 @@ import { AnimatedTooltip } from './ui/animated-tooltip';
 import React from 'react';
 import { Book, Home } from 'lucide-react';
 import { ModeToggle } from './mode-toggle';
+import { usePlausible } from 'next-plausible';
 
 const ProductItem = ({
     title,
@@ -29,8 +30,15 @@ const ProductItem = ({
     src: string | StaticImageData;
     disabled?: boolean;
 }) => {
+    const plausible = usePlausible();
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        disabled && e.preventDefault(); disabled && e.stopPropagation();
+        plausible('click-nav-product', { props: { title, href, location: 'nav' } });
+    }
+
     const link = (
-        <NavigationMenuLink asChild onClick={(e) => {disabled && e.preventDefault(); disabled && e.stopPropagation()}}>
+        <NavigationMenuLink asChild onClick={handleClick}>
             <Link
                 href={disabled ? '' : href} 
                 onClick={(e) => {disabled && e.preventDefault(); disabled && e.stopPropagation()}}
@@ -61,8 +69,13 @@ const ListItem = React.forwardRef<
     React.ElementRef<"a">,
     React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
+    const plausible = usePlausible();
+
+    const handleClick = (e: React.MouseEvent<HTMLLIElement>) => {
+        plausible('click-nav-list', { props: { title, href: props.href, location: 'nav' } });
+    }
     return (
-        <li>
+        <li onClick={handleClick}>
             <NavigationMenuLink asChild>
                 <a
                     ref={ref}
@@ -84,6 +97,7 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem"
 
 const Navbar: FC = () => {
+    const plausible = usePlausible();
     const scrollPosition = useScrollPosition();
     const innerHeight = useWindowHeight();
     const path = typeof window !== 'undefined' ? window.location.pathname : '';
@@ -210,7 +224,10 @@ const Navbar: FC = () => {
                         <ModeToggle />
                     </div>
                     <Button
-                        onClick={() => scrollToSection('contact')}
+                        onClick={() => {
+                            scrollToSection('contact')
+                            plausible('click-contact', { props: { location: 'nav', href: '#contact' } });
+                        }}
                     >
                         Kontakt
                     </Button>
