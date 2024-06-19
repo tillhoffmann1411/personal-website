@@ -225,7 +225,7 @@ const Navbar: FC = () => {
                     </div>
                     <Button
                         onClick={() => {
-                            scrollToSection('contact')
+                            scrollToSection('contact');
                             plausible('click-contact', { props: { location: 'nav', href: '#contact' } });
                         }}
                     >

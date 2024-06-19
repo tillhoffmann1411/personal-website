@@ -47,7 +47,7 @@ const Contact: FC = () => {
     }, [formState.status]);
 
     return (
-        <section id="offer">
+        <section id="contact">
             <div className="py-6 space-y-2">
                 <Headline2>Kontakt</Headline2>
             </div>
