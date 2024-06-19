@@ -22,6 +22,7 @@ export default function RootLayout({
         <title>👨🏽‍💻 Till Hoffmann</title>
         <meta name="description" content="Till Hoffmann web development portfolio" />
         <link rel="icon" href="/favicon.ico" />
+        <script defer data-domain="till-hoffmann.me" src="https://plausible.io/js/script.js"></script>
       </Head>
       <body className={prozaLibre.className}>
         <ThemeProvider
