@@ -2,60 +2,40 @@ import Link from 'next/link';
 
 export const faqData = [
     {
-        question: "How can I get in touch with you?",
+        question: "Was ist bei dir der Unterschied zu einem normalen Software Entwickler?",
         answer: (
             <span>
                 <p className='leading-7 [&:not(:first-child)]:mt-6'>
-                    You can reach out to me through the following methods:
+                    Zusammen mit dir entwickeln wir zusammen deine Idee weiter. Diese nutzen wir dann, um Features, Tasks und Schnittstellen zu definieren. Daraus leite ich Anforderungen an die Software ab. Dabei beachte ich immer deinen konkreten Kontext.
                 </p>
                 <ul className="my-6 ml-6 list-disc [&>li]:mt-2">
-                    <li>
-                        <span className='font-extrabold'>Contact-Form</span>: Feel free to send me an email with the <Link href="#contact" className='underline hover:text-primary'>contact form</Link> on this website.
-                    </li>
-                    <li>
-                        <span className='font-extrabold'>Social Media</span>: You can connect with me on{" "}
-                        <Link
-                            href="https://www.linkedin.com/in/tillhoffmann/"
-                            className='underline hover:text-primary'
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            LinkedIn
-                        </Link>{" "}where I actively engage with the tech community.
-                    </li>
+                    <li>Wie viele Nutzer werden die Software nutzen?</li>
+                    <li>Auf welchen Geräten wird die Software laufen?</li>
+                    <li>Welche Technologien werden bereits im Unternehmen verwendet?</li>
+                    <li>... und vieles mehr.</li>
                 </ul>
                 <p className='leading-7 [&:not(:first-child)]:mt-6'>
-                    I&apos;m always open to inquiries, collaborations, and discussions related
-                    to technology, startups, or any other topic you&apos;d like to explore.
-                    Looking forward to connecting with you!
+                    Am Ende der Planung stelle ich dir alles vor und ich beginne mit der Entwicklung.
                 </p>
             </span>
         ),
     },
     {
         question:
-            "Do you offer freelance services, and what type of services do you offer?",
+            "Wie schaffst du es in 4 Wochen einen Prototypen zu entwickeln?",
         answer: (
             <div>
-                <p className='leading-7 [&:not(:first-child)]:mt-6'>My freelance services include:</p>
-                <ul className="my-6 ml-6 list-disc [&>li]:mt-">
-                    <li>Full-Stack Development in TypeScript, React, Node.js and Python</li>
-                    <li>Knowledge graph design, planning, and implementation</li>
-                    <li>Process optimization and automation</li>
-                    <li>API Integration (JavaScript and Python)</li>
-                </ul>
+                <p className='leading-7 [&:not(:first-child)]:mt-6'>
+                    Durch strukturiertes Vorgehen und fokusieren auf die Kernfunktion, schaffe ich es deine Idee in 4 Wochen zu realisieren. Dabei werde ich dir alles vorbereiten, was du brauchst, um deine umgesetzte Idee zu präsentieren.
+                </p>
             </div>
         ),
     },
     {
-        question: "Can you provide examples of your previous work or projects?",
+        question: "Wie lange entwickelst du schon Produkte?",
         answer: (
             <p className='leading-7 [&:not(:first-child)]:mt-6'>
-                You can explore a selection of my previous work and projects
-                in my <Link href="#portfolio" className='underline hover:text-primary'>portfolio</Link>. If you have
-                any specific inquiries about a particular project or would like more
-                details, feel free to reach out, and I&apos;d be happy to provide additional
-                information.
+                Ich entwickle Produkte nun schon seit mehereren Jahren. Dabei habe ich eigene Produkte entwickelt, die vom Ministerium für Wirtschaft und Klimaschutz für digitale Innovation ausgezeichnet wurde. Daneben habe ich mehrere Produkte für andere Unternehmen entwickelt.
             </p>
         ),
     },
