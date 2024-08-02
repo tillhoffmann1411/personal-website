@@ -4,6 +4,12 @@ import ProblemStatement from '@/components/prototyp-dev/problem-statement'
 import Solution from '@/components/prototyp-dev/solution'
 import Offer from '@/components/prototyp-dev/offer'
 import Contact from '@/components/contact/contact'
+import { Metadata } from 'next/types'
+
+export const metadata: Metadata = {
+  title: 'Till Hoffmann | Prototyp in 4 Wochen',
+  description: 'Till Hoffmann experte für digitale Produkte und Automatisierung.',
+};
 
 export default function Page() {
   return (

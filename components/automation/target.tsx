@@ -54,7 +54,7 @@ export default function Target() {
           </ul>
           <div>
             <Button asChild>
-              <Link href="#contact">Jetzt Beraten Lassen</Link>
+              <Link href="#contact">Kostenfrei Beraten Lassen</Link>
             </Button>
           </div>
         </div>

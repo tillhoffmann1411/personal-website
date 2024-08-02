@@ -1,6 +1,6 @@
 import React from 'react'
 import { BackgroundGradientAnimation } from '../ui/background-gradient-animation'
-import { Headline1 } from '../ui/typography'
+import { Headline1, Muted, Subtitle } from '../ui/typography'
 
 export default function Hero() {
     return (
@@ -18,8 +18,11 @@ export default function Hero() {
             >
                 <div className='container px-4 md:px-6 max-w-4xl text-center'>
                     <Headline1>
-                        Erspare dir und deinem Team nervige Arbeit
+                        Erspare dir und deinem Team 4 Stunden pro Woche.
                     </Headline1>
+                    <Subtitle>
+                        Durch automatisierte Prozesse
+                    </Subtitle>
                 </div>
             </BackgroundGradientAnimation>
         </section>

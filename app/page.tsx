@@ -1,13 +1,13 @@
 'use server';
-
-import About from '../components/landing-page/about';
-import BlogFeed from '../components/landing-page/blog/blog';
-import Contact from '../components/contact/contact';
-import FAQ from '../components/landing-page/faq/faq';
-import Hero from '../components/landing-page/hero/hero';
-import Edu from '../components/landing-page/edu';
-import Products from '../components/landing-page/products';
-import Offer from '../components/landing-page/offer';
+import About from '@/components/landing-page/about';
+import BlogFeed from '@/components/landing-page/blog/blog';
+import Contact from '@/components/contact/contact';
+import FAQ from '@/components/faq';
+import Hero from '@/components/landing-page/hero/hero';
+import Edu from '@/components/landing-page/edu';
+import Products from '@/components/landing-page/products';
+import Offer from '@/components/landing-page/offer';
+import { faqData } from '@/lib/data/faq';
 
 export default async function Home() {
   return (
@@ -20,7 +20,7 @@ export default async function Home() {
         <About />
         <BlogFeed />
         <Contact />
-        <FAQ />
+        <FAQ faqData={faqData} />
       </div>
     </main>
   );

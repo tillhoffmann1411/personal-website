@@ -28,6 +28,12 @@ export function Headline4({ children }: { children: React.ReactNode }) {
   )
 }
 
+export function Subtitle({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="scroll-m-20 text-2xl font-semibold tracking-tight text-muted-foreground">{children}</p>
+  )
+}
+
 export function Body({ children }: { children: React.ReactNode }) {
   return (
     <div className="leading-7 [&:not(:first-child)]:mt-6 break-words">{children}</div>

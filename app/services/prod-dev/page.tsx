@@ -3,6 +3,12 @@ import Hero from '@/components/product-dev/hero'
 import Services from '@/components/product-dev/services'
 import Offer from '@/components/product-dev/offer'
 import Contact from '@/components/contact/contact'
+import { Metadata } from 'next/types'
+
+export const metadata: Metadata = {
+  title: 'Till Hoffmann | Produktentwicklung',
+  description: 'Till Hoffmann experte für digitale Produkte und Automatisierung.',
+};
 
 export default function Page() {
   return (
