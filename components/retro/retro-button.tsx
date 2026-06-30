@@ -13,9 +13,9 @@ const RetroButton = forwardRef<HTMLButtonElement, RetroButtonProps>(
       <button
         ref={ref}
         className={cn(
-          'inline-flex items-center justify-center px-3 py-1 text-[13px] font-retro',
-          'focus:outline-none focus-visible:ring-2 focus-visible:ring-win-titlebar focus-visible:ring-offset-1',
-          pressed ? 'win-inset-dark' : 'win-outset active:win-inset-dark',
+          'xp-btn inline-flex items-center justify-center font-retro',
+          'focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0058e6] focus-visible:ring-offset-1',
+          pressed && 'shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2)]',
           className,
         )}
         {...props}

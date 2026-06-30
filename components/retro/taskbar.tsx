@@ -2,14 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { retroContent } from '@/lib/data/retro-content';
-import RetroButton from './retro-button';
-
-function scrollToSection(id: string) {
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
+import { useDesktop } from './desktop-context';
 
 function Clock() {
   const [time, setTime] = useState('');
@@ -28,43 +21,64 @@ function Clock() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="win-inset-dark flex items-center px-2 py-0.5 text-[11px] tabular-nums">
-      {time}
-    </div>
-  );
+  return <div className="xp-clock tabular-nums">{time}</div>;
 }
 
 export default function Taskbar() {
-  const sectionList = Object.values(retroContent.sections);
+  const {
+    windows,
+    activeWindowId,
+    startMenuOpen,
+    setStartMenuOpen,
+    taskbarClick,
+  } = useDesktop();
+
+  const openWindows = windows.filter((w) => !w.closed);
 
   return (
-    <footer className="fixed bottom-0 left-0 right-0 z-50 win-outset border-t-2 border-win-border-light bg-win-silver">
-      <div className="flex items-center gap-1 overflow-x-auto px-1 py-1">
-        <RetroButton
-          className="shrink-0 gap-1 font-bold"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+    <footer className="xp-taskbar fixed bottom-0 left-0 right-0 z-50 h-[38px]">
+      <div className="flex h-full items-center gap-1 overflow-x-auto px-1">
+        <button
+          id="xp-start-button"
+          type="button"
+          className={`xp-start-btn shrink-0 ${startMenuOpen ? 'xp-start-btn-active' : ''}`}
+          onClick={() => setStartMenuOpen(!startMenuOpen)}
+          aria-expanded={startMenuOpen}
+          aria-haspopup="menu"
         >
-          <span aria-hidden="true">🪟</span>
-          <span className="hidden sm:inline">Start</span>
-        </RetroButton>
+          <span
+            aria-hidden="true"
+            className="flex h-5 w-5 items-center justify-center rounded-sm bg-gradient-to-br from-red-500 via-yellow-400 to-green-500 text-[8px] font-bold text-white shadow-sm"
+          >
+            ⊞
+          </span>
+          <span>Start</span>
+        </button>
+
+        <div className="mx-1 h-6 w-px shrink-0 bg-[#1e52b7] opacity-60" />
 
         <div className="flex min-w-0 flex-1 gap-1 overflow-x-auto">
-          {sectionList.map((section) => (
-            <RetroButton
-              key={section.id}
-              className="shrink-0 max-w-[120px] truncate text-[11px] sm:max-w-none sm:text-[13px]"
-              onClick={() => scrollToSection(section.id)}
+          {openWindows.map((win) => (
+            <button
+              key={win.id}
+              type="button"
+              className={`xp-taskbar-item shrink-0 ${
+                activeWindowId === win.id && !win.minimized
+                  ? 'xp-taskbar-item-active'
+                  : ''
+              } ${win.minimized ? 'xp-taskbar-item-minimized' : ''}`}
+              onClick={() => taskbarClick(win.id)}
+              title={win.title}
             >
               <span className="mr-1" aria-hidden="true">
-                {section.icon}
+                {win.icon}
               </span>
-              <span className="truncate">{section.title}</span>
-            </RetroButton>
+              {win.title}
+            </button>
           ))}
         </div>
 
-        <div className="flex shrink-0 items-center gap-1">
+        <div className="flex shrink-0 items-center gap-2 pl-1">
           {retroContent.social.map((link) => (
             <a
               key={link.name}
@@ -72,11 +86,9 @@ export default function Taskbar() {
               target="_blank"
               rel="noreferrer"
               aria-label={link.label}
-              className="win-outset flex h-7 w-7 items-center justify-center text-[11px] font-bold hover:bg-[#dfdfdf] focus:outline-none focus-visible:ring-2 focus-visible:ring-win-titlebar"
+              className="xp-taskbar-item !max-w-none !px-2 text-[11px]"
             >
-              {link.name === 'LinkedIn' && 'in'}
-              {link.name === 'X' && 'X'}
-              {link.name === 'GitHub' && 'GH'}
+              {link.name}
             </a>
           ))}
           <Clock />

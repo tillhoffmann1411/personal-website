@@ -1,16 +1,11 @@
 import { retroContent } from '@/lib/data/retro-content';
-import WinWindow from '../win-window';
+import XpWindow from '../xp-window';
 
 export default function ContactSection() {
   const { sections, social, name } = retroContent;
 
   return (
-    <WinWindow
-      id={sections.contact.id}
-      title={sections.contact.title}
-      icon={sections.contact.icon}
-      offset="sm"
-    >
+    <XpWindow id={sections.contact.id}>
       <p className="mb-3 text-[12px] leading-relaxed">
         Du findest {name} auf folgenden Plattformen:
       </p>
@@ -21,12 +16,12 @@ export default function ContactSection() {
             href={link.url}
             target="_blank"
             rel="noreferrer"
-            className="win-outset inline-flex items-center justify-center px-3 py-1 text-[13px] hover:bg-[#dfdfdf] focus:outline-none focus-visible:ring-2 focus-visible:ring-win-titlebar"
+            className="xp-btn inline-flex items-center justify-center text-[13px] no-underline text-black"
           >
             {link.name} →
           </a>
         ))}
       </div>
-    </WinWindow>
+    </XpWindow>
   );
 }
