@@ -27,7 +27,18 @@ const config = {
         "2/1": "2/1",
         "3/1": "3/1",
       },
+      fontFamily: {
+        retro: ['Tahoma', '"MS Sans Serif"', 'Arial', 'sans-serif'],
+      },
       colors: {
+        'win-teal': '#008080',
+        'win-silver': '#c0c0c0',
+        'win-titlebar': '#000080',
+        'win-titlebar-light': '#1084d0',
+        'win-desktop': '#008080',
+        'win-border-light': '#ffffff',
+        'win-border-dark': '#808080',
+        'win-border-darker': '#404040',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
