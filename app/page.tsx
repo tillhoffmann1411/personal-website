@@ -1,9 +1,9 @@
-import RetroDesktop from '@/components/retro/desktop';
+import MrRobotExperience from '@/components/mrrobot/experience';
 
 export default function Home() {
   return (
     <main>
-      <RetroDesktop />
+      <MrRobotExperience />
     </main>
   );
 }

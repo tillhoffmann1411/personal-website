@@ -26,8 +26,16 @@ const config = {
       },
       fontFamily: {
         retro: ['Tahoma', '"MS Sans Serif"', 'Arial', 'sans-serif'],
+        mono: ['var(--font-mono)', 'Courier New', 'monospace'],
+        sans: ['var(--font-sans)', 'Arial', 'sans-serif'],
       },
       colors: {
+        'mr-black': '#0a0a0a',
+        'mr-dark': '#111411',
+        'mr-green': '#00ff41',
+        'mr-red': '#ff0040',
+        'mr-amber': '#ffb000',
+        'mr-white': '#e8e8e8',
         'win-teal': '#008080',
         'win-silver': '#c0c0c0',
         'win-titlebar': '#000080',
@@ -143,6 +151,10 @@ const config = {
             transform: "translateY(-50%)",
           },
         },
+        mrFadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',
@@ -154,6 +166,7 @@ const config = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+        "mr-fade-in": "mrFadeIn 0.6s ease-out forwards",
       },
     },
   },
