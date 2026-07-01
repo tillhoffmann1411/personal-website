@@ -204,7 +204,7 @@ export default function CommandTerminal({
         onSubmit={handleSubmit}
         className="flex items-center gap-2 border-t border-mr-green/20 px-3 py-2"
       >
-        <span className="shrink-0 text-mr-red text-xs sm:text-sm">
+        <span className="shrink-0 text-base text-mr-red sm:text-sm">
           till@{activeSection}:~$
         </span>
         <input
@@ -213,7 +213,7 @@ export default function CommandTerminal({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="min-w-0 flex-1 bg-transparent font-mono text-xs text-mr-green outline-none placeholder:text-mr-green/30 sm:text-sm"
+          className="min-w-0 flex-1 bg-transparent font-mono text-base text-mr-green outline-none placeholder:text-mr-green/30 sm:text-sm"
           placeholder="help"
           autoComplete="off"
           spellCheck={false}
