@@ -22,7 +22,7 @@ function sectionListText() {
   const sections = Object.values(siteContent.sections)
     .map((s) => `  ${s.id.padEnd(12)} # ${s.label}`)
     .join('\n');
-  return `${sections}\n  impressum     # Impressum`;
+  return `${sections}\n  contact       # Kontakt (E-Mail)\n  impressum     # Impressum`;
 }
 
 function socialText() {
@@ -115,11 +115,16 @@ export default function CommandTerminal({
             break;
           }
 
+          if (arg === 'contact') {
+            append([{ type: 'output', text: 'Opening mail client...' }]);
+            window.location.assign(`mailto:${siteContent.contact.email}`);
+            break;
+          }
+
           const fileMap: Record<string, SectionId> = {
             about: 'about',
             education: 'education',
             projects: 'projects',
-            contact: 'contact',
           };
           const target = fileMap[arg ?? ''];
           if (!target) {

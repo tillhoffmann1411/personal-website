@@ -9,7 +9,7 @@ type EducationItem = {
 
 export default function EducationRow({ items }: { items: EducationItem[] }) {
   return (
-    <div className="-mx-5 flex gap-4 overflow-x-auto px-5 pb-2 snap-x snap-mandatory sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0">
+    <div className="-mx-5 flex gap-4 overflow-x-auto pl-8 pr-5 pb-2 snap-x snap-mandatory sm:mx-0 sm:grid sm:grid-cols-3 sm:gap-6 sm:overflow-visible sm:px-0 sm:pl-0">
       {items.map((item) => (
         <article
           key={item.degree}

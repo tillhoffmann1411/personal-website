@@ -84,14 +84,22 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
               </div>
               <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">{siteContent.tagline}</p>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">{siteContent.location}</p>
-              <a
-                href={linkedIn.url}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
-              >
-                {linkedIn.name} →
-              </a>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+                <a
+                  href={linkedIn.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
+                >
+                  {linkedIn.name} →
+                </a>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
+                >
+                  E-Mail schreiben
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -116,19 +124,6 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
               />
             ))}
           </div>
-        </section>
-
-        <section id="contact" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
-          <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-            Kontakt
-          </h2>
-          <p className="text-zinc-600 dark:text-zinc-400">Schreib mir gerne eine E-Mail.</p>
-          <a
-            href={`mailto:${contact.email}`}
-            className="mt-4 inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
-          >
-            E-Mail schreiben
-          </a>
         </section>
       </main>
 
