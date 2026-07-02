@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
+import { projects } from '@/lib/data/projects';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
 import { ModeToggle } from '@/components/mode-toggle';
 import EducationRow from './education-row';
@@ -116,7 +117,7 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
             Projekte
           </h2>
           <div className="space-y-10">
-            {siteContent.projects.map((project, index) => (
+            {projects.map((project, index) => (
               <ProjectCard
                 key={project.name}
                 project={project}

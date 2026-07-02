@@ -40,36 +40,6 @@ export const siteContent = {
     },
   ],
 
-  projects: [
-    {
-      name: 'Knowledge in a Box',
-      description:
-        'Startup für kontextbasiertes Wissensmanagement. Verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph — per Web-App oder Browser-Erweiterung.',
-      url: 'https://knowledge-in-a-box.de',
-      status: 'active' as const,
-      image: '/portfolio/kiab-mock.webp',
-      awards: [
-        {
-          title: 'Deutscher Innovationspreis für Digitales',
-          logo: '/logos/gruender-preis.webp',
-        },
-        {
-          title: 'EXIST Gründerförderung',
-          logo: '/logos/exist.webp',
-        },
-      ],
-    },
-    {
-      name: 'Snaplete',
-      description:
-        'KI-basiertes Event-Foto-Matching: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden. DSGVO-konform, Daten in Deutschland — Selfies werden nach 24 Stunden automatisch gelöscht.',
-      url: 'https://snaplete.de',
-      status: 'active' as const,
-      image: 'https://snaplete.de/apple-touch-icon.png',
-      awards: [],
-    },
-  ],
-
   contact: {
     email: 'till@hoffmann.id',
   },
@@ -84,8 +54,6 @@ export const siteContent = {
 } as const;
 
 export type SectionId = keyof typeof siteContent.sections;
-
-export type Project = (typeof siteContent.projects)[number];
 
 export function scrollToSection(id: SectionId) {
   const el = document.getElementById(id);

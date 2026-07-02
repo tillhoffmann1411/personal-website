@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { Project } from '@/lib/data/site-content';
+import type { Project } from '@/lib/data/projects';
 
 type ProjectCardProps = {
   project: Project;
@@ -11,7 +11,7 @@ function isExternalImage(src: string) {
 }
 
 export default function ProjectCard({ project, reversed = false }: ProjectCardProps) {
-  const awards = 'awards' in project ? project.awards : [];
+  const awards = project.awards ?? [];
 
   return (
     <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/20">
