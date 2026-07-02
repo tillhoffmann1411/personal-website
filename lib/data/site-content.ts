@@ -5,7 +5,7 @@ export const siteContent = {
   tagline:
     'Freelance Founder für Softwareentwicklung und KI-Themen. Aktuell in Köln — arbeite freiberuflich und an eigenen Projekten.',
   location: 'Köln, Deutschland',
-  role: 'Freelance · Founder · Softwareentwicklung & KI',
+  role: 'Freelance · Gründer · Softwareentwicklung & KI',
 
   linkedIn: {
     name: 'LinkedIn',
