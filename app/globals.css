@@ -52,49 +52,211 @@
     --input: 125 3.7% 15.9%;
     --ring: 125 71.8% 29.2%;
   }
-
-  .theme-custom {
-    --gradient: #033501;
-    --background: 125 99.8% 98.22%;
-    --foreground: 125 9.6% 0.44%;
-
-    --muted: 125 9.6% 91.1%;
-    --muted-foreground: 125 4.8% 41.1%;
-
-    --popover: 125 13.200000000000003% 91.1%;
-    --popover-foreground: 125 9.6% 0.55%;
-
-    --card: 125 13.200000000000003% 91.1%;
-    --card-foreground: 125 9.6% 0.55%;
-
-    --border: 125 14.6% 89.44%;
-    --input: 125 14.6% 89.44%;
-
-    --primary: 125 96% 11%;
-    --primary-foreground: 125 1.92% 91.1%;
-
-    --secondary: 125 29.759999999999998% 95.55%;
-    --secondary-foreground: 125 6.76% 11.1%;
-
-    --accent: 125 29.759999999999998% 95.55%;
-    --accent-foreground: 125 6.76% 11.1%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --ring: 125 96% 11%;
-
-    --radius: 0.5rem;
-}
 }
 
-
- 
 @layer base {
   * {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .mr-scanlines {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+    opacity: 0.4;
+  }
+
+  .mr-panel {
+    background: rgba(8, 12, 8, 0.85);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.03);
+  }
+
+  .mr-btn {
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+
+  .mr-btn:hover {
+    text-shadow: 0 0 8px rgba(0, 255, 65, 0.5);
+  }
+
+  .mr-cursor {
+    animation: mr-blink 1s step-end infinite;
+  }
+
+  .mr-press-enter {
+    animation: mr-pulse-red 2s ease-in-out infinite;
+  }
+
+  .mr-flicker {
+    animation: mr-flicker 4s linear infinite;
+  }
+
+  .mr-glitch {
+    animation: mr-glitch-skew 4s infinite linear alternate-reverse;
+  }
+
+  .mr-glitch::before,
+  .mr-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .mr-glitch::before {
+    color: #ff0040;
+    animation: mr-glitch-anim 3s infinite linear alternate-reverse;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-2px, -1px);
+  }
+
+  .mr-glitch::after {
+    color: #00ff41;
+    animation: mr-glitch-anim2 2s infinite linear alternate-reverse;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(2px, 1px);
+  }
+
+  .mr-chat-fab {
+    box-shadow: 0 4px 24px rgba(0, 255, 65, 0.15);
+  }
+
+  .mr-chat-panel {
+    animation: mr-chat-in 0.2s ease-out;
+  }
+
+  @media (min-width: 1024px) {
+    .mr-chat-panel::after {
+      content: '';
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid rgba(0, 255, 65, 0.35);
+      border-bottom: 2px solid rgba(0, 255, 65, 0.35);
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes mr-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes mr-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes mr-pulse-red {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes mr-flicker {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  93% {
+    opacity: 0.4;
+  }
+  94% {
+    opacity: 1;
+  }
+  97% {
+    opacity: 0.6;
+  }
+  98% {
+    opacity: 1;
+  }
+}
+
+@keyframes mr-glitch-skew {
+  0%,
+  100% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(0deg);
+  }
+  21% {
+    transform: skew(1deg);
+  }
+  22% {
+    transform: skew(0deg);
+  }
+}
+
+@keyframes mr-glitch-anim {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 1px);
+  }
+  40% {
+    transform: translate(2px, -1px);
+  }
+  60% {
+    transform: translate(-1px, 2px);
+  }
+  80% {
+    transform: translate(1px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes mr-glitch-anim2 {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(2px, 0);
+  }
+  50% {
+    transform: translate(-2px, 1px);
+  }
+  75% {
+    transform: translate(1px, -1px);
+  }
+  100% {
+    transform: translate(0);
   }
 }

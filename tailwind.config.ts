@@ -1,7 +1,4 @@
 import type { Config } from "tailwindcss";
-import svgToDataUri from "mini-svg-data-uri";
-import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette"
-
 
 const config = {
   darkMode: ["class"],
@@ -27,7 +24,26 @@ const config = {
         "2/1": "2/1",
         "3/1": "3/1",
       },
+      fontFamily: {
+        retro: ['Tahoma', '"MS Sans Serif"', 'Arial', 'sans-serif'],
+        mono: ['var(--font-mono)', 'Courier New', 'monospace'],
+        sans: ['var(--font-sans)', 'Arial', 'sans-serif'],
+      },
       colors: {
+        'mr-black': '#0a0a0a',
+        'mr-dark': '#111411',
+        'mr-green': '#00ff41',
+        'mr-red': '#ff0040',
+        'mr-amber': '#ffb000',
+        'mr-white': '#e8e8e8',
+        'win-teal': '#008080',
+        'win-silver': '#c0c0c0',
+        'win-titlebar': '#000080',
+        'win-titlebar-light': '#1084d0',
+        'win-desktop': '#008080',
+        'win-border-light': '#ffffff',
+        'win-border-dark': '#808080',
+        'win-border-darker': '#404040',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -135,6 +151,10 @@ const config = {
             transform: "translateY(-50%)",
           },
         },
+        mrFadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
       },
       animation: {
         typewriter: 'typewriter 2s steps(11) forwards',
@@ -146,52 +166,13 @@ const config = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
+        "mr-fade-in": "mrFadeIn 0.6s ease-out forwards",
       },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
-    addVariablesForColors,
-    function ({ matchUtilities, theme }: any) {
-      matchUtilities(
-        {
-          "bg-grid": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-          "bg-grid-small": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="8" height="8" fill="none" stroke="${value}"><path d="M0 .5H31.5V32"/></svg>`
-            )}")`,
-          }),
-          "bg-dot": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="1.6257413380501518"></circle></svg>`
-            )}")`,
-          }),
-          "bg-dot-thick": (value: any) => ({
-            backgroundImage: `url("${svgToDataUri(
-              `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="16" height="16" fill="none"><circle fill="${value}" id="pattern-circle" cx="10" cy="10" r="2.5"></circle></svg>`
-            )}")`,
-          }),
-        },
-        { values: flattenColorPalette(theme("backgroundColor")), type: "color" }
-      );
-    },
   ],
 } satisfies Config
-
-// This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
-function addVariablesForColors({ addBase, theme }: any) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
-  );
- 
-  addBase({
-    ":root": newVars,
-  });
-}
 
 export default config

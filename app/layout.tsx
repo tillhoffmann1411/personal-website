@@ -1,44 +1,44 @@
-import { Cormorant_Garamond, Proza_Libre } from 'next/font/google'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Share_Tech_Mono, Inter } from 'next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider';
-import Navbar from '@/components/navbar';
-import Footer from '@/components/footer';
-import PlausibleProvider from 'next-plausible'
+import PlausibleProvider from 'next-plausible';
 import { Metadata } from 'next/types';
+import { ThemeProvider } from '@/components/theme-provider';
+import './globals.css';
 
+const shareTechMono = Share_Tech_Mono({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-mono',
+});
 
-const cormorantGaramond = Cormorant_Garamond({ subsets: ['latin'], weight: '400' })
-const prozaLibre = Proza_Libre({ subsets: ['latin'], weight: '400' })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
   title: 'Till Hoffmann',
-  description: 'Till Hoffmann experte für digitale Produkte und Automatisierung.',
+  description:
+    'Till Hoffmann — Freelance Founder für Softwareentwicklung und KI. Köln.',
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className='dark'>
-      <body className={prozaLibre.className}>
-      <PlausibleProvider domain="till-hoffmann.me">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          disableTransitionOnChange
-        >
-          <Navbar />
-          {children}
-          <Footer />
+    <html lang="de" suppressHydrationWarning className={`${shareTechMono.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <PlausibleProvider domain="till-hoffmann.me">
+            {children}
+            <SpeedInsights />
+            <Analytics />
+          </PlausibleProvider>
         </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
-      </PlausibleProvider>
       </body>
     </html>
-  )
+  );
 }
