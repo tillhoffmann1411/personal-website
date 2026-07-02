@@ -168,8 +168,8 @@ export default function CommandTerminal({
   };
 
   return (
-    <div className="flex flex-col bg-mr-black/95">
-      <div className="max-h-52 overflow-y-auto px-3 py-2 font-mono text-xs sm:max-h-56 sm:text-sm">
+    <div className="flex min-h-0 flex-1 flex-col bg-mr-black/95">
+      <div className="max-h-52 overflow-y-auto px-3 py-2 font-mono text-base sm:max-h-56 lg:max-h-none lg:min-h-0 lg:flex-1 lg:text-sm">
         {lines.map((line, i) => (
           <div
             key={`${i}-${line.text.slice(0, 20)}`}
@@ -190,7 +190,7 @@ export default function CommandTerminal({
         onSubmit={handleSubmit}
         className="flex items-center gap-2 border-t border-mr-green/20 px-3 py-2.5"
       >
-        <span className="shrink-0 font-mono text-base text-mr-red sm:text-sm">
+        <span className="shrink-0 font-mono text-base text-mr-red lg:text-sm">
           ~$
         </span>
         <input
@@ -199,7 +199,7 @@ export default function CommandTerminal({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="min-w-0 flex-1 bg-transparent font-mono text-base text-mr-green outline-none placeholder:text-mr-green/30 sm:text-sm"
+          className="min-w-0 flex-1 bg-transparent font-mono text-base text-mr-green outline-none placeholder:text-mr-green/30 lg:text-sm"
           placeholder="help"
           autoComplete="off"
           spellCheck={false}

@@ -137,6 +137,20 @@
   .mr-chat-panel {
     animation: mr-chat-in 0.2s ease-out;
   }
+
+  @media (min-width: 1024px) {
+    .mr-chat-panel::after {
+      content: '';
+      position: absolute;
+      right: 6px;
+      bottom: 6px;
+      width: 10px;
+      height: 10px;
+      border-right: 2px solid rgba(0, 255, 65, 0.35);
+      border-bottom: 2px solid rgba(0, 255, 65, 0.35);
+      pointer-events: none;
+    }
+  }
 }
 
 @keyframes mr-chat-in {
