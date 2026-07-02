@@ -43,11 +43,12 @@ export default function ImpressumPage() {
           <p>{impressum.country}</p>
           <p className="mt-6">Umsatzsteuer-ID: {impressum.vatId}</p>
           <p className="mt-6">
+            E-Mail:{' '}
             <a
               href={`mailto:${impressum.email}`}
-              className="inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
+              className="text-zinc-900 underline decoration-zinc-300 underline-offset-2 transition-colors hover:decoration-zinc-900 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-300"
             >
-              E-Mail schreiben
+              {impressum.email}
             </a>
           </p>
         </address>
