@@ -19,16 +19,32 @@ export const siteContent = {
       degree: 'Bachelor Wirtschaftsinformatik',
       institution: 'FH Münster',
       detail: 'Schwerpunkt Webentwicklung',
+      logo: '/logos/fh.webp',
     },
     {
       degree: 'Master Wirtschaftsinformatik',
       institution: 'WWU Münster',
       detail: 'Schwerpunkt Machine Learning',
+      logo: '/logos/wwu.webp',
     },
     {
       degree: 'Auslandssemester',
       institution: 'Süd-Korea',
       detail: 'Schwerpunkte in KI',
+      logo: '/logos/unist.webp',
+    },
+  ],
+
+  awards: [
+    {
+      title: 'Deutscher Innovationspreis für Digitales',
+      subtitle: 'Knowledge in a Box',
+      logo: '/logos/gruender-preis.webp',
+    },
+    {
+      title: 'EXIST Gründerförderung',
+      subtitle: 'Knowledge in a Box',
+      logo: '/logos/exist.webp',
     },
   ],
 
@@ -45,15 +61,21 @@ export const siteContent = {
     {
       name: 'Knowledge in a Box',
       description:
-        '2022 gegründetes Startup für kontextbasiertes Wissensmanagement. Ausgezeichnet mit dem Deutschen Innovationspreis für Digitales.',
+        'Startup für kontextbasiertes Wissensmanagement. Verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph — per Web-App oder Browser-Erweiterung.',
       url: 'https://knowledge-in-a-box.de',
       status: 'active' as const,
+      image: '/portfolio/kiab-mock.webp',
+      tags: ['Startup', 'KI', 'Wissensmanagement'],
+      year: '2022',
     },
     {
       name: 'Projekt 2',
       description: 'Hier entsteht demnächst etwas Neues.',
       url: null,
       status: 'coming-soon' as const,
+      image: null,
+      tags: [] as string[],
+      year: null,
     },
   ],
 
@@ -77,6 +99,8 @@ export const siteContent = {
 } as const;
 
 export type SectionId = keyof typeof siteContent.sections;
+
+export type Project = (typeof siteContent.projects)[number];
 
 export function scrollToSection(id: SectionId) {
   const el = document.getElementById(id);

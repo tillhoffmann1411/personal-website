@@ -3,6 +3,9 @@
 import Image from 'next/image';
 import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
+import AwardsRow from './awards-row';
+import EducationRow from './education-row';
+import ProjectCard from './project-card';
 
 type LandingPageProps = {
   onReboot: () => void;
@@ -16,7 +19,7 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       <header className="sticky top-0 z-30 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-3xl items-center justify-between px-5 py-4 sm:px-8">
+        <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 sm:px-8">
           <button
             type="button"
             onClick={() => scrollToSection('about')}
@@ -54,7 +57,7 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
         </nav>
       </header>
 
-      <main className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+      <main className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
         <section id="about" className="scroll-mt-20 pb-16 sm:pb-20">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
             <div className="shrink-0 self-center sm:self-start">
@@ -84,15 +87,8 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
           <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400">
             Ausbildung
           </h2>
-          <ul className="space-y-8">
-            {siteContent.education.map((item) => (
-              <li key={item.degree}>
-                <p className="font-medium text-zinc-900">{item.degree}</p>
-                <p className="mt-1 text-zinc-600">{item.institution}</p>
-                <p className="mt-0.5 text-sm text-zinc-400">{item.detail}</p>
-              </li>
-            ))}
-          </ul>
+          <EducationRow items={[...siteContent.education]} />
+          <AwardsRow items={[...siteContent.awards]} />
         </section>
 
         <section id="work" className="scroll-mt-20 border-t border-zinc-100 py-16 sm:py-20">
@@ -116,29 +112,13 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
           <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400">
             Projekte
           </h2>
-          <div className="space-y-8">
-            {siteContent.projects.map((project) => (
-              <article key={project.name} className="space-y-3">
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-lg font-medium text-zinc-900">{project.name}</h3>
-                  {project.status === 'coming-soon' && (
-                    <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-500">
-                      Bald verfügbar
-                    </span>
-                  )}
-                </div>
-                <p className="leading-relaxed text-zinc-600">{project.description}</p>
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex text-sm font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:decoration-zinc-900"
-                  >
-                    Zur Webseite →
-                  </a>
-                ) : null}
-              </article>
+          <div className="space-y-10">
+            {siteContent.projects.map((project, index) => (
+              <ProjectCard
+                key={project.name}
+                project={project}
+                reversed={index % 2 === 1}
+              />
             ))}
           </div>
         </section>

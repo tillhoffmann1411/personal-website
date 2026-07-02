@@ -82,9 +82,6 @@ export default function CommandTerminal({
         case 'social':
           append([{ type: 'output', text: socialText() }]);
           break;
-        case 'fsociety':
-          append([{ type: 'output', text: terminalCommands.fsociety }]);
-          break;
         case 'hello':
           append([{ type: 'output', text: terminalCommands.hello }]);
           break;

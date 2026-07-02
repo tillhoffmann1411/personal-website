@@ -24,22 +24,11 @@ export const terminalCommands = {
   cat <file>    — read a file (about, education, work, projects, contact)
   open <file>   — scroll to section
   social        — external links
-  fsociety      — ???
   hello         — greet the system
   control       — ...
   ecorp         — corporate database
   clear         — clear terminal
   reboot        — restart boot sequence`,
-
-  fsociety: `
-  ┌─────────────────────────────────────┐
-  │  WE ARE fsociety.                   │
-  │  WE ARE LEGION.                     │
-  │  WE DO NOT FORGIVE.                 │
-  │  WE DO NOT FORGET.                  │
-  │                                     │
-  │  ...just kidding. This is a portfolio. │
-  └─────────────────────────────────────┘`,
 
   hello: 'Hello, friend. Hello, friend? That\'s lame. Maybe I should give you a name...',
 
