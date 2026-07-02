@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
 import EducationRow from './education-row';
@@ -10,13 +11,11 @@ type LandingPageProps = {
   onReboot: () => void;
 };
 
-const navItems = Object.values(siteContent.sections).filter(
-  (s) => s.id !== 'impressum',
-);
+const navItems = Object.values(siteContent.sections);
 
 export default function LandingPage({ onReboot }: LandingPageProps) {
   const handleNav = (id: SectionId) => scrollToSection(id);
-  const { impressum, linkedIn, contact } = siteContent;
+  const { linkedIn, contact } = siteContent;
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
@@ -119,47 +118,24 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
           <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400">
             Kontakt
           </h2>
-          <p className="text-zinc-600">
-            Schreib mir gerne eine E-Mail:{' '}
-            <a
-              href={`mailto:${contact.email}`}
-              className="font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900"
-            >
-              {contact.email}
-            </a>
-          </p>
-        </section>
-
-        <section id="impressum" className="scroll-mt-20 border-t border-zinc-100 py-16 sm:py-20">
-          <h2 className="mb-6 text-sm font-medium uppercase tracking-widest text-zinc-400">
-            Impressum
-          </h2>
-          <address className="not-italic leading-relaxed text-zinc-600">
-            <p className="font-medium text-zinc-900">{impressum.name}</p>
-            <p className="mt-2">{impressum.street}</p>
-            <p>{impressum.city}</p>
-            <p>{impressum.country}</p>
-            <p className="mt-3">
-              <a
-                href={`mailto:${impressum.email}`}
-                className="text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900"
-              >
-                {impressum.email}
-              </a>
-            </p>
-          </address>
+          <p className="text-zinc-600">Schreib mir gerne eine E-Mail.</p>
+          <a
+            href={`mailto:${contact.email}`}
+            className="mt-4 inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
+          >
+            E-Mail schreiben
+          </a>
         </section>
       </main>
 
       <footer className="border-t border-zinc-100 py-8 text-center text-sm text-zinc-400">
         <p>© {new Date().getFullYear()} {siteContent.name}</p>
-        <button
-          type="button"
-          onClick={() => scrollToSection('impressum')}
-          className="mt-2 text-zinc-400 underline decoration-zinc-200 underline-offset-2 hover:text-zinc-600"
+        <Link
+          href="/impressum"
+          className="mt-2 inline-block text-zinc-400 underline decoration-zinc-200 underline-offset-2 hover:text-zinc-600"
         >
           Impressum
-        </button>
+        </Link>
       </footer>
 
       <TerminalChatBubble onReboot={onReboot} onNavigate={handleNav} />

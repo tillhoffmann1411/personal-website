@@ -17,7 +17,6 @@ export const siteContent = {
     education: { id: 'education', title: 'education.log', label: 'Ausbildung' },
     projects: { id: 'projects', title: 'projects/', label: 'Projekte' },
     contact: { id: 'contact', title: 'contact.enc', label: 'Kontakt' },
-    impressum: { id: 'impressum', title: 'impressum.txt', label: 'Impressum' },
   },
 
   education: [
