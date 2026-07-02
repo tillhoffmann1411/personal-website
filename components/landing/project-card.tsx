@@ -6,15 +6,15 @@ type ProjectCardProps = {
   reversed?: boolean;
 };
 
+function isExternalImage(src: string) {
+  return src.startsWith('http');
+}
+
 export default function ProjectCard({ project, reversed = false }: ProjectCardProps) {
-  const isComingSoon = project.status === 'coming-soon';
+  const awards = 'awards' in project ? project.awards : [];
 
   return (
-    <article
-      className={`group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md ${
-        isComingSoon ? 'opacity-80' : ''
-      }`}
-    >
+    <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md">
       <div
         className={`flex flex-col ${
           reversed ? 'md:flex-row-reverse' : 'md:flex-row'
@@ -22,15 +22,23 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
       >
         <div className="relative aspect-[16/10] w-full shrink-0 bg-zinc-100 md:aspect-auto md:w-2/5">
           {project.image ? (
-            <Image
-              src={project.image}
-              alt={project.name}
-              fill
-              className={`object-cover transition-transform duration-500 group-hover:scale-[1.02] ${
-                isComingSoon ? 'grayscale' : ''
-              }`}
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
+            isExternalImage(project.image) ? (
+              <div className="flex h-full min-h-[200px] items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 p-8 md:min-h-full">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="max-h-32 w-auto object-contain"
+                />
+              </div>
+            ) : (
+              <Image
+                src={project.image}
+                alt={project.name}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+            )
           ) : (
             <div className="flex h-full min-h-[200px] items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200">
               <span className="font-mono text-sm text-zinc-400">coming soon</span>
@@ -42,11 +50,6 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
           <div className="mb-3 flex flex-wrap items-center gap-2">
             {project.year && (
               <span className="text-xs font-medium text-zinc-400">{project.year}</span>
-            )}
-            {isComingSoon && (
-              <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-500">
-                Bald verfügbar
-              </span>
             )}
           </div>
 
@@ -68,6 +71,31 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
           )}
 
           <p className="mt-4 leading-relaxed text-zinc-600">{project.description}</p>
+
+          {awards.length > 0 && (
+            <div className="mt-5 flex flex-wrap items-center gap-5 border-t border-zinc-100 pt-5">
+              {awards.map((award) => (
+                <div
+                  key={award.title}
+                  className="flex items-center gap-3"
+                  title={award.title}
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-zinc-900 p-1.5">
+                    <Image
+                      src={award.logo}
+                      alt={award.title}
+                      width={40}
+                      height={40}
+                      className="max-h-9 w-auto object-contain"
+                    />
+                  </div>
+                  <span className="max-w-[140px] text-xs leading-snug text-zinc-500">
+                    {award.title}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
 
           {project.url && (
             <a

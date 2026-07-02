@@ -25,9 +25,7 @@ function sectionListText() {
 }
 
 function socialText() {
-  return siteContent.social
-    .map((s) => `  ${s.name.padEnd(10)} → ${s.url}`)
-    .join('\n');
+  return `  ${siteContent.linkedIn.name.padEnd(10)} → ${siteContent.linkedIn.url}`;
 }
 
 export default function CommandTerminal({
@@ -113,9 +111,9 @@ export default function CommandTerminal({
           const fileMap: Record<string, SectionId> = {
             about: 'about',
             education: 'education',
-            work: 'work',
             projects: 'projects',
             contact: 'contact',
+            impressum: 'impressum',
           };
           const target = fileMap[arg ?? ''];
           if (!target) {

@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
-import AwardsRow from './awards-row';
 import EducationRow from './education-row';
 import ProjectCard from './project-card';
 
@@ -11,10 +10,13 @@ type LandingPageProps = {
   onReboot: () => void;
 };
 
-const navItems = Object.values(siteContent.sections);
+const navItems = Object.values(siteContent.sections).filter(
+  (s) => s.id !== 'impressum',
+);
 
 export default function LandingPage({ onReboot }: LandingPageProps) {
   const handleNav = (id: SectionId) => scrollToSection(id);
+  const { impressum, linkedIn, contact } = siteContent;
 
   return (
     <div className="min-h-screen bg-white text-zinc-900">
@@ -79,6 +81,14 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
               </div>
               <p className="leading-relaxed text-zinc-600">{siteContent.tagline}</p>
               <p className="text-sm text-zinc-400">{siteContent.location}</p>
+              <a
+                href={linkedIn.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
+              >
+                {linkedIn.name} →
+              </a>
             </div>
           </div>
         </section>
@@ -88,24 +98,6 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
             Ausbildung
           </h2>
           <EducationRow items={[...siteContent.education]} />
-          <AwardsRow items={[...siteContent.awards]} />
-        </section>
-
-        <section id="work" className="scroll-mt-20 border-t border-zinc-100 py-16 sm:py-20">
-          <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400">
-            Aktuell
-          </h2>
-          <p className="mb-6 leading-relaxed text-zinc-600">
-            {siteContent.work.description}
-          </p>
-          <ul className="space-y-2">
-            {siteContent.work.items.map((item) => (
-              <li key={item} className="flex items-center gap-3 text-zinc-700">
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-900" />
-                {item}
-              </li>
-            ))}
-          </ul>
         </section>
 
         <section id="projects" className="scroll-mt-20 border-t border-zinc-100 py-16 sm:py-20">
@@ -127,27 +119,47 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
           <h2 className="mb-8 text-sm font-medium uppercase tracking-widest text-zinc-400">
             Kontakt
           </h2>
-          <p className="mb-6 text-zinc-600">
-            Du findest mich auf folgenden Plattformen:
+          <p className="text-zinc-600">
+            Schreib mir gerne eine E-Mail:{' '}
+            <a
+              href={`mailto:${contact.email}`}
+              className="font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900"
+            >
+              {contact.email}
+            </a>
           </p>
-          <div className="flex flex-wrap gap-3">
-            {siteContent.social.map((link) => (
+        </section>
+
+        <section id="impressum" className="scroll-mt-20 border-t border-zinc-100 py-16 sm:py-20">
+          <h2 className="mb-6 text-sm font-medium uppercase tracking-widest text-zinc-400">
+            Impressum
+          </h2>
+          <address className="not-italic leading-relaxed text-zinc-600">
+            <p className="font-medium text-zinc-900">{impressum.name}</p>
+            <p className="mt-2">{impressum.street}</p>
+            <p>{impressum.city}</p>
+            <p>{impressum.country}</p>
+            <p className="mt-3">
               <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
+                href={`mailto:${impressum.email}`}
+                className="text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900"
               >
-                {link.name}
+                {impressum.email}
               </a>
-            ))}
-          </div>
+            </p>
+          </address>
         </section>
       </main>
 
       <footer className="border-t border-zinc-100 py-8 text-center text-sm text-zinc-400">
-        © {new Date().getFullYear()} {siteContent.name}
+        <p>© {new Date().getFullYear()} {siteContent.name}</p>
+        <button
+          type="button"
+          onClick={() => scrollToSection('impressum')}
+          className="mt-2 text-zinc-400 underline decoration-zinc-200 underline-offset-2 hover:text-zinc-600"
+        >
+          Impressum
+        </button>
       </footer>
 
       <TerminalChatBubble onReboot={onReboot} onNavigate={handleNav} />

@@ -4,14 +4,20 @@ export const siteContent = {
   tagline:
     'Freelance Founder für Softwareentwicklung und KI-Themen. Aktuell in Köln — arbeite freiberuflich und an eigenen Projekten.',
   location: 'Köln, Deutschland',
-  role: 'Freelance Founder · Softwareentwicklung & KI',
+  role: 'Freelance · Founder · Softwareentwicklung & KI',
+
+  linkedIn: {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/tillhoffmann/',
+    label: 'LinkedIn Profil',
+  },
 
   sections: {
     about: { id: 'about', title: 'about.txt', label: 'Über mich' },
     education: { id: 'education', title: 'education.log', label: 'Ausbildung' },
-    work: { id: 'work', title: 'status.sh', label: 'Aktuell' },
     projects: { id: 'projects', title: 'projects/', label: 'Projekte' },
     contact: { id: 'contact', title: 'contact.enc', label: 'Kontakt' },
+    impressum: { id: 'impressum', title: 'impressum.txt', label: 'Impressum' },
   },
 
   education: [
@@ -35,28 +41,6 @@ export const siteContent = {
     },
   ],
 
-  awards: [
-    {
-      title: 'Deutscher Innovationspreis für Digitales',
-      subtitle: 'Knowledge in a Box',
-      logo: '/logos/gruender-preis.webp',
-    },
-    {
-      title: 'EXIST Gründerförderung',
-      subtitle: 'Knowledge in a Box',
-      logo: '/logos/exist.webp',
-    },
-  ],
-
-  work: {
-    description:
-      'Ich arbeite derzeit freiberuflich an Softwareprojekten und entwickle parallel eigene Produkte im Bereich Software und KI.',
-    items: [
-      'Freelancing in Softwareentwicklung',
-      'Eigene Projekte & Startups',
-    ],
-  },
-
   projects: [
     {
       name: 'Knowledge in a Box',
@@ -67,35 +51,41 @@ export const siteContent = {
       image: '/portfolio/kiab-mock.webp',
       tags: ['Startup', 'KI', 'Wissensmanagement'],
       year: '2022',
+      awards: [
+        {
+          title: 'Deutscher Innovationspreis für Digitales',
+          logo: '/logos/gruender-preis.webp',
+        },
+        {
+          title: 'EXIST Gründerförderung',
+          logo: '/logos/exist.webp',
+        },
+      ],
     },
     {
-      name: 'Projekt 2',
-      description: 'Hier entsteht demnächst etwas Neues.',
-      url: null,
-      status: 'coming-soon' as const,
-      image: null,
-      tags: [] as string[],
+      name: 'Snaplete',
+      description:
+        'KI-basiertes Event-Foto-Matching: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden. DSGVO-konform, Daten in Deutschland — Selfies werden nach 24 Stunden automatisch gelöscht.',
+      url: 'https://snaplete.de',
+      status: 'active' as const,
+      image: 'https://snaplete.de/apple-touch-icon.png',
+      tags: ['KI', 'Event', 'DSGVO'],
       year: null,
+      awards: [],
     },
   ],
 
-  social: [
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/tillhoffmann/',
-      label: 'LinkedIn Profil',
-    },
-    {
-      name: 'X',
-      url: 'https://x.com/tillxhoffmann',
-      label: 'X Profil',
-    },
-    {
-      name: 'GitHub',
-      url: 'https://github.com/tillhoffmann1411',
-      label: 'GitHub Profil',
-    },
-  ],
+  contact: {
+    email: 'till@hoffmann.id',
+  },
+
+  impressum: {
+    name: 'Till Hoffmann',
+    street: 'Rathenauplatz 24',
+    city: '50674 Köln',
+    country: 'Deutschland',
+    email: 'till@hoffmann.id',
+  },
 } as const;
 
 export type SectionId = keyof typeof siteContent.sections;

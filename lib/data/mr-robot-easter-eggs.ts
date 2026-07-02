@@ -21,7 +21,7 @@ export const terminalCommands = {
   help          — show this message
   whoami        — identity file
   ls            — list directories
-  cat <file>    — read a file (about, education, work, projects, contact)
+  cat <file>    — read a file (about, education, projects, contact, impressum)
   open <file>   — scroll to section
   social        — external links
   hello         — greet the system
