@@ -47,28 +47,9 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
         </div>
 
         <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
-          <div className="mb-3 flex flex-wrap items-center gap-2">
-            {project.year && (
-              <span className="text-xs font-medium text-zinc-400 dark:text-zinc-500">{project.year}</span>
-            )}
-          </div>
-
           <h3 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-2xl">
             {project.name}
           </h3>
-
-          {project.tags.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )}
 
           <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">{project.description}</p>
 

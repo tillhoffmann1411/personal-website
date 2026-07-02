@@ -48,8 +48,6 @@ export const siteContent = {
       url: 'https://knowledge-in-a-box.de',
       status: 'active' as const,
       image: '/portfolio/kiab-mock.webp',
-      tags: ['Startup', 'KI', 'Wissensmanagement'],
-      year: '2022',
       awards: [
         {
           title: 'Deutscher Innovationspreis für Digitales',
@@ -68,8 +66,6 @@ export const siteContent = {
       url: 'https://snaplete.de',
       status: 'active' as const,
       image: 'https://snaplete.de/apple-touch-icon.png',
-      tags: ['KI', 'Event', 'DSGVO'],
-      year: null,
       awards: [],
     },
   ],
