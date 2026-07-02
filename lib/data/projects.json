@@ -21,7 +21,7 @@
     "description": "KI-basiertes Event-Foto-Matching: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden. DSGVO-konform, Daten in Deutschland — Selfies werden nach 24 Stunden automatisch gelöscht.",
     "url": "https://snaplete.de",
     "status": "active",
-    "image": "https://snaplete.de/apple-touch-icon.png",
+    "image": "/portfolio/snaplete.webp",
     "awards": []
   }
 ]
