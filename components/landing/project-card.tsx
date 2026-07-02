@@ -20,22 +20,23 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
           reversed ? 'md:flex-row-reverse' : 'md:flex-row'
         }`}
       >
-        <div className="relative aspect-[16/10] w-full shrink-0 bg-zinc-100 dark:bg-zinc-800 md:aspect-auto md:w-2/5">
+        <div className="relative flex w-full shrink-0 items-center justify-center bg-zinc-100 dark:bg-zinc-800 aspect-[16/10] p-4 md:aspect-auto md:w-2/5 md:min-h-[240px] md:self-stretch">
           {project.image ? (
             isExternalImage(project.image) ? (
-              <div className="flex h-full min-h-[200px] items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 p-8 md:min-h-full">
+              <div className="flex h-full w-full items-center justify-center rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-800 p-6">
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="max-h-32 w-auto object-contain"
+                  className="max-h-32 max-w-full object-contain"
                 />
               </div>
             ) : (
               <Image
                 src={project.image}
                 alt={project.name}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                width={1200}
+                height={750}
+                className="h-auto max-h-full w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
                 sizes="(max-width: 768px) 100vw, 40vw"
               />
             )
