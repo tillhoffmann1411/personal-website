@@ -29,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${shareTechMono.variable} ${inter.variable}`}>
-      <body className="font-mono">
+      <body className="font-sans antialiased">
         <PlausibleProvider domain="till-hoffmann.me">
           {children}
           <SpeedInsights />

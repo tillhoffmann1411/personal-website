@@ -22,7 +22,7 @@ export const terminalCommands = {
   whoami        — identity file
   ls            — list directories
   cat <file>    — read a file (about, education, work, projects, contact)
-  open <file>   — navigate to section
+  open <file>   — scroll to section
   social        — external links
   fsociety      — ???
   hello         — greet the system

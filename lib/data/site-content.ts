@@ -51,7 +51,7 @@ export const siteContent = {
     },
     {
       name: 'Projekt 2',
-      description: 'Encrypted partition. Access pending.',
+      description: 'Hier entsteht demnächst etwas Neues.',
       url: null,
       status: 'coming-soon' as const,
     },
@@ -77,3 +77,10 @@ export const siteContent = {
 } as const;
 
 export type SectionId = keyof typeof siteContent.sections;
+
+export function scrollToSection(id: SectionId) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}

@@ -59,8 +59,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-mr-black text-mr-green antialiased;
-    font-family: var(--font-mono), 'Courier New', monospace;
+    @apply bg-white text-zinc-900 antialiased;
+    font-family: var(--font-sans), system-ui, sans-serif;
   }
 }
 
@@ -128,6 +128,25 @@
     animation: mr-glitch-anim2 2s infinite linear alternate-reverse;
     clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
     transform: translate(2px, 1px);
+  }
+
+  .mr-chat-fab {
+    box-shadow: 0 4px 24px rgba(0, 255, 65, 0.15);
+  }
+
+  .mr-chat-panel {
+    animation: mr-chat-in 0.2s ease-out;
+  }
+}
+
+@keyframes mr-chat-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 

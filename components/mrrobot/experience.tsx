@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import LandingPage from '@/components/landing/landing-page';
 import BootSequence from './boot-sequence';
 import { useBootComplete } from './hooks';
-import MainSite from './main-site';
 
 export default function MrRobotExperience() {
   const { bootComplete, completeBoot, reboot, hydrated } = useBootComplete();
@@ -15,7 +15,7 @@ export default function MrRobotExperience() {
   };
 
   if (!hydrated) {
-    return <div className="min-h-screen bg-mr-black" />;
+    return <div className="min-h-screen bg-white" />;
   }
 
   return (
@@ -29,7 +29,7 @@ export default function MrRobotExperience() {
       )}
       {bootComplete && (
         <div className="animate-mr-fade-in">
-          <MainSite onReboot={reboot} />
+          <LandingPage onReboot={reboot} />
         </div>
       )}
     </>

@@ -14,14 +14,13 @@ import { siteContent, type SectionId } from '@/lib/data/site-content';
 type TerminalLine = { type: 'input' | 'output' | 'error'; text: string };
 
 type CommandTerminalProps = {
-  activeSection: SectionId;
-  onNavigate: (section: SectionId) => void;
+  onNavigate: (id: SectionId) => void;
   onReboot: () => void;
 };
 
 function sectionListText() {
   return Object.values(siteContent.sections)
-    .map((s) => `  ${s.title.padEnd(16)} # ${s.label}`)
+    .map((s) => `  ${s.id.padEnd(12)} # ${s.label}`)
     .join('\n');
 }
 
@@ -32,7 +31,6 @@ function socialText() {
 }
 
 export default function CommandTerminal({
-  activeSection,
   onNavigate,
   onReboot,
 }: CommandTerminalProps) {
@@ -117,30 +115,23 @@ export default function CommandTerminal({
         case 'open': {
           const fileMap: Record<string, SectionId> = {
             about: 'about',
-            'about.txt': 'about',
             education: 'education',
-            'education.log': 'education',
             work: 'work',
-            'status.sh': 'work',
             projects: 'projects',
             contact: 'contact',
-            'contact.enc': 'contact',
           };
           const target = fileMap[arg ?? ''];
           if (!target) {
-            append([{ type: 'error', text: `file not found: ${arg ?? '(none)'}` }]);
+            append([{ type: 'error', text: `section not found: ${arg ?? '(none)'}` }]);
             break;
           }
-          if (command === 'open') onNavigate(target);
+          onNavigate(target);
           append([
             {
               type: 'output',
-              text: command === 'open'
-                ? `Opening ${siteContent.sections[target].title}...`
-                : `See panel: ${siteContent.sections[target].label}`,
+              text: `Scrolling to ${siteContent.sections[target].label}...`,
             },
           ]);
-          if (command === 'cat') onNavigate(target);
           break;
         }
         default:
@@ -182,8 +173,8 @@ export default function CommandTerminal({
   };
 
   return (
-    <div className="mr-panel border-t border-mr-green/30 bg-mr-black/95">
-      <div className="max-h-36 overflow-y-auto px-3 py-2 font-mono text-xs sm:max-h-44 sm:text-sm">
+    <div className="flex flex-col bg-mr-black/95">
+      <div className="max-h-52 overflow-y-auto px-3 py-2 font-mono text-xs sm:max-h-56 sm:text-sm">
         {lines.map((line, i) => (
           <div
             key={`${i}-${line.text.slice(0, 20)}`}
@@ -192,7 +183,7 @@ export default function CommandTerminal({
                 ? 'text-mr-white/90'
                 : line.type === 'error'
                   ? 'text-mr-red'
-                  : 'text-mr-green/80 whitespace-pre-wrap'
+                  : 'whitespace-pre-wrap text-mr-green/80'
             }
           >
             {line.text}
@@ -202,10 +193,10 @@ export default function CommandTerminal({
       </div>
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 border-t border-mr-green/20 px-3 py-2"
+        className="flex items-center gap-2 border-t border-mr-green/20 px-3 py-2.5"
       >
-        <span className="shrink-0 text-base text-mr-red sm:text-sm">
-          till@{activeSection}:~$
+        <span className="shrink-0 font-mono text-base text-mr-red sm:text-sm">
+          ~$
         </span>
         <input
           ref={inputRef}
