@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { siteContent } from '@/lib/data/site-content';
-import { ModeToggle } from '@/components/mode-toggle';
 
 export const metadata: Metadata = {
   title: 'Impressum — Till Hoffmann',
@@ -13,26 +12,6 @@ export default function ImpressumPage() {
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
-      <header className="border-b border-zinc-200/80 bg-white dark:border-zinc-800/80 dark:bg-zinc-950">
-        <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <Link
-            href="/"
-            className="text-sm font-semibold tracking-tight text-zinc-900 transition-colors hover:text-zinc-600 dark:text-zinc-100 dark:hover:text-zinc-400"
-          >
-            {name}
-          </Link>
-          <div className="flex items-center gap-3">
-            <Link
-              href="/"
-              className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              Zurück
-            </Link>
-            <ModeToggle />
-          </div>
-        </div>
-      </header>
-
       <main className="mx-auto max-w-4xl px-5 py-12 sm:px-8 sm:py-16">
         <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">Impressum</h1>
 
@@ -41,12 +20,14 @@ export default function ImpressumPage() {
           <p className="mt-2">{impressum.street}</p>
           <p>{impressum.city}</p>
           <p>{impressum.country}</p>
+          <p className="mt-6">Umsatzsteuer-ID: {impressum.vatId}</p>
           <p className="mt-6">
+            E-Mail:{' '}
             <a
               href={`mailto:${impressum.email}`}
-              className="inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
+              className="text-zinc-900 underline decoration-zinc-300 underline-offset-2 transition-colors hover:decoration-zinc-900 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-300"
             >
-              E-Mail schreiben
+              {impressum.email}
             </a>
           </p>
         </address>

@@ -50,6 +50,7 @@ export const siteContent = {
     city: '50674 Köln',
     country: 'Deutschland',
     email: 'till@hoffmann.id',
+    vatId: 'DE366760507',
   },
 } as const;
 
