@@ -41,6 +41,7 @@ export default function ImpressumPage() {
           <p className="mt-2">{impressum.street}</p>
           <p>{impressum.city}</p>
           <p>{impressum.country}</p>
+          <p className="mt-6">Umsatzsteuer-ID: {impressum.vatId}</p>
           <p className="mt-6">
             <a
               href={`mailto:${impressum.email}`}
