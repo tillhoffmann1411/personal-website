@@ -1,6 +1,7 @@
 export const siteContent = {
   name: 'Till Hoffmann',
   handle: 'tillhoffmann',
+  profileImage: '/images/profile-headshot.webp',
   tagline:
     'Freelance Founder für Softwareentwicklung und KI-Themen. Aktuell in Köln — arbeite freiberuflich und an eigenen Projekten.',
   location: 'Köln, Deutschland',

@@ -3,6 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import PlausibleProvider from 'next-plausible';
 import { Metadata } from 'next/types';
+import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 
 const shareTechMono = Share_Tech_Mono({
@@ -28,13 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${shareTechMono.variable} ${inter.variable}`}>
+    <html lang="de" suppressHydrationWarning className={`${shareTechMono.variable} ${inter.variable}`}>
       <body className="font-sans antialiased">
-        <PlausibleProvider domain="till-hoffmann.me">
-          {children}
-          <SpeedInsights />
-          <Analytics />
-        </PlausibleProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <PlausibleProvider domain="till-hoffmann.me">
+            {children}
+            <SpeedInsights />
+            <Analytics />
+          </PlausibleProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
