@@ -1,46 +1,38 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
+import { siteContent } from '@/lib/data/site-content';
 import { projects } from '@/lib/data/projects';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
 import { ModeToggle } from '@/components/mode-toggle';
 import EducationRow from './education-row';
 import ProjectCard from './project-card';
-
-type LandingPageProps = {
-  onReboot: () => void;
-};
+import ScrollNavButton from './scroll-nav-button';
 
 const navItems = Object.values(siteContent.sections);
 
-export default function LandingPage({ onReboot }: LandingPageProps) {
-  const handleNav = (id: SectionId) => scrollToSection(id);
+export default function LandingPage() {
   const { linkedIn, contact, profileImage } = siteContent;
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
       <header className="sticky top-0 z-30 border-b border-zinc-200/80 bg-white/90 backdrop-blur-md dark:border-zinc-800/80 dark:bg-zinc-950/90">
         <div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-5 py-4 sm:px-8">
-          <button
-            type="button"
-            onClick={() => scrollToSection('about')}
+          <ScrollNavButton
+            id="about"
             className="text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-100"
           >
             {siteContent.name}
-          </button>
+          </ScrollNavButton>
           <div className="flex items-center gap-3 sm:gap-4">
             <nav className="hidden gap-6 sm:flex" aria-label="Hauptnavigation">
               {navItems.map((item) => (
-                <button
+                <ScrollNavButton
                   key={item.id}
-                  type="button"
-                  onClick={() => handleNav(item.id as SectionId)}
+                  id={item.id}
                   className="text-sm text-zinc-500 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
                 >
                   {item.label}
-                </button>
+                </ScrollNavButton>
               ))}
             </nav>
             <ModeToggle />
@@ -51,14 +43,13 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
           aria-label="Mobile navigation"
         >
           {navItems.map((item) => (
-            <button
+            <ScrollNavButton
               key={item.id}
-              type="button"
-              onClick={() => handleNav(item.id as SectionId)}
+              id={item.id}
               className="shrink-0 text-sm text-zinc-500 dark:text-zinc-400"
             >
               {item.label}
-            </button>
+            </ScrollNavButton>
           ))}
         </nav>
       </header>
@@ -138,7 +129,7 @@ export default function LandingPage({ onReboot }: LandingPageProps) {
         </Link>
       </footer>
 
-      <TerminalChatBubble onReboot={onReboot} onNavigate={handleNav} />
+      <TerminalChatBubble />
     </div>
   );
 }

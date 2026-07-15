@@ -9,12 +9,11 @@ import {
   useState,
 } from 'react';
 import { elliotQuotes, terminalCommands } from '@/lib/data/mr-robot-easter-eggs';
-import { siteContent, type SectionId } from '@/lib/data/site-content';
+import { siteContent, scrollToSection, type SectionId } from '@/lib/data/site-content';
 
 type TerminalLine = { type: 'input' | 'output' | 'error'; text: string };
 
 type CommandTerminalProps = {
-  onNavigate: (id: SectionId) => void;
   onReboot: () => void;
 };
 
@@ -30,7 +29,6 @@ function socialText() {
 }
 
 export default function CommandTerminal({
-  onNavigate,
   onReboot,
 }: CommandTerminalProps) {
   const [lines, setLines] = useState<TerminalLine[]>([
@@ -131,7 +129,7 @@ export default function CommandTerminal({
             append([{ type: 'error', text: `section not found: ${arg ?? '(none)'}` }]);
             break;
           }
-          onNavigate(target);
+          scrollToSection(target);
           append([
             {
               type: 'output',
@@ -144,7 +142,7 @@ export default function CommandTerminal({
           append([{ type: 'error', text: `command not found: ${cmd}` }]);
       }
     },
-    [append, onNavigate, onReboot],
+    [append, onReboot],
   );
 
   const handleSubmit = (e: FormEvent) => {

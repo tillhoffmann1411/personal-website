@@ -2,18 +2,11 @@
 
 import { useEffect, useState } from 'react';
 import CommandTerminal from './command-terminal';
-import type { SectionId } from '@/lib/data/site-content';
+import BootSequence from './boot-sequence';
 
-type TerminalChatBubbleProps = {
-  onReboot: () => void;
-  onNavigate: (id: SectionId) => void;
-};
-
-export default function TerminalChatBubble({
-  onReboot,
-  onNavigate,
-}: TerminalChatBubbleProps) {
+export default function TerminalChatBubble() {
   const [open, setOpen] = useState(false);
+  const [booting, setBooting] = useState(false);
 
   useEffect(() => {
     if (!open) return;
@@ -23,6 +16,10 @@ export default function TerminalChatBubble({
     window.addEventListener('keydown', handleEscape);
     return () => window.removeEventListener('keydown', handleEscape);
   }, [open]);
+
+  if (booting) {
+    return <BootSequence onComplete={() => setBooting(false)} />;
+  }
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3 sm:bottom-6 sm:right-6">
@@ -48,7 +45,7 @@ export default function TerminalChatBubble({
               ×
             </button>
           </div>
-          <CommandTerminal onNavigate={onNavigate} onReboot={onReboot} />
+          <CommandTerminal onReboot={() => setBooting(true)} />
         </div>
       )}
 

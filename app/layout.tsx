@@ -17,10 +17,40 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
+const title = 'Till Hoffmann';
+const description =
+  'Till Hoffmann — Freelance Founder für Softwareentwicklung und KI. Köln.';
+const siteUrl = 'https://till-hoffmann.me';
+
 export const metadata: Metadata = {
-  title: 'Till Hoffmann',
-  description:
-    'Till Hoffmann — Freelance Founder für Softwareentwicklung und KI. Köln.',
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: {
+    canonical: siteUrl,
+  },
+  openGraph: {
+    title,
+    description,
+    url: siteUrl,
+    siteName: title,
+    locale: 'de_DE',
+    type: 'website',
+    images: [
+      {
+        url: '/images/profile-headshot.webp',
+        width: 1024,
+        height: 1024,
+        alt: title,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/images/profile-headshot.webp'],
+  },
 };
 
 export default function RootLayout({

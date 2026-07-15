@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export function useTypewriter(text: string, speed = 45, enabled = true) {
   const [displayed, setDisplayed] = useState('');
@@ -29,27 +29,4 @@ export function useTypewriter(text: string, speed = 45, enabled = true) {
   }, [text, speed, enabled]);
 
   return { displayed, done };
-}
-
-export function useBootComplete() {
-  const [bootComplete, setBootComplete] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    const skip = sessionStorage.getItem('mrrobot-boot-complete') === '1';
-    if (skip) setBootComplete(true);
-    setHydrated(true);
-  }, []);
-
-  const completeBoot = useCallback(() => {
-    sessionStorage.setItem('mrrobot-boot-complete', '1');
-    setBootComplete(true);
-  }, []);
-
-  const reboot = useCallback(() => {
-    sessionStorage.removeItem('mrrobot-boot-complete');
-    setBootComplete(false);
-  }, []);
-
-  return { bootComplete, completeBoot, reboot, hydrated };
 }
