@@ -2,7 +2,6 @@
   {
     "name": "Knowledge in a Box",
     "description": "Startup für kontextbasiertes Wissensmanagement. Verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph — per Web-App oder Browser-Erweiterung.",
-    "url": "https://knowledge-in-a-box.de",
     "status": "active",
     "image": "/portfolio/kiab-mock.webp",
     "awards": [

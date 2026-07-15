@@ -78,18 +78,18 @@ export default function LandingPage() {
               <p className="text-sm text-zinc-400 dark:text-zinc-500">{siteContent.location}</p>
               <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
                 <a
+                  href={`mailto:${contact.email}`}
+                  className="inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
+                >
+                  E-Mail schreiben
+                </a>
+                <a
                   href={linkedIn.url}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
                 >
-                  {linkedIn.name} →
-                </a>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="inline-flex items-center rounded-full border border-zinc-200 px-4 py-2 text-sm text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900 dark:border-zinc-700 dark:text-zinc-300 dark:hover:border-zinc-400 dark:hover:text-zinc-100"
-                >
-                  E-Mail schreiben
+                  {linkedIn.name}
                 </a>
               </div>
             </div>
