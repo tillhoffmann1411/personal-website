@@ -70,10 +70,6 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="min-w-0 flex-1 space-y-4 text-center sm:text-left">
-              <span className="inline-flex items-center gap-2 border border-brand-700 px-2.5 py-1 font-mono text-[11px] uppercase tracking-widest text-brand-700 dark:border-brand-500/60 dark:text-brand-300">
-                <span className="h-1.5 w-1.5 shrink-0 bg-brand-500" />
-                Verfügbar für neue Projekte
-              </span>
               <div>
                 <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                   {siteContent.name}
