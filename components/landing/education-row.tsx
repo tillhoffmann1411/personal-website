@@ -13,7 +13,7 @@ export default function EducationRow({ items }: { items: EducationItem[] }) {
       {items.map((item) => (
         <article
           key={item.degree}
-          className="flex min-w-[220px] snap-start flex-col items-center rounded-2xl border border-zinc-200 bg-zinc-50/50 p-5 text-center dark:border-zinc-800 dark:bg-zinc-900/50 sm:min-w-0"
+          className="flex min-w-[220px] snap-start flex-col items-center rounded-2xl border border-zinc-200 bg-zinc-50/50 p-5 text-center transition-colors hover:border-brand-600 dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-brand-500 sm:min-w-0"
         >
           <div className="mb-4 flex h-20 w-full items-center justify-center rounded-xl bg-zinc-900 px-4 py-3">
             <Image

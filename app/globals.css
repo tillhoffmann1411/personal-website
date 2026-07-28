@@ -65,6 +65,11 @@
 }
 
 @layer components {
+  .bg-dot-grid {
+    background-image: radial-gradient(currentColor 1px, transparent 1.5px);
+    background-size: 28px 28px;
+  }
+
   .mr-scanlines {
     background: repeating-linear-gradient(
       0deg,

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import type { Project } from '@/lib/data/projects';
+import CornerMarks from './corner-marks';
 
 type ProjectCardProps = {
   project: Project;
@@ -14,7 +15,8 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
   const awards = project.awards ?? [];
 
   return (
-    <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-shadow hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-none dark:hover:shadow-lg dark:hover:shadow-black/20">
+    <article className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-colors hover:border-brand-600 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-500">
+      <CornerMarks />
       <div
         className={`flex flex-col ${
           reversed ? 'md:flex-row-reverse' : 'md:flex-row'
@@ -48,9 +50,17 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
         </div>
 
         <div className="flex flex-1 flex-col justify-center p-6 sm:p-8">
-          <h3 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-2xl">
-            {project.name}
-          </h3>
+          <div className="flex flex-wrap items-center gap-3">
+            <h3 className="text-xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-2xl">
+              {project.name}
+            </h3>
+            {project.status === 'active' && (
+              <span className="inline-flex items-center gap-1.5 border border-brand-600 px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest text-brand-700 dark:border-brand-600/70 dark:text-brand-300">
+                <span className="h-1.5 w-1.5 shrink-0 bg-brand-500" />
+                Aktiv
+              </span>
+            )}
+          </div>
 
           <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">{project.description}</p>
 
