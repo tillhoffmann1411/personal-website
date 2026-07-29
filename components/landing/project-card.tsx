@@ -15,17 +15,17 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
   const awards = project.awards ?? [];
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-colors hover:border-brand-600 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-500">
+    <article className="group relative overflow-hidden border border-zinc-200 bg-white transition-colors hover:border-brand-600 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-brand-500">
       <CornerMarks />
       <div
         className={`flex flex-col ${
           reversed ? 'md:flex-row-reverse' : 'md:flex-row'
         }`}
       >
-        <div className="relative flex w-full shrink-0 items-center justify-center bg-zinc-100 dark:bg-zinc-800 aspect-[16/10] p-4 md:aspect-auto md:w-2/5 md:min-h-[240px] md:self-stretch">
+        <div className="relative flex w-full shrink-0 items-center justify-center border-b border-zinc-200 bg-zinc-100 p-4 dark:border-zinc-800 dark:bg-zinc-800 aspect-[16/10] md:aspect-auto md:w-2/5 md:min-h-[240px] md:self-stretch md:border-b-0">
           {project.image ? (
             isExternalImage(project.image) ? (
-              <div className="flex h-full w-full items-center justify-center rounded-lg bg-gradient-to-br from-zinc-900 to-zinc-800 p-6">
+              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-zinc-900 to-zinc-800 p-6">
                 <img
                   src={project.image}
                   alt={project.name}
@@ -65,14 +65,14 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
           <p className="mt-4 leading-relaxed text-zinc-600 dark:text-zinc-400">{project.description}</p>
 
           {awards.length > 0 && (
-            <div className="mt-5 flex flex-wrap items-center gap-5 border-t border-zinc-100 pt-5 dark:border-zinc-800">
+            <div className="mt-5 flex flex-wrap items-center gap-5 border-t border-dashed border-zinc-300 pt-5 dark:border-zinc-700">
               {awards.map((award) => (
                 <div
                   key={award.title}
                   className="flex items-center gap-3"
                   title={award.title}
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-zinc-900 p-1.5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center border border-zinc-800 bg-zinc-900 p-1.5">
                     <Image
                       src={award.logo}
                       alt={award.title}
@@ -94,7 +94,7 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
               href={project.url}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex w-fit items-center gap-1 text-sm font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 transition-colors hover:decoration-zinc-900 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-300"
+              className="mt-6 inline-flex w-fit items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-zinc-700 transition-colors hover:text-brand-700 dark:text-zinc-300 dark:hover:text-brand-300"
             >
               Zur Webseite
               <span aria-hidden="true">→</span>
