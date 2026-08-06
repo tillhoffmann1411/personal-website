@@ -4,6 +4,7 @@ import { siteContent } from '@/lib/data/site-content';
 import { projects } from '@/lib/data/projects';
 import TerminalChatBubble from '@/components/mrrobot/terminal-chat-bubble';
 import { ModeToggle } from '@/components/mode-toggle';
+import ClientProjects from './client-projects';
 import CornerMarks from './corner-marks';
 import EducationRow from './education-row';
 import ProjectCard from './project-card';
@@ -77,7 +78,13 @@ export default function LandingPage() {
                 <p className="mt-2 text-lg text-zinc-600 dark:text-zinc-400">{siteContent.role}</p>
               </div>
               <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">{siteContent.tagline}</p>
-              <p className="text-sm text-zinc-400 dark:text-zinc-500">{siteContent.location}</p>
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
+                <span className="inline-flex items-center gap-2 border border-brand-600 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-brand-700 dark:border-brand-600/70 dark:text-brand-300">
+                  <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 bg-brand-500" />
+                  {siteContent.availability}
+                </span>
+                <span className="text-sm text-zinc-400 dark:text-zinc-500">{siteContent.location}</span>
+              </div>
               <div className="flex flex-wrap items-center justify-center gap-3 pt-2 sm:justify-start">
                 <a
                   href={`mailto:${contact.email}`}
@@ -98,16 +105,9 @@ export default function LandingPage() {
           </div>
         </section>
 
-        <section id="education" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
-          <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
-            // Ausbildung
-          </h2>
-          <EducationRow items={[...siteContent.education]} />
-        </section>
-
         <section id="projects" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
           <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
-            // Projekte
+            {'// Projekte'}
           </h2>
           <div className="space-y-10">
             {projects.map((project, index) => (
@@ -118,6 +118,23 @@ export default function LandingPage() {
               />
             ))}
           </div>
+        </section>
+
+        <section id="work" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
+          <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
+            {'// Kundenprojekte'}
+          </h2>
+          <ClientProjects items={siteContent.clientProjects.items} />
+          <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+            {siteContent.clientProjects.note}
+          </p>
+        </section>
+
+        <section id="education" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
+          <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
+            {'// Ausbildung'}
+          </h2>
+          <EducationRow items={siteContent.education} />
         </section>
       </main>
 

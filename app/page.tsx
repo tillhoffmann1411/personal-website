@@ -1,20 +1,37 @@
 import LandingPage from '@/components/landing/landing-page';
-import { siteContent } from '@/lib/data/site-content';
+import { siteContent, siteUrl } from '@/lib/data/site-content';
 
 const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${siteUrl}/#person`,
   name: siteContent.name,
   jobTitle: 'Freelance Founder für Softwareentwicklung und KI',
-  url: 'https://till-hoffmann.me',
-  image: `https://till-hoffmann.me${siteContent.profileImage}`,
+  description: siteContent.tagline,
+  url: siteUrl,
+  image: `${siteUrl}${siteContent.profileImage}`,
   email: `mailto:${siteContent.contact.email}`,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Köln',
     addressCountry: 'DE',
   },
-  sameAs: [siteContent.linkedIn.url, 'https://till-hoffmann.me'],
+  alumniOf: siteContent.education.map((item) => ({
+    '@type': 'EducationalOrganization',
+    name: item.institution,
+  })),
+  knowsAbout: [
+    'Softwareentwicklung',
+    'Künstliche Intelligenz',
+    'React',
+    'Next.js',
+    'TypeScript',
+    'Python',
+    'Realtime-Architekturen',
+    'SaaS',
+  ],
+  knowsLanguage: ['de', 'en'],
+  sameAs: [siteContent.linkedIn.url, 'https://hoffmann.id'],
 };
 
 export default function Home() {

@@ -3,8 +3,11 @@ import type { Metadata } from 'next';
 import { siteContent } from '@/lib/data/site-content';
 
 export const metadata: Metadata = {
-  title: 'Impressum — Till Hoffmann',
+  title: 'Impressum',
   description: 'Impressum und Kontaktinformationen.',
+  alternates: {
+    canonical: '/impressum',
+  },
 };
 
 export default function ImpressumPage() {
