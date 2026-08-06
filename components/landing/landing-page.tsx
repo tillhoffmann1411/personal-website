@@ -121,9 +121,12 @@ export default function LandingPage() {
         </section>
 
         <section id="work" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
-          <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
+          <h2 className="mb-2 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
             {'// Kundenprojekte'}
           </h2>
+          <p className="mb-8 max-w-xl text-sm text-zinc-500 dark:text-zinc-400">
+            Eine Auswahl laufender und abgeschlossener Projekte — die vollständige Liste gibt es auf Anfrage.
+          </p>
           <ClientProjects items={siteContent.clientProjects.items} />
           <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
             {siteContent.clientProjects.note}
