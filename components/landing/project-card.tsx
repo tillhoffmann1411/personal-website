@@ -44,7 +44,7 @@ export default function ProjectCard({ project, reversed = false }: ProjectCardPr
             )
           ) : (
             <div className="flex h-full min-h-[200px] items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-800 dark:to-zinc-900">
-              <span className="font-mono text-sm text-zinc-400 dark:text-zinc-500">coming soon</span>
+              <span className="font-mono text-sm text-zinc-500 dark:text-zinc-400">coming soon</span>
             </div>
           )}
         </div>

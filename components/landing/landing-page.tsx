@@ -83,7 +83,7 @@ export default function LandingPage() {
                   <span aria-hidden="true" className="h-1.5 w-1.5 shrink-0 bg-brand-500" />
                   {siteContent.availability}
                 </span>
-                <span className="text-sm text-zinc-400 dark:text-zinc-500">{siteContent.location}</span>
+                <span className="text-sm text-zinc-500 dark:text-zinc-400">{siteContent.location}</span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-3 pt-2 sm:justify-start">
                 <a
@@ -128,7 +128,7 @@ export default function LandingPage() {
             Eine Auswahl laufender und abgeschlossener Projekte — die vollständige Liste gibt es auf Anfrage.
           </p>
           <ClientProjects items={siteContent.clientProjects.items} />
-          <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+          <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
             {siteContent.clientProjects.note}
           </p>
         </section>

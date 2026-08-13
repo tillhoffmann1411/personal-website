@@ -37,7 +37,7 @@ export default function EducationRow({ items }: { items: readonly EducationItem[
           <p className="mt-2 font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
             {item.institution}
           </p>
-          <p className="mt-1.5 text-xs text-zinc-400 dark:text-zinc-500">{item.detail}</p>
+          <p className="mt-1.5 text-xs text-zinc-500 dark:text-zinc-400">{item.detail}</p>
         </article>
       ))}
     </div>

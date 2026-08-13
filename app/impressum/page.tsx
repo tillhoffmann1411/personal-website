@@ -36,13 +36,13 @@ export default function ImpressumPage() {
         </address>
       </main>
 
-      <footer className="border-t border-zinc-100 py-8 text-center text-sm text-zinc-400 dark:border-zinc-800 dark:text-zinc-500">
+      <footer className="border-t border-zinc-100 py-8 text-center text-sm text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
         <p>
           © {new Date().getFullYear()} {name}
         </p>
         <Link
           href="/"
-          className="mt-2 inline-block text-zinc-400 underline decoration-zinc-200 underline-offset-2 hover:text-zinc-600 dark:text-zinc-500 dark:decoration-zinc-700 dark:hover:text-zinc-300"
+          className="mt-2 inline-block text-zinc-500 underline decoration-zinc-200 underline-offset-2 hover:text-zinc-600 dark:text-zinc-400 dark:decoration-zinc-700 dark:hover:text-zinc-300"
         >
           Zur Startseite
         </Link>

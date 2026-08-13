@@ -22,7 +22,7 @@ export default function ClientProjects({ items }: { items: readonly ClientProjec
 
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 font-mono text-xs uppercase tracking-widest">
             <span className="text-brand-700 dark:text-brand-400">{item.sector}</span>
-            <span className="text-zinc-400 dark:text-zinc-500">{item.period}</span>
+            <span className="text-zinc-500 dark:text-zinc-400">{item.period}</span>
           </div>
 
           <h3 className="mt-3 text-lg font-semibold leading-snug tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-xl">
