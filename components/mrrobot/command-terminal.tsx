@@ -121,6 +121,7 @@ export default function CommandTerminal({
 
           const fileMap: Record<string, SectionId> = {
             about: 'about',
+            services: 'services',
             education: 'education',
             projects: 'projects',
           };

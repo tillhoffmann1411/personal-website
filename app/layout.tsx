@@ -19,9 +19,9 @@ const inter = Inter({
 });
 
 const name = 'Till Hoffmann';
-const title = 'Till Hoffmann — Freelance Softwareentwickler & Gründer in Köln';
+const title = 'Till Hoffmann — KI-Transformation & Softwareentwicklung für KMU, Köln';
 const description =
-  'Till Hoffmann — Freelance Softwareentwickler und Gründer aus Köln. Web-Anwendungen, Realtime-Architekturen und KI-Produkte. Offen für Co-Founder-Anfragen.';
+  'Till Hoffmann hilft kleinen und mittelständischen Unternehmen, ihre digitale Welt ins KI-Zeitalter zu bringen: Prozesse, Daten, Schnittstellen, KI-Tools und individuelle Software. Freelancer und Gründer aus Köln.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -35,13 +35,16 @@ export const metadata: Metadata = {
   creator: name,
   publisher: name,
   keywords: [
+    'KI-Transformation',
+    'KI-Beratung KMU',
+    'Prozessautomatisierung',
+    'KI-gestützte Softwareentwicklung',
     'Freelance Softwareentwickler',
     'Fullstack Entwickler Köln',
     'Next.js',
     'React',
     'Python',
     'KI',
-    'Co-Founder',
     'Gründer',
   ],
   alternates: {

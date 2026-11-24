@@ -5,10 +5,10 @@ export const siteContent = {
   handle: 'tillhoffmann',
   profileImage: '/images/profile-headshot.webp',
   tagline:
-    'Freelance Founder für Softwareentwicklung und KI-Themen. Aktuell in Köln — arbeite freiberuflich und an eigenen Projekten.',
+    'Ich helfe kleinen und mittelständischen Unternehmen, ihre digitale Welt ins KI-Zeitalter zu bringen: von den Prozessen über Daten und Schnittstellen bis zur fertigen Software.',
   location: 'Köln, Deutschland',
-  role: 'Freelance · Gründer · Softwareentwicklung & KI',
-  availability: 'Offen für Co-Founder-Anfragen',
+  role: 'KI-Transformation & Softwareentwicklung für KMU',
+  availability: 'Neue Projekte ab Januar 2027',
 
   linkedIn: {
     name: 'LinkedIn',
@@ -18,9 +18,36 @@ export const siteContent = {
 
   sections: {
     about: { id: 'about', title: 'about.txt', label: 'Über mich' },
+    services: { id: 'services', title: 'services/', label: 'Leistungen' },
     projects: { id: 'projects', title: 'projects/', label: 'Projekte' },
     work: { id: 'work', title: 'work.log', label: 'Kundenprojekte' },
     education: { id: 'education', title: 'education.log', label: 'Ausbildung' },
+  },
+
+  services: {
+    intro:
+      'Ich setze KI dort ein, wo sie im Alltag wirklich etwas verändert. Zuerst verstehe ich Prozesse, Daten und bestehende Tools, dann wähle ich passende Modelle und Werkzeuge aus und verbinde alles zu einem System, das funktioniert. Wo es keine fertige Lösung gibt, entwickle ich sie selbst.',
+    items: [
+      {
+        title: 'KI-Transformation für KMU',
+        points: [
+          'Prozesse aufnehmen und dort ansetzen, wo KI Zeit oder Fehler spart',
+          'Datenbestand ordnen und eine Knowledge Base aufbauen',
+          'Schnittstellen schaffen und bestehende Systeme verknüpfen',
+          'KI-Modelle und Tools auswählen, passend zu Aufgabe, Datenschutz und Budget',
+          'Schulungen und Workshops, damit Teams KI sicher selbst nutzen',
+        ],
+      },
+      {
+        title: 'KI-gestützte Softwareentwicklung',
+        points: [
+          'Individuelle Webanwendungen von der Idee bis zum Betrieb',
+          'Integration von KI und LLMs in bestehende Produkte',
+          'Beratung von Entwicklungsteams beim Aufsetzen KI-gestützter Entwicklungsprozesse',
+        ],
+      },
+    ],
+    cta: 'Ab Januar 2027 habe ich wieder Kapazität für neue Projekte. Erzählen Sie mir, wo es in Ihrem Unternehmen hakt – ein erstes Gespräch ist unverbindlich.',
   },
 
   education: [
@@ -48,19 +75,19 @@ export const siteContent = {
   ],
 
   clientProjects: {
-    note: 'Kundennamen anonymisiert · Details auf Anfrage',
+    note: 'Einige Kundennamen anonymisiert · Details auf Anfrage',
     items: [
       {
         title: 'Testautomatisierung für sicherheitskritische Systeme',
         sector: 'BOS & Kritische Infrastruktur',
-        period: 'seit 2024',
+        period: '2024 – 2026',
         role: 'Fullstack-Entwickler · Verantwortung Frontend & Architektur',
         summary:
-          'Plattform, auf der Testfälle grafisch modelliert, automatisiert gegen reale Hardware und Anwendungen ausgeführt und in Echtzeit ausgewertet werden. Ersetzt einen zuvor mehrwöchigen manuellen Testzyklus.',
+          'Von Grund auf neu entwickelte Plattform, die zuvor rein manuelle, mehrwöchige Testzyklen ersetzt: Tests grafisch erstellen, parallel auf Windows-Clients, Browsern und Robotern ausführen und live zuschauen, inklusive Fehleranalyse, Video, Screenshots und automatischen Berichten.',
         metrics: [
-          '300+ automatisierte Testfälle',
-          '~10 Personen im Team',
-          '2,5+ Jahre Laufzeit',
+          'mehrere hundert Ergebnisse pro Testlauf',
+          'parallele Ausführung, live gestreamt',
+          '~3 Jahre Laufzeit',
         ],
         stack: [
           'Next.js',
@@ -87,14 +114,34 @@ export const siteContent = {
         stack: ['AWS Transcribe', 'Kinesis', 'Lambda', 'DynamoDB', 'React', 'Serverless'],
       },
       {
+        title: 'blookery – Prozessautomatisierung im Travel Tech',
+        sector: 'Reisebranche',
+        period: 'seit 2026',
+        role: 'Freelance-Entwickler',
+        summary:
+          'Flugänderungen werden automatisch aus eingehenden E-Mails erkannt und im CRM gepflegt, statt von Hand nachgetragen. Dazu Benchmarking von Such- und Optimierungsalgorithmen für Flug- und Hotelkombinationen.',
+        metrics: [],
+        stack: ['React', 'Node.js', 'MongoDB', 'Gmail API', 'Pipedrive'],
+      },
+      {
         title: 'Automatisierte Kursplanung',
         sector: 'Bildung & Kursbetrieb',
         period: '2024',
-        role: 'Freelance-Entwickler',
+        role: 'Entwickler',
         summary:
-          'Anwendung zur automatischen Erstellung optimierter Kurspläne. Kern ist ein Algorithmus zur Trainerzuordnung, der Verfügbarkeiten, Qualifikationen und eine faire Verteilung als Constraint-Problem löst — für bessere Planung und Qualität der Lehre.',
+          'Anwendung zur automatischen Erstellung optimierter Kurspläne. Kern ist ein Algorithmus zur Trainerzuordnung, der Verfügbarkeiten, Qualifikationen und eine faire Verteilung als Constraint-Problem löst.',
         metrics: [],
-        stack: ['React', 'Scheduling-Algorithmus', 'Constraint Solving'],
+        stack: ['React', 'SQL', 'Scheduling-Algorithmus', 'Constraint Solving'],
+      },
+      {
+        title: 'Datenpipeline im Gesundheitswesen',
+        sector: 'Daten & Cloud',
+        period: '2022',
+        role: 'Software-Entwickler · codecentric AG',
+        summary:
+          'Automatisierte Pipeline, die Daten aus mehreren Systemen per Schnittstelle abholt, in BigQuery zusammenführt und serverlos betrieben für Auswertungen und Dashboards bereitstellt.',
+        metrics: [],
+        stack: ['Python', 'BigQuery', 'Cloud Functions', 'Looker Studio'],
       },
     ],
   },

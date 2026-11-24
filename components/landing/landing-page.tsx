@@ -9,6 +9,7 @@ import CornerMarks from './corner-marks';
 import EducationRow from './education-row';
 import ProjectCard from './project-card';
 import ScrollNavButton from './scroll-nav-button';
+import Services from './services';
 import SiteNav from './site-nav';
 
 const navItems = Object.values(siteContent.sections);
@@ -103,6 +104,18 @@ export default function LandingPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section id="services" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">
+          <h2 className="mb-8 font-mono text-sm font-medium uppercase tracking-widest text-brand-700 dark:text-brand-400">
+            {'// Leistungen'}
+          </h2>
+          <Services
+            intro={siteContent.services.intro}
+            items={siteContent.services.items}
+            cta={siteContent.services.cta}
+            email={contact.email}
+          />
         </section>
 
         <section id="projects" className="scroll-mt-20 border-t border-zinc-100 py-16 dark:border-zinc-800 sm:py-20">

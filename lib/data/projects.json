@@ -1,12 +1,19 @@
 [
   {
-    "name": "Knowledge in a Box",
-    "description": "Startup für kontextbasiertes Wissensmanagement. Verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph — per Web-App oder Browser-Erweiterung.",
+    "name": "Snaplete",
+    "description": "KI-basiertes Event-Foto-Matching, das ich als Gründer und Lead Developer baue: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden und direkt kaufen. Open-Weight-Modelle, Daten in Deutschland, Selfies werden nach 30 Tagen automatisch gelöscht.",
+    "url": "https://snaplete.de",
     "status": "active",
+    "image": "/portfolio/snaplete.webp",
+    "awards": []
+  },
+  {
+    "name": "Knowledge in a Box",
+    "description": "B2B-SaaS für kontextbasiertes Wissensmanagement, das ich als Co-Founder und technischer Kopf aufgebaut habe. Verbindet Informationen aus verschiedenen Quellen in einem Wissensgraph und schlägt passende Dokumente und Ansprechpartner vor, per Web-App oder Browser-Erweiterung.",
     "image": "/portfolio/kiab-mock.webp",
     "awards": [
       {
-        "title": "Deutscher Innovationspreis für Digitales",
+        "title": "Gründungspreis 2023 · BMWK-Wettbewerb „Digitale Innovationen“",
         "logo": "/logos/gruender-preis.webp"
       },
       {
@@ -14,13 +21,5 @@
         "logo": "/logos/exist.webp"
       }
     ]
-  },
-  {
-    "name": "Snaplete",
-    "description": "KI-basiertes Event-Foto-Matching: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden. DSGVO-konform, Daten in Deutschland — Selfies werden nach 24 Stunden automatisch gelöscht.",
-    "url": "https://snaplete.de",
-    "status": "active",
-    "image": "/portfolio/snaplete.webp",
-    "awards": []
   }
 ]
