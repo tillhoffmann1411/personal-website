@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 const name = 'Till Hoffmann';
-const title = 'Till Hoffmann — KI-Transformation & Softwareentwicklung für KMU, Köln';
+const title = 'Till Hoffmann | KI-Transformation & Softwareentwicklung für KMU in Köln';
 const description =
   'Till Hoffmann hilft kleinen und mittelständischen Unternehmen, ihre digitale Welt ins KI-Zeitalter zu bringen: Prozesse, Daten, Schnittstellen, KI-Tools und individuelle Software. Freelancer und Gründer aus Köln.';
 
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: `%s — ${name}`,
+    template: `%s | ${name}`,
   },
   description,
   applicationName: name,

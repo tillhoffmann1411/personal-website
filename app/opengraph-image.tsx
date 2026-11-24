@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { siteContent } from '@/lib/data/site-content';
 
-export const alt = 'Till Hoffmann — Freelance Softwareentwickler & Gründer in Köln';
+export const alt = 'Till Hoffmann: KI-Transformation & Softwareentwicklung für KMU in Köln';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 

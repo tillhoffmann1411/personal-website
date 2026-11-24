@@ -18,23 +18,23 @@ export const elliotQuotes = [
 
 export const terminalCommands = {
   help: `Available commands:
-  help          — show this message
-  whoami        — identity file
-  ls            — list directories
-  cat <file>    — read a file (about, education, projects, contact, impressum)
-  open <file>   — scroll to section
-  social        — external links
-  hello         — greet the system
-  control       — ...
-  ecorp         — corporate database
-  clear         — clear terminal
-  reboot        — restart boot sequence`,
+  help          show this message
+  whoami        identity file
+  ls            list directories
+  cat <file>    read a file (about, education, projects, contact, impressum)
+  open <file>   scroll to section
+  social        external links
+  hello         greet the system
+  control       ...
+  ecorp         corporate database
+  clear         clear terminal
+  reboot        restart boot sequence`,
 
   hello: 'Hello, friend. Hello, friend? That\'s lame. Maybe I should give you a name...',
 
   control: 'Control is an illusion.',
 
-  ecorp: `E Corp — "Evil Corp"
+  ecorp: `E Corp ("Evil Corp")
   Status: NOT FOUND in this filesystem.
   Note: You might be looking for tillhoffmann.me`,
 

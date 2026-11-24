@@ -47,21 +47,21 @@ export const siteContent = {
         ],
       },
     ],
-    cta: 'Ab Januar 2027 habe ich wieder Kapazität für neue Projekte. Erzählen Sie mir, wo es in Ihrem Unternehmen hakt – ein erstes Gespräch ist unverbindlich.',
+    cta: 'Ab Januar 2027 habe ich wieder Kapazität für neue Projekte. Erzählen Sie mir, wo es in Ihrem Unternehmen hakt. Ein erstes Gespräch ist unverbindlich.',
   },
 
   education: [
     {
       degree: 'B.Sc. Wirtschaftsinformatik',
       institution: 'FH Münster',
-      period: '2016 – 2020',
+      period: '2016 bis 2020',
       detail: 'Schwerpunkt Software- und Webentwicklung',
       logo: '/logos/fh.webp',
     },
     {
       degree: 'M.Sc. Information Systems',
       institution: 'Universität Münster',
-      period: '2020 – 2023',
+      period: '2020 bis 2023',
       detail: 'Schwerpunkt Data Science',
       logo: '/logos/wwu.webp',
     },
@@ -80,7 +80,7 @@ export const siteContent = {
       {
         title: 'Testautomatisierung für sicherheitskritische Systeme',
         sector: 'BOS & Kritische Infrastruktur',
-        period: '2024 – 2026',
+        period: '2024 bis 2026',
         role: 'Fullstack-Entwickler · Verantwortung Frontend & Architektur',
         summary:
           'Von Grund auf neu entwickelte Plattform, die zuvor rein manuelle, mehrwöchige Testzyklen ersetzt: Tests grafisch erstellen, parallel auf Windows-Clients, Browsern und Robotern ausführen und live zuschauen, inklusive Fehleranalyse, Video, Screenshots und automatischen Berichten.',
@@ -114,7 +114,7 @@ export const siteContent = {
         stack: ['AWS Transcribe', 'Kinesis', 'Lambda', 'DynamoDB', 'React', 'Serverless'],
       },
       {
-        title: 'blookery – Prozessautomatisierung im Travel Tech',
+        title: 'blookery: Prozessautomatisierung im Travel Tech',
         sector: 'Reisebranche',
         period: 'seit 2026',
         role: 'Freelance-Entwickler',

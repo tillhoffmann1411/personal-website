@@ -138,7 +138,7 @@ export default function LandingPage() {
             {'// Kundenprojekte'}
           </h2>
           <p className="mb-8 max-w-xl text-sm text-zinc-500 dark:text-zinc-400">
-            Eine Auswahl laufender und abgeschlossener Projekte — die vollständige Liste gibt es auf Anfrage.
+            Eine Auswahl laufender und abgeschlossener Projekte. Die vollständige Liste gibt es auf Anfrage.
           </p>
           <ClientProjects items={siteContent.clientProjects.items} />
           <p className="mt-6 font-mono text-xs uppercase tracking-widest text-zinc-500 dark:text-zinc-400">
