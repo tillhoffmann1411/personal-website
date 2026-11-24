@@ -1,7 +1,7 @@
 [
   {
     "name": "Snaplete",
-    "description": "KI-basiertes Event-Foto-Matching, das ich als Gründer und Lead Developer baue: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden und direkt kaufen. Open-Weight-Modelle, Daten in Deutschland, Selfies werden nach 30 Tagen automatisch gelöscht.",
+    "description": "KI-basiertes Event-Foto-Matching, das ich als Gründer und Lead Developer baue: Selfie hochladen, in Sekunden alle eigenen Eventfotos finden und direkt kaufen. Server und Daten in Deutschland, Selfies werden nach 30 Tagen automatisch gelöscht.",
     "url": "https://snaplete.de",
     "status": "active",
     "image": "/portfolio/snaplete.webp",
